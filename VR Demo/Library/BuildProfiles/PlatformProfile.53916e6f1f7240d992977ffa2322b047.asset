@@ -17,7 +17,7 @@ MonoBehaviour:
   m_Subtarget: 0
   m_PlatformId: 53916e6f1f7240d992977ffa2322b047
   m_PlatformBuildProfile:
-    rid: 8892605991635386384
+    rid: 1813263079168802832
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_ScriptingDefines: []
@@ -26,7 +26,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8892605991635386384
+    - rid: 1813263079168802832
       type: {class: VisionOSPlatformSettings, ns: UnityEditor.VisionOS, asm: UnityEditor.VisionOS.Extensions}
       data:
         m_Development: 0

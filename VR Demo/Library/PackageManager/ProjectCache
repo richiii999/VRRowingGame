@@ -1,33 +1,33 @@
 m_ProjectFiles:
   m_ManifestFileStatus:
-    m_FilePath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Packages/manifest.json
+    m_FilePath: D:/GitHub/VRRowingGame/My project (1)/Packages/manifest.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638952193100000000
-    m_Hash: 1463483768
+      ticks: 638959853848471807
+    m_Hash: 2492993243
   m_LockFileStatus:
-    m_FilePath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Packages/packages-lock.json
+    m_FilePath: D:/GitHub/VRRowingGame/My project (1)/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638952193190000000
-    m_Hash: 3899465245
+      ticks: 638959853914866602
+    m_Hash: 193086034
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
   m_LocalFileStatus: []
-m_ProjectPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Packages
-m_EditorVersion: 6000.2.6f2 (4a4dcaec6541)
+m_ProjectPath: D:/GitHub/VRRowingGame/My project (1)/Packages
+m_EditorVersion: 6000.0.59f2 (ef281c76c3c1)
 m_ResolvedPackages:
 - packageId: com.unity.collab-proxy@2.9.3
   testable: 0
   isDirectDependency: 1
   version: 2.9.3
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.collab-proxy@ab839cc7d2ad
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.collab-proxy@ab839cc7d2ad
   assetPath: Packages/com.unity.collab-proxy
   name: com.unity.collab-proxy
   displayName: Unity Version Control
@@ -125,8 +125,10 @@ m_ResolvedPackages:
     - 2.9.1
     - 2.9.2
     - 2.9.3
+    - 2.10.0
     compatible:
     - 2.9.3
+    - 2.10.0
     recommended: 2.9.3
     deprecated: []
   dependencies: []
@@ -176,7 +178,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -203,7 +204,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.2
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.feature.development@767aadbc6eb7
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.feature.development@767aadbc6eb7
   assetPath: Packages/com.unity.feature.development
   name: com.unity.feature.development
   displayName: Engineering
@@ -250,7 +251,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.ide.rider
-    version: 3.0.37
+    version: 3.0.38
   - name: com.unity.editorcoroutines
     version: 1.0.0
   - name: com.unity.performance.profile-analyzer
@@ -289,7 +290,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -314,7 +314,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.14.2
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.inputsystem@be6c4fd0abf5
   assetPath: Packages/com.unity.inputsystem
   name: com.unity.inputsystem
   displayName: Input System
@@ -406,8 +406,6 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
     version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
   keywords:
   - input
   - events
@@ -446,7 +444,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -469,12 +466,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.learn.iet-framework@5.0.2
+- packageId: com.unity.learn.iet-framework@4.0.4
   testable: 0
   isDirectDependency: 1
-  version: 5.0.2
+  version: 4.0.4
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.learn.iet-framework@c18a35c1d1a1
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.learn.iet-framework@104e397c56f7
   assetPath: Packages/com.unity.learn.iet-framework
   name: com.unity.learn.iet-framework
   displayName: Tutorial Framework
@@ -559,8 +556,19 @@ m_ResolvedPackages:
     - 5.0.1
     - 5.0.2
     compatible:
+    - 4.0.4
+    - 4.1.0
+    - 4.1.1
+    - 4.1.2
+    - 4.1.3
+    - 4.1.5
+    - 4.2.0-pre.1
+    - 4.2.0-pre.2
+    - 4.2.0-pre.3
+    - 5.0.0
+    - 5.0.1
     - 5.0.2
-    recommended: 5.0.2
+    recommended: 4.0.4
     deprecated: []
   dependencies:
   - name: com.unity.editorcoroutines
@@ -589,33 +597,33 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638919872523490000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@5.0/manual/index.html
+  datePublishedTicks: 638735819363810000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@4.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/iet-package.git
-    revision: 5a05d439ae261c9f9727be5d0b23419658403e7b
+    revision: 67b54224375735a114b1a2e68aad2d0bc2668cca
     path: 
   unityLifecycle:
-    version: 5.0.2
+    version: 4.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Fixed\n- Removed the Ask Assistant button"}'
+  upmReserved: '{"changelog":"### Fixed\n\n- Popout window for media is now properly
+    always unmasked even when resized"}'
   assetStore:
     productId: 
-  fingerprint: c18a35c1d1a104da89f97a15f3ef7fc112ec49d6
+  fingerprint: 104e397c56f7e54a6b20dd4ed443ecc9e65a9472
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 5.0.2
+    minimumPackageVersion: 4.0.4
     minimumUnityVersion: 2021.3.0a1
   compliance:
     status: 0
@@ -628,7 +636,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.multiplayer.center@f5e57a8bed06
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.multiplayer.center@f3fb577b3546
   assetPath: Packages/com.unity.multiplayer.center
   name: com.unity.multiplayer.center
   displayName: Multiplayer Center
@@ -662,8 +670,6 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
-    version: 1.0.0
-  - name: com.unity.modules.physics
     version: 1.0.0
   keywords:
   - Multiplayer
@@ -699,7 +705,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -708,7 +713,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: f5e57a8bed0637672c58142b1bfd7e6fea03746c
+  fingerprint: f3fb577b3546594b97b8cc34307cd621f60f1c73
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.0
@@ -719,12 +724,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.render-pipelines.universal@17.2.0
+- packageId: com.unity.render-pipelines.universal@17.0.4
   testable: 0
   isDirectDependency: 1
-  version: 17.2.0
+  version: 17.0.4
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.render-pipelines.universal@8a7d82525fcc
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.render-pipelines.universal@2a2241f53fcd
   assetPath: Packages/com.unity.render-pipelines.universal
   name: com.unity.render-pipelines.universal
   displayName: Universal Render Pipeline
@@ -741,23 +746,23 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 17.2.0
+    - 17.0.4
     compatible:
-    - 17.2.0
-    recommended: 17.2.0
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.shadergraph
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.render-pipelines.universal-config
     version: 17.0.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -769,15 +774,15 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.collections
-    version: 2.5.7
+    version: 2.5.1
   - name: com.unity.test-framework
     version: 1.6.0
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.terrain
@@ -785,7 +790,7 @@ m_ResolvedPackages:
   - name: com.unity.rendering.light-transport
     version: 1.0.1
   - name: com.unity.shadergraph
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.searcher
     version: 4.9.3
   - name: com.unity.render-pipelines.universal-config
@@ -821,12 +826,11 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.2.0
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -835,11 +839,11 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 8a7d82525fcc8dd0e7e773aab79da10c8167a241
+  fingerprint: 2a2241f53fcdc4b81c5d4cc8f551f2ed9f754c94
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.2.0
-    minimumUnityVersion: 6000.2.0a1
+    minimumPackageVersion: 17.0.4
+    minimumUnityVersion: 6000.0.0a1
   compliance:
     status: 0
     violation:
@@ -851,7 +855,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.8.9
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.timeline@6b9e48457ddb
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.timeline@6b9e48457ddb
   assetPath: Packages/com.unity.timeline
   name: com.unity.timeline
   displayName: Timeline
@@ -1012,7 +1016,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1049,7 +1052,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 2.0.10
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.toolchain.win-x86_64-linux-x86_64@426618737602
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602
   assetPath: Packages/com.unity.toolchain.win-x86_64-linux-x86_64
   name: com.unity.toolchain.win-x86_64-linux-x86_64
   displayName: Toolchain Win Linux x64
@@ -1139,7 +1142,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1164,7 +1166,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.androidxr-openxr@077cd026549f
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.androidxr-openxr@077cd026549f
   assetPath: Packages/com.unity.xr.androidxr-openxr
   name: com.unity.xr.androidxr-openxr
   displayName: Unity OpenXR Android XR
@@ -1186,6 +1188,7 @@ m_ResolvedPackages:
     - 1.0.0-pre.3
     - 1.0.0
     - 1.0.1
+    - 1.0.2
     - 1.1.0-pre.1
     compatible:
     - 0.4.3-exp.1
@@ -1195,6 +1198,7 @@ m_ResolvedPackages:
     - 1.0.0-pre.3
     - 1.0.0
     - 1.0.1
+    - 1.0.2
     - 1.1.0-pre.1
     recommended: 
     deprecated: []
@@ -1286,11 +1290,10 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 
-    nextVersion: 1.0.0-pre.2
+    nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1316,7 +1319,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 6.2.0
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.arfoundation@ddd5a77596e0
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.arfoundation@ddd5a77596e0
   assetPath: Packages/com.unity.xr.arfoundation
   name: com.unity.xr.arfoundation
   displayName: AR Foundation
@@ -1476,12 +1479,26 @@ m_ResolvedPackages:
     - 6.3.0-pre.1
     - 6.3.0-pre.2
     - 6.3.0
+    - 6.4.0-pre.1
     compatible:
+    - 6.0.6
+    - 6.1.0-pre.1
+    - 6.1.0-pre.2
+    - 6.1.0-pre.3
+    - 6.1.0-pre.4
+    - 6.1.0-pre.5
+    - 6.1.0
+    - 6.1.1
+    - 6.2.0-pre.1
+    - 6.2.0-pre.2
+    - 6.2.0-pre.3
+    - 6.2.0-pre.4
     - 6.2.0
     - 6.3.0-pre.1
     - 6.3.0-pre.2
     - 6.3.0
-    recommended: 6.2.0
+    - 6.4.0-pre.1
+    recommended: 6.0.6
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -1519,13 +1536,13 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
     version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.xr.core-utils
     version: 2.5.3
   - name: com.unity.modules.xr
+    version: 1.0.0
+  - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.subsystems
     version: 1.0.0
@@ -1579,12 +1596,11 @@ m_ResolvedPackages:
     revision: 61b43dd04b6ca60655d6e1079b222ccb7e1dde1b
     path: 
   unityLifecycle:
-    version: 6.2.0
-    nextVersion: 
+    version: 6.0.6
+    nextVersion: 6.1.0-pre.1
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1602,7 +1618,7 @@ m_ResolvedPackages:
   fingerprint: ddd5a77596e090d65c05b33ddc92105a90fab142
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 6.2.0
+    minimumPackageVersion: 6.0.6
     minimumUnityVersion: 6000.0.0a1
   compliance:
     status: 0
@@ -1615,7 +1631,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.6.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.hands@ff73e7abcedb
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.hands@ff73e7abcedb
   assetPath: Packages/com.unity.xr.hands
   name: com.unity.xr.hands
   displayName: XR Hands
@@ -1651,6 +1667,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.3
     - 1.6.0
     - 1.6.1
+    - 1.6.2
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     compatible:
@@ -1661,6 +1678,7 @@ m_ResolvedPackages:
     - 1.6.0-pre.3
     - 1.6.0
     - 1.6.1
+    - 1.6.2
     - 1.7.0-pre.1
     - 1.7.0-pre.2
     recommended: 1.5.1
@@ -1739,11 +1757,10 @@ m_ResolvedPackages:
     path: 
   unityLifecycle:
     version: 1.5.0
-    nextVersion: 1.6.0-pre.3
+    nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1772,7 +1789,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 3.2.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.interaction.toolkit@76258c00be3e
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.interaction.toolkit@76258c00be3e
   assetPath: Packages/com.unity.xr.interaction.toolkit
   name: com.unity.xr.interaction.toolkit
   displayName: XR Interaction Toolkit
@@ -1852,9 +1869,16 @@ m_ResolvedPackages:
     - 3.2.1
     - 3.3.0-pre.1
     compatible:
+    - 3.0.8
+    - 3.1.0-pre.1
+    - 3.1.0
+    - 3.1.1
+    - 3.1.2
+    - 3.2.0-pre.1
+    - 3.2.0
     - 3.2.1
     - 3.3.0-pre.1
-    recommended: 3.2.1
+    recommended: 3.0.8
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -1929,12 +1953,11 @@ m_ResolvedPackages:
     revision: 76ea9b3d9ff76136ef0dd9a2c8f28e08b89155fe
     path: 
   unityLifecycle:
-    version: 3.2.1
+    version: 3.0.8
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -1986,7 +2009,7 @@ m_ResolvedPackages:
   fingerprint: 76258c00be3ea4eb64bfddff79870b92092a74c7
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 3.2.1
+    minimumPackageVersion: 3.0.8
     minimumUnityVersion: 2021.3.0a1
   compliance:
     status: 0
@@ -1999,7 +2022,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 4.5.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.management@20be87dea580
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.management@20be87dea580
   assetPath: Packages/com.unity.xr.management
   name: com.unity.xr.management
   displayName: XR Plugin Management
@@ -2139,7 +2162,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2170,7 +2192,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.15.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.openxr@05fb1a7d75d1
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.openxr@05fb1a7d75d1
   assetPath: Packages/com.unity.xr.openxr
   name: com.unity.xr.openxr
   displayName: OpenXR Plugin
@@ -2259,11 +2281,11 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
     version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
   - name: com.unity.xr.core-utils
     version: 2.5.3
   - name: com.unity.modules.xr
+    version: 1.0.0
+  - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.subsystems
     version: 1.0.0
@@ -2307,7 +2329,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2337,7 +2358,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.accessibility
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility
   assetPath: Packages/com.unity.modules.accessibility
   name: com.unity.modules.accessibility
   displayName: Accessibility
@@ -2389,7 +2410,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2414,7 +2434,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ai
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
   assetPath: Packages/com.unity.modules.ai
   name: com.unity.modules.ai
   displayName: AI
@@ -2466,7 +2486,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2491,7 +2510,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.androidjni
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni
   assetPath: Packages/com.unity.modules.androidjni
   name: com.unity.modules.androidjni
   displayName: Android JNI
@@ -2542,7 +2561,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2567,7 +2585,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.animation
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
   assetPath: Packages/com.unity.modules.animation
   name: com.unity.modules.animation
   displayName: Animation
@@ -2619,7 +2637,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2644,7 +2661,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.assetbundle
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
   assetPath: Packages/com.unity.modules.assetbundle
   name: com.unity.modules.assetbundle
   displayName: Asset Bundle
@@ -2696,7 +2713,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2721,7 +2737,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.audio
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
   assetPath: Packages/com.unity.modules.audio
   name: com.unity.modules.audio
   displayName: Audio
@@ -2773,7 +2789,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2798,7 +2813,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.cloth
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
   assetPath: Packages/com.unity.modules.cloth
   name: com.unity.modules.cloth
   displayName: Cloth
@@ -2854,7 +2869,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2879,7 +2893,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.director
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
   assetPath: Packages/com.unity.modules.director
   name: com.unity.modules.director
   displayName: Director
@@ -2939,7 +2953,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -2964,7 +2977,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.imageconversion
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
   assetPath: Packages/com.unity.modules.imageconversion
   name: com.unity.modules.imageconversion
   displayName: Image Conversion
@@ -3016,7 +3029,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3041,7 +3053,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.imgui
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
   assetPath: Packages/com.unity.modules.imgui
   name: com.unity.modules.imgui
   displayName: IMGUI
@@ -3093,7 +3105,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3118,7 +3129,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.jsonserialize
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
   assetPath: Packages/com.unity.modules.jsonserialize
   name: com.unity.modules.jsonserialize
   displayName: JSONSerialize
@@ -3170,7 +3181,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3195,7 +3205,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.particlesystem
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
   assetPath: Packages/com.unity.modules.particlesystem
   name: com.unity.modules.particlesystem
   displayName: Particle System
@@ -3247,7 +3257,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3272,7 +3281,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
   assetPath: Packages/com.unity.modules.physics
   name: com.unity.modules.physics
   displayName: Physics
@@ -3324,7 +3333,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3349,7 +3357,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.physics2d
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
   assetPath: Packages/com.unity.modules.physics2d
   name: com.unity.modules.physics2d
   displayName: Physics 2D
@@ -3401,7 +3409,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3426,7 +3433,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.screencapture
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
   assetPath: Packages/com.unity.modules.screencapture
   name: com.unity.modules.screencapture
   displayName: Screen Capture
@@ -3482,7 +3489,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3507,7 +3513,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrain
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
   assetPath: Packages/com.unity.modules.terrain
   name: com.unity.modules.terrain
   displayName: Terrain
@@ -3559,7 +3565,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3584,7 +3589,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.terrainphysics
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
   assetPath: Packages/com.unity.modules.terrainphysics
   name: com.unity.modules.terrainphysics
   displayName: Terrain Physics
@@ -3644,7 +3649,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3669,7 +3673,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.tilemap
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
   assetPath: Packages/com.unity.modules.tilemap
   name: com.unity.modules.tilemap
   displayName: Tilemap
@@ -3724,7 +3728,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3749,7 +3752,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.ui
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
   assetPath: Packages/com.unity.modules.ui
   name: com.unity.modules.ui
   displayName: UI
@@ -3801,7 +3804,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3826,7 +3828,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.uielements
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
   assetPath: Packages/com.unity.modules.uielements
   name: com.unity.modules.uielements
   displayName: UIElements
@@ -3855,8 +3857,6 @@ m_ResolvedPackages:
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
     version: 1.0.0
-  - name: com.unity.modules.physics
-    version: 1.0.0
   resolvedDependencies:
   - name: com.unity.modules.ui
     version: 1.0.0
@@ -3865,8 +3865,6 @@ m_ResolvedPackages:
   - name: com.unity.modules.jsonserialize
     version: 1.0.0
   - name: com.unity.modules.hierarchycore
-    version: 1.0.0
-  - name: com.unity.modules.physics
     version: 1.0.0
   keywords: []
   registry:
@@ -3898,7 +3896,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -3923,7 +3920,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.umbra
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
   assetPath: Packages/com.unity.modules.umbra
   name: com.unity.modules.umbra
   displayName: Umbra
@@ -3975,7 +3972,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4000,7 +3996,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unityanalytics
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
   assetPath: Packages/com.unity.modules.unityanalytics
   name: com.unity.modules.unityanalytics
   displayName: Unity Analytics
@@ -4059,7 +4055,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4084,7 +4079,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequest
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
   assetPath: Packages/com.unity.modules.unitywebrequest
   name: com.unity.modules.unitywebrequest
   displayName: Unity Web Request
@@ -4136,7 +4131,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4161,7 +4155,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestassetbundle
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
   assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
   name: com.unity.modules.unitywebrequestassetbundle
   displayName: Unity Web Request Asset Bundle
@@ -4221,7 +4215,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4246,7 +4239,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestaudio
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
   assetPath: Packages/com.unity.modules.unitywebrequestaudio
   name: com.unity.modules.unitywebrequestaudio
   displayName: Unity Web Request Audio
@@ -4306,7 +4299,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4331,7 +4323,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequesttexture
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
   assetPath: Packages/com.unity.modules.unitywebrequesttexture
   name: com.unity.modules.unitywebrequesttexture
   displayName: Unity Web Request Texture
@@ -4391,7 +4383,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4416,7 +4407,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.unitywebrequestwww
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
   assetPath: Packages/com.unity.modules.unitywebrequestwww
   name: com.unity.modules.unitywebrequestwww
   displayName: Unity Web Request WWW
@@ -4492,7 +4483,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4517,7 +4507,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.vehicles
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
   assetPath: Packages/com.unity.modules.vehicles
   name: com.unity.modules.vehicles
   displayName: Vehicles
@@ -4573,7 +4563,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4598,7 +4587,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.video
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
   assetPath: Packages/com.unity.modules.video
   name: com.unity.modules.video
   displayName: Video
@@ -4662,7 +4651,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4687,7 +4675,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.vr
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
   assetPath: Packages/com.unity.modules.vr
   name: com.unity.modules.vr
   displayName: VR
@@ -4753,7 +4741,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4778,7 +4765,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.wind
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
   assetPath: Packages/com.unity.modules.wind
   name: com.unity.modules.wind
   displayName: Wind
@@ -4830,7 +4817,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4855,7 +4841,7 @@ m_ResolvedPackages:
   isDirectDependency: 1
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.xr
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
   assetPath: Packages/com.unity.modules.xr
   name: com.unity.modules.xr
   displayName: XR
@@ -4919,7 +4905,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -4944,7 +4929,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.subsystems
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems
   assetPath: Packages/com.unity.modules.subsystems
   name: com.unity.modules.subsystems
   displayName: Subsystems
@@ -5000,7 +4985,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5025,7 +5009,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 2
-  resolvedPath: /home/hayden/Unity/Hub/Editor/6000.2.6f2/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.modules.hierarchycore
+  resolvedPath: D:\Program Files\Unity\Hub\Editor\6000.0.59f2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore
   assetPath: Packages/com.unity.modules.hierarchycore
   name: com.unity.modules.hierarchycore
   displayName: Hierarchy Core
@@ -5077,7 +5061,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5102,7 +5085,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.5.3
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.core-utils@f0450cbac8d6
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.core-utils@f0450cbac8d6
   assetPath: Packages/com.unity.xr.core-utils
   name: com.unity.xr.core-utils
   displayName: XR Core Utilities
@@ -5202,7 +5185,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5228,7 +5210,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.1.12
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.xr.legacyinputhelpers@b7579e86f3b4
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.xr.legacyinputhelpers@b7579e86f3b4
   assetPath: Packages/com.unity.xr.legacyinputhelpers
   name: com.unity.xr.legacyinputhelpers
   displayName: XR Legacy Input Helpers
@@ -5329,7 +5311,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5356,7 +5337,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.0
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.ugui@51dcd919565a
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.ugui@23b1a4ff749d
   assetPath: Packages/com.unity.ugui
   name: com.unity.ugui
   displayName: Unity UI
@@ -5427,7 +5408,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5436,7 +5416,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 51dcd919565a9ecf41037079f7b1f844efea4dc4
+  fingerprint: 23b1a4ff749d69614ac83bcec9b1eb5d286cc9f0
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 2.0.0
@@ -5452,7 +5432,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.3.2
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.mathematics@8017b507cc74
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.mathematics@8017b507cc74
   assetPath: Packages/com.unity.mathematics
   name: com.unity.mathematics
   displayName: Mathematics
@@ -5525,7 +5505,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5553,7 +5532,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.0
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.editorcoroutines@7d48783e7b8c
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.editorcoroutines@7d48783e7b8c
   assetPath: Packages/com.unity.editorcoroutines
   name: com.unity.editorcoroutines
   displayName: Editor Coroutines
@@ -5617,7 +5596,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5642,7 +5620,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.10
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.sysroot@7bbbb9339c14
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.sysroot@7bbbb9339c14
   assetPath: Packages/com.unity.sysroot
   name: com.unity.sysroot
   displayName: Sysroot Base
@@ -5717,7 +5695,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5742,7 +5719,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.9
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.sysroot.linux-x86_64@1998d1c7730e
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.sysroot.linux-x86_64@1998d1c7730e
   assetPath: Packages/com.unity.sysroot.linux-x86_64
   name: com.unity.sysroot.linux-x86_64
   displayName: Sysroot Linux x64
@@ -5818,7 +5795,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5838,12 +5814,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.render-pipelines.core@17.2.0
+- packageId: com.unity.render-pipelines.core@17.0.4
   testable: 0
   isDirectDependency: 0
-  version: 17.2.0
+  version: 17.0.4
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.render-pipelines.core@57503240b1f3
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.render-pipelines.core@029632be9a02
   assetPath: Packages/com.unity.render-pipelines.core
   name: com.unity.render-pipelines.core
   displayName: Scriptable Render Pipeline Core
@@ -5863,14 +5839,14 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 17.2.0
+    - 17.0.4
     compatible:
-    - 17.2.0
-    recommended: 17.2.0
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.burst
-    version: 1.8.14
+    version: 1.8.20
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.ugui
@@ -5887,7 +5863,7 @@ m_ResolvedPackages:
     version: 1.0.1
   resolvedDependencies:
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -5899,15 +5875,15 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.collections
-    version: 2.5.7
+    version: 2.5.1
   - name: com.unity.test-framework
     version: 1.6.0
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.terrain
@@ -5939,12 +5915,11 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.2.0
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -5953,23 +5928,23 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: 57503240b1f3d659cc4e7c27ad04ae6de0a1aab0
+  fingerprint: 029632be9a0271571aabfba918ea32f2fe33bd70
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.2.0
-    minimumUnityVersion: 6000.2.0a1
+    minimumPackageVersion: 17.0.4
+    minimumUnityVersion: 6000.0.0a1
   compliance:
     status: 0
     violation:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.shadergraph@17.2.0
+- packageId: com.unity.shadergraph@17.0.4
   testable: 0
   isDirectDependency: 0
-  version: 17.2.0
+  version: 17.0.4
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.shadergraph@c7cb9a0feac2
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.shadergraph@de26b472816a
   assetPath: Packages/com.unity.shadergraph
   name: com.unity.shadergraph
   displayName: Shader Graph
@@ -5987,21 +5962,21 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
-    - 17.2.0
+    - 17.0.4
     compatible:
-    - 17.2.0
-    recommended: 17.2.0
+    - 17.0.4
+    recommended: 17.0.4
     deprecated: []
   dependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.searcher
     version: 4.9.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -6013,15 +5988,15 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.collections
-    version: 2.5.7
+    version: 2.5.1
   - name: com.unity.test-framework
     version: 1.6.0
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.terrain
@@ -6055,12 +6030,11 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-    version: 17.2.0
+    version: 17.0.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6069,11 +6043,11 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: c7cb9a0feac210d93d6dc2bba8dfe0e243c509eb
+  fingerprint: de26b472816ac61e3f313fc6573f32ed59e67998
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 17.2.0
-    minimumUnityVersion: 6000.2.0a1
+    minimumPackageVersion: 17.0.4
+    minimumUnityVersion: 6000.0.0a1
   compliance:
     status: 0
     violation:
@@ -6085,7 +6059,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 17.0.3
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.render-pipelines.universal-config@dbe3fd082d8f
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.render-pipelines.universal-config@dd206bf35d04
   assetPath: Packages/com.unity.render-pipelines.universal-config
   name: com.unity.render-pipelines.universal-config
   displayName: Universal Render Pipeline Config
@@ -6109,9 +6083,9 @@ m_ResolvedPackages:
     version: 17.0.3
   resolvedDependencies:
   - name: com.unity.render-pipelines.core
-    version: 17.2.0
+    version: 17.0.4
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -6123,15 +6097,15 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.collections
-    version: 2.5.7
+    version: 2.5.1
   - name: com.unity.test-framework
     version: 1.6.0
   - name: com.unity.ext.nunit
     version: 2.0.5
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   - name: com.unity.modules.physics
     version: 1.0.0
   - name: com.unity.modules.terrain
@@ -6168,7 +6142,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6177,7 +6150,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: dbe3fd082d8fb31428ea5de3e6074910576c83c9
+  fingerprint: dd206bf35d0451204981fdb31d4c6831a0ee2a7e
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 17.0.3
@@ -6193,7 +6166,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.1.0
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.settings-manager@41738c275190
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.settings-manager@41738c275190
   assetPath: Packages/com.unity.settings-manager
   name: com.unity.settings-manager
   displayName: Settings Manager
@@ -6217,9 +6190,11 @@ m_ResolvedPackages:
     - 2.0.0
     - 2.0.1
     - 2.1.0
+    - 2.1.1
     compatible:
     - 2.1.0
-    recommended: 2.1.0
+    - 2.1.1
+    recommended: 2.1.1
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -6253,7 +6228,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6280,7 +6254,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.23
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.ide.visualstudio@198cdf337d13
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.ide.visualstudio@198cdf337d13
   assetPath: Packages/com.unity.ide.visualstudio
   name: com.unity.ide.visualstudio
   displayName: Visual Studio Editor
@@ -6321,9 +6295,11 @@ m_ResolvedPackages:
     - 2.0.21
     - 2.0.22
     - 2.0.23
+    - 2.0.25
     compatible:
     - 2.0.23
-    recommended: 2.0.23
+    - 2.0.25
+    recommended: 2.0.25
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -6367,7 +6343,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6391,12 +6366,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.ide.rider@3.0.37
+- packageId: com.unity.ide.rider@3.0.38
   testable: 0
   isDirectDependency: 0
-  version: 3.0.37
+  version: 3.0.38
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.ide.rider@0baf0f91edc0
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.ide.rider@1f60b3138684
   assetPath: Packages/com.unity.ide.rider
   name: com.unity.ide.rider
   displayName: JetBrains Rider Editor
@@ -6461,7 +6436,6 @@ m_ResolvedPackages:
     - 3.0.37
     - 3.0.38
     compatible:
-    - 3.0.37
     - 3.0.38
     recommended: 3.0.38
     deprecated:
@@ -6488,36 +6462,33 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638929118109900000
+  datePublishedTicks: 638938045127600000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: 39f00cc44029286564f951484a56b488a35df36d
+    revision: 8a49d81ce92f334a07e3b71a8847b2f60dc12287
     path: 
   unityLifecycle:
-    version: 3.0.37
+    version: 3.0.38
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
-  isDeprecated: 1
-  deprecationMessage: '3.3.0.37 has a regression: newly created C# files are not
-    added in the project'
+  isDeprecated: 0
+  deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"- Automatic update generated projects, when Roslyn
-    AdditionalFiles are changed\n- Remove .editorconfig from distributed package
-    to not prevent hiding warnings with a top user .editorconfig"}'
+  upmReserved: '{"changelog":"- fix a regression, introduced in 3.0.37. New files
+    are not added in the project."}'
   assetStore:
     productId: 
-  fingerprint: 0baf0f91edc004d6f71bbd74a38e2503a5f1228b
+  fingerprint: 1f60b3138684c97af67aa8d911b1632ba916d29d
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 3.0.37
+    minimumPackageVersion: 3.0.38
     minimumUnityVersion: 2021.3.0a1
   compliance:
     status: 0
@@ -6530,7 +6501,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.3
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.performance.profile-analyzer@a68e7bc84997
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.performance.profile-analyzer@a68e7bc84997
   assetPath: Packages/com.unity.performance.profile-analyzer
   name: com.unity.performance.profile-analyzer
   displayName: Profile Analyzer
@@ -6601,7 +6572,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6627,7 +6597,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.6.0
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.test-framework@b016de14e327
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.test-framework@0baaad2f700c
   assetPath: Packages/com.unity.test-framework
   name: com.unity.test-framework
   displayName: Test Framework
@@ -6692,7 +6662,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6701,7 +6670,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: b016de14e327c556528161f02e71920b09fbd642
+  fingerprint: 0baaad2f700c671c6932db856fb80e6fa04b1bde
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.6.0
@@ -6717,7 +6686,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.2.6
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.testtools.codecoverage@205a02cbcb39
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.testtools.codecoverage@205a02cbcb39
   assetPath: Packages/com.unity.testtools.codecoverage
   name: com.unity.testtools.codecoverage
   displayName: Code Coverage
@@ -6822,7 +6791,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6852,7 +6820,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 4.9.3
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.searcher@1e17ce91558d
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.searcher@1e17ce91558d
   assetPath: Packages/com.unity.searcher
   name: com.unity.searcher
   displayName: Searcher
@@ -6923,7 +6891,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -6944,12 +6911,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.burst@1.8.24
+- packageId: com.unity.burst@1.8.25
   testable: 0
   isDirectDependency: 0
-  version: 1.8.24
+  version: 1.8.25
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.burst@f7a407abf4d5
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.burst@1df634d836b8
   assetPath: Packages/com.unity.burst
   name: com.unity.burst
   displayName: Burst
@@ -7105,7 +7072,6 @@ m_ResolvedPackages:
     - 1.8.24
     - 1.8.25
     compatible:
-    - 1.8.24
     - 1.8.25
     recommended: 1.8.25
     deprecated: []
@@ -7135,43 +7101,42 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638899061085800000
+  datePublishedTicks: 638936354350140000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.burst@1.8/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/burst.git
-    revision: a51d00bdd6ede2678af40037e722269d09e4d3aa
+    revision: 05afff266a602147349dc3706f2c09210e05ec2f
     path: 
   unityLifecycle:
-    version: 1.8.24
+    version: 1.8.25
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n- Linux/ARM64 support\n- Added Floating
-    Point Mode option to Burst AOT Settings.\n- Added a warning that using processor
-    intrinsics in methods with `FloatMode = Deterministic` requires bit-level equivalent
-    functionality on other target architectures to ensure deterministic results.\n\n###
-    Fixed\n- Fixed a crash that could occur in Burst when Unity is started with the
-    `-disableManagedDebugger` command line argument\n- Fixed an issue where a static
-    field of a large value type could cause an `InterpreterOutOfMemoryException`
-    to be thrown.\n- Fixed Burst Inspector UI elements overlapping and losing interactability
-    when the window size is reduced.\n\n### Changed\n- Optimized zero-initialization
-    of local variables; where possible, zero-initialization is now done at first
-    use rather than in the function prolog"}'
+  upmReserved: '{"changelog":"### Fixed\n- Fixed infinite loop and unbounded memory
+    consumption when having a (possibly indirectly) recursive method with the `[MethodImpl(MethodImplOptions.AggressiveInlining)]`
+    attribute\n- Fixes an issue where `math.min` and `math.max` would do signed comparisons
+    on unsigned integers when compiling with `FloatMode.Fast`.\n- Fixed a crash on
+    some Android devices what would be triggered when \"Enable ARMv9 Security Features\"
+    was enabled.\n- Fixed a rare crash that could happen when the Burst package was
+    unloaded.\n- Fixed relocation error when stack protection was enabled on 32-bit
+    Android.\n\n### Added\n- Added LLVM 20 support\n- Added guards to UWP ARM32 to
+    be available only for versions lower than 6.3 [PLAT-15016](https://jira.unity3d.com/browse/PLAT-15016)\n-
+    `FloatMode.Deterministic` is now supported by Burst. Please refer to the documentation
+    for details."}'
   assetStore:
     productId: 
-  fingerprint: f7a407abf4d5abf19ce630824dcde261e02ed97e
+  fingerprint: 1df634d836b8106f13dc82401a91b336d615a874
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 1.8.24
+    minimumPackageVersion: 1.8.25
     minimumUnityVersion: 2021.3.0a1
   compliance:
     status: 0
@@ -7179,12 +7144,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.collections@2.5.7
+- packageId: com.unity.collections@2.5.1
   testable: 0
   isDirectDependency: 0
-  version: 2.5.7
+  version: 2.5.1
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.collections@d49facba0036
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.collections@56bff8827a7e
   assetPath: Packages/com.unity.collections
   name: com.unity.collections
   displayName: Collections
@@ -7278,6 +7243,9 @@ m_ResolvedPackages:
     - 2.6.0-pre.4
     - 2.6.2
     compatible:
+    - 2.5.1
+    - 2.5.2
+    - 2.5.3
     - 2.5.7
     - 2.6.0-exp.2
     - 2.6.0-pre.3
@@ -7287,18 +7255,16 @@ m_ResolvedPackages:
     deprecated: []
   dependencies:
   - name: com.unity.burst
-    version: 1.8.19
-  - name: com.unity.mathematics
-    version: 1.3.2
+    version: 1.8.17
   - name: com.unity.test-framework
-    version: 1.4.6
+    version: 1.4.5
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
     version: 3.0.3
   resolvedDependencies:
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -7310,9 +7276,9 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   keywords:
   - dots
   - collections
@@ -7332,39 +7298,36 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638803020568560000
+  datePublishedTicks: 638621282722800000
   documentationUrl: https://docs.unity3d.com/Packages/com.unity.collections@2.5/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/dots.git
-    revision: 2520fc806449bf4c278c9031eb21f0a6aeccda46
+    revision: 5b0dea6b455f5df005c19fa984ddfa237d6cd707
     path: 
   unityLifecycle:
-    version: 2.5.7
+    version: 2.5.1
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Changed\n\n* Updated the `com.unity.entities` dependency
-    to version `1.3.14`\n* Updated the `com.unity.burst` dependency to version `1.8.19`\n*
-    Updated the `com.unity.nuget.mono-cecil` dependency to version `1.11.5`\n* Updated
-    the `com.unity.test-framework dependency` to version `1.4.6`\n* The minimum supported
-    editor version is now 2022.3.20f1\n\n### Fixed\n\n* UnsafeQueue memory leak due
-    to OnDomainUnload callback being discarded by Burst."}'
+  upmReserved: '{"changelog":"### Changed\n* Updated Burst dependency to version
+    1.8.17\n* Updated Unity Test Framework dependency to version 1.4.5\n* Updated
+    entities packages dependencies\n\n### Fixed\n* Certain cases would cause an ILPostProcessor
+    to fail, blocking compilation, but no more."}'
   assetStore:
     productId: 
-  fingerprint: d49facba0036aa0e1508296262f9d93b44d1ab3b
+  fingerprint: 56bff8827a7ef6d44fcee4f36e558a74da89c1a0
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 2.5.7
-    minimumUnityVersion: 2022.3.20f1
+    minimumPackageVersion: 2.5.1
+    minimumUnityVersion: 2022.3.11f1
   compliance:
     status: 0
     violation:
@@ -7376,7 +7339,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 1.0.1
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.rendering.light-transport@b87e8bb2ed63
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.rendering.light-transport@9bd588f963c0
   assetPath: Packages/com.unity.rendering.light-transport
   name: com.unity.rendering.light-transport
   displayName: Unity Light Transport Library
@@ -7405,9 +7368,9 @@ m_ResolvedPackages:
     version: 1.0.0
   resolvedDependencies:
   - name: com.unity.collections
-    version: 2.5.7
+    version: 2.5.1
   - name: com.unity.burst
-    version: 1.8.24
+    version: 1.8.25
   - name: com.unity.mathematics
     version: 1.3.2
   - name: com.unity.modules.jsonserialize
@@ -7419,9 +7382,9 @@ m_ResolvedPackages:
   - name: com.unity.modules.imgui
     version: 1.0.0
   - name: com.unity.nuget.mono-cecil
-    version: 1.11.5
+    version: 1.11.4
   - name: com.unity.test-framework.performance
-    version: 3.1.0
+    version: 3.2.0
   - name: com.unity.modules.terrain
     version: 1.0.0
   keywords:
@@ -7457,7 +7420,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -7466,7 +7428,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: b87e8bb2ed63244954625c205361835f3289327c
+  fingerprint: 9bd588f963c0ca6105f0978f9cfc66444032a804
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 1.0.1
@@ -7482,7 +7444,7 @@ m_ResolvedPackages:
   isDirectDependency: 0
   version: 2.0.5
   source: 2
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.ext.nunit@b16e6d09cd93
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.ext.nunit@031a54704bff
   assetPath: Packages/com.unity.ext.nunit
   name: com.unity.ext.nunit
   displayName: Custom NUnit
@@ -7537,7 +7499,6 @@ m_ResolvedPackages:
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
@@ -7546,7 +7507,7 @@ m_ResolvedPackages:
   upmReserved: 
   assetStore:
     productId: 
-  fingerprint: b16e6d09cd93f527249a1f05a86ef45695dc934b
+  fingerprint: 031a54704bffe39e6a0324909f8eaa4565bdebf2
   editorCompatibility:
     compatibilityLevel: 0
     minimumPackageVersion: 2.0.5
@@ -7557,12 +7518,12 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.nuget.mono-cecil@1.11.5
+- packageId: com.unity.nuget.mono-cecil@1.11.4
   testable: 0
   isDirectDependency: 0
-  version: 1.11.5
+  version: 1.11.4
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.nuget.mono-cecil@d78732e851eb
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.nuget.mono-cecil@d6f9955a5d5f
   assetPath: Packages/com.unity.nuget.mono-cecil
   name: com.unity.nuget.mono-cecil
   displayName: Mono Cecil
@@ -7571,16 +7532,16 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-  type: 
+  type: library
   description: 'The mono cecil library from https://www.nuget.org/packages/Mono.Cecil/
 
 
     This
     package is intended for internal Unity use only. Most Unity users will be better
-    suited using the existing community tooling.
+    suite using the existing community tooling.
 
-    To avoid assembly clashes,
-    please use this package if you intend to use Mono.Cecil.'
+    To avoid assembly clashes, please
+    use this package if you intend to use Mono.Cecil.'
   errors: []
   versions:
     all:
@@ -7594,6 +7555,7 @@ m_ResolvedPackages:
     - 1.11.5
     - 1.11.6
     compatible:
+    - 1.11.4
     - 1.11.5
     - 1.11.6
     recommended: 1.11.6
@@ -7616,48 +7578,45 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638729992509040000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.nuget.mono-cecil@1.11/manual/index.html
+  datePublishedTicks: 637852971930000000
+  documentationUrl: 
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.nuget.mono-cecil.git
-    revision: ab40507b5d82f57a4f34b6d0eacca1d6b170341d
+    revision: d0133ce672d724694b56bfd20672acf6f8737fec
     path: 
   unityLifecycle:
-    version: 1.11.5
+    version: 1.11.4
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 0
   isDeprecated: 0
   deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"* This is a verified release of the com.unity.nuget.mono-cecil
-    with embedded dlls of mono-cecil\n* Updated Cecil to 0.11.5 with a grafted patch
-    from this bug fix PR (https://github.com/jbevain/cecil/pull/914)"}'
+  upmReserved: 
   assetStore:
     productId: 
-  fingerprint: d78732e851eb42273c8e4d97993d3a94b207e570
+  fingerprint: d6f9955a5d5f84d45442ff1ad0fb694cc6e2fd62
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 1.11.5
-    minimumUnityVersion: 2019.4.0a1
+    minimumPackageVersion: 1.11.4
+    minimumUnityVersion: 2018.4.0a1
   compliance:
     status: 0
     violation:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-- packageId: com.unity.test-framework.performance@3.1.0
+- packageId: com.unity.test-framework.performance@3.2.0
   testable: 0
   isDirectDependency: 0
-  version: 3.1.0
+  version: 3.2.0
   source: 1
-  resolvedPath: /home/hayden/Documents/GitHub/VRRowingGame/VR Demo/Library/PackageCache/com.unity.test-framework.performance@92d1d09a72ed
+  resolvedPath: D:\GitHub\VRRowingGame\My project (1)\Library\PackageCache\com.unity.test-framework.performance@0840f58e4562
   assetPath: Packages/com.unity.test-framework.performance
   name: com.unity.test-framework.performance
   displayName: Performance testing API
@@ -7726,9 +7685,8 @@ m_ResolvedPackages:
     - 3.1.0
     - 3.2.0
     compatible:
-    - 3.1.0
     - 3.2.0
-    recommended: 3.1.0
+    recommended: 3.2.0
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -7762,36 +7720,32 @@ m_ResolvedPackages:
   entitlements:
     licensingModel: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638792643567670000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework.performance@3.1/manual/index.html
+  datePublishedTicks: 638936561440790000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.test-framework.performance@3.2/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.test-framework.performance.git
-    revision: 6126c0ee357019ed762100ffeca520029274e869
+    revision: fe7ade132131103e7608be564921ab8de35fd8e4
     path: 
   unityLifecycle:
-    version: 3.1.0
+    version: 3.2.0
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
     deprecationMessage: 
-    isDiscoverable: 1
   isDeprecated: 0
   deprecationMessage: 
   git:
     hash: 
     revision: 
-  upmReserved: '{"changelog":"### Added\n- Added an optional command-line argument
-    \"perfTestResults\" to control the target location of performance test run results
-    file.\n### Fixed\n- Warmup cycles no longer record GC measurements.\n- Setup
-    and Cleanup cycles no longer contribute to GC measurements."}'
+  upmReserved: '{"changelog":"### Added\n\n- Improved render threading mode reporting"}'
   assetStore:
     productId: 
-  fingerprint: 92d1d09a72ed696fa23fd76c675b29d211664b50
+  fingerprint: 0840f58e45624f7677679a0f8b6a5137689e607f
   editorCompatibility:
     compatibilityLevel: 0
-    minimumPackageVersion: 3.1.0
+    minimumPackageVersion: 3.2.0
     minimumUnityVersion: 2020.3.0a1
   compliance:
     status: 0
@@ -7799,4 +7753,4 @@ m_ResolvedPackages:
       scopePatternExpression: 
       message: 
       readMoreLink: 
-m_BuiltInPackagesHash: 417b5d56ac34202c3217f6e4d927a9642640178f
+m_BuiltInPackagesHash: 988bdf8a68b40be00f4507073aadc82581208e31
