@@ -8,8 +8,7 @@ public class waterFloat : MonoBehaviour
         Vector3 pos;
         Quaternion rot;
         transform.GetPositionAndRotation(out pos, out rot);
-        transform.position = new Vector3(0, (float)3.87, (float)14.81);
-        Debug.Log(pos.x + pos.y + pos.z);
+        transform.position = new Vector3(-4, (float)0, (float)-3);
     }
 
     // Update is called once per frame
@@ -21,6 +20,6 @@ public class waterFloat : MonoBehaviour
         //Debug.Log(pos.y);
         //if (pos.y < 0) { transform.position = new Vector3(0, (float)3.87, (float)14.81); }
         Debug.Log(gameObject.GetComponent<Rigidbody>().useGravity = false);
-        gameObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(0, (float)3.87, (float)14.81);
+        gameObject.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, (float)-1, 0);
     }
 }
