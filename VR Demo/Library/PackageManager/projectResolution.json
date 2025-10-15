@@ -1,18 +1,18 @@
 {
   "context": {
-    "projectPath": "D:/GitHub/VRRowingGame/My project (1)/Packages",
+    "projectPath": "D:/VRRowingProject/VRRowingGame/VR Demo/Packages",
     "unityVersion": "6000.0.59f2"
   },
   "inputs": [
-    "D:\\GitHub\\VRRowingGame\\My project (1)\\Packages\\manifest.json",
-    "D:\\GitHub\\VRRowingGame\\My project (1)\\Packages\\packages-lock.json",
+    "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Packages\\manifest.json",
+    "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Packages\\packages-lock.json",
     "D:\\Program Files\\Unity\\Hub\\Editor\\6000.0.59f2\\Editor\\Data\\Resources\\PackageManager\\BuiltInPackages\\BuiltInPackagesCombined.sha1"
   ],
   "outputs": {
     "com.unity.collab-proxy@2.9.3": {
       "name": "com.unity.collab-proxy",
       "displayName": "Unity Version Control",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.collab-proxy@ab839cc7d2ad",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.collab-proxy@ab839cc7d2ad",
       "fingerprint": "ab839cc7d2adf143e5378baf46edc31cbc5d84f7",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.9.3",
@@ -22,7 +22,7 @@
     "com.unity.feature.development@1.0.2": {
       "name": "com.unity.feature.development",
       "displayName": "Engineering",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.feature.development@767aadbc6eb7",
       "fingerprint": "767aadbc6eb72681a4ca807c8fa248e0230a0cef",
       "version": "1.0.2",
       "source": "builtin",
@@ -31,7 +31,7 @@
     "com.unity.inputsystem@1.14.2": {
       "name": "com.unity.inputsystem",
       "displayName": "Input System",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.inputsystem@be6c4fd0abf5",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.inputsystem@be6c4fd0abf5",
       "fingerprint": "be6c4fd0abf5b9b45f956b97294032a67f3c2f4d",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.14.2",
@@ -41,7 +41,7 @@
     "com.unity.learn.iet-framework@4.0.4": {
       "name": "com.unity.learn.iet-framework",
       "displayName": "Tutorial Framework",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.learn.iet-framework@104e397c56f7",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.learn.iet-framework@104e397c56f7",
       "fingerprint": "104e397c56f7e54a6b20dd4ed443ecc9e65a9472",
       "editorCompatibility": "2021.3.0a1",
       "version": "4.0.4",
@@ -51,7 +51,7 @@
     "com.unity.multiplayer.center@1.0.0": {
       "name": "com.unity.multiplayer.center",
       "displayName": "Multiplayer Center",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.multiplayer.center@f3fb577b3546",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.multiplayer.center@f3fb577b3546",
       "fingerprint": "f3fb577b3546594b97b8cc34307cd621f60f1c73",
       "editorCompatibility": "6000.0.0a1",
       "version": "1.0.0",
@@ -61,7 +61,7 @@
     "com.unity.render-pipelines.universal@17.0.4": {
       "name": "com.unity.render-pipelines.universal",
       "displayName": "Universal Render Pipeline",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.render-pipelines.universal@2a2241f53fcd",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.render-pipelines.universal@2a2241f53fcd",
       "fingerprint": "2a2241f53fcdc4b81c5d4cc8f551f2ed9f754c94",
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.4",
@@ -71,7 +71,7 @@
     "com.unity.timeline@1.8.9": {
       "name": "com.unity.timeline",
       "displayName": "Timeline",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.timeline@6b9e48457ddb",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.timeline@6b9e48457ddb",
       "fingerprint": "6b9e48457ddb4f64813d77fd77efc79a8f3102ae",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.8.9",
@@ -81,7 +81,7 @@
     "com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10": {
       "name": "com.unity.toolchain.win-x86_64-linux-x86_64",
       "displayName": "Toolchain Win Linux x64",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.toolchain.win-x86_64-linux-x86_64@426618737602",
       "fingerprint": "426618737602d0ff76e85db678b73b56aa2e891a",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.10",
@@ -91,7 +91,7 @@
     "com.unity.xr.androidxr-openxr@1.0.1": {
       "name": "com.unity.xr.androidxr-openxr",
       "displayName": "Unity OpenXR Android XR",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.androidxr-openxr@077cd026549f",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.androidxr-openxr@077cd026549f",
       "fingerprint": "077cd026549fc3a57aa474caaffb5c347e5ca568",
       "editorCompatibility": "6000.0.23f1",
       "version": "1.0.1",
@@ -101,7 +101,7 @@
     "com.unity.xr.arfoundation@6.2.0": {
       "name": "com.unity.xr.arfoundation",
       "displayName": "AR Foundation",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.arfoundation@ddd5a77596e0",
       "fingerprint": "ddd5a77596e090d65c05b33ddc92105a90fab142",
       "editorCompatibility": "6000.0.0a1",
       "version": "6.2.0",
@@ -111,7 +111,7 @@
     "com.unity.xr.hands@1.6.1": {
       "name": "com.unity.xr.hands",
       "displayName": "XR Hands",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.hands@ff73e7abcedb",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.hands@ff73e7abcedb",
       "fingerprint": "ff73e7abcedb00c91c9323d447e83f233d142178",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.6.1",
@@ -121,7 +121,7 @@
     "com.unity.xr.interaction.toolkit@3.2.1": {
       "name": "com.unity.xr.interaction.toolkit",
       "displayName": "XR Interaction Toolkit",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e",
       "fingerprint": "76258c00be3ea4eb64bfddff79870b92092a74c7",
       "editorCompatibility": "2021.3.0a1",
       "version": "3.2.1",
@@ -131,7 +131,7 @@
     "com.unity.xr.management@4.5.1": {
       "name": "com.unity.xr.management",
       "displayName": "XR Plugin Management",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.management@20be87dea580",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.management@20be87dea580",
       "fingerprint": "20be87dea58031bdc9e932e7e7cbe7d270db0e4a",
       "editorCompatibility": "2020.3.15f1",
       "version": "4.5.1",
@@ -141,7 +141,7 @@
     "com.unity.xr.openxr@1.15.1": {
       "name": "com.unity.xr.openxr",
       "displayName": "OpenXR Plugin",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.openxr@05fb1a7d75d1",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.openxr@05fb1a7d75d1",
       "fingerprint": "05fb1a7d75d118139c283c8d76b7f99a655364a8",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.15.1",
@@ -423,7 +423,7 @@
     "com.unity.xr.core-utils@2.5.3": {
       "name": "com.unity.xr.core-utils",
       "displayName": "XR Core Utilities",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.core-utils@f0450cbac8d6",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.core-utils@f0450cbac8d6",
       "fingerprint": "f0450cbac8d66beb614cb1b4241eae977ee9990e",
       "editorCompatibility": "2021.3.0f1",
       "version": "2.5.3",
@@ -433,7 +433,7 @@
     "com.unity.xr.legacyinputhelpers@2.1.12": {
       "name": "com.unity.xr.legacyinputhelpers",
       "displayName": "XR Legacy Input Helpers",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.xr.legacyinputhelpers@b7579e86f3b4",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.xr.legacyinputhelpers@b7579e86f3b4",
       "fingerprint": "b7579e86f3b456c909fda6b875fba7ab1eeb1322",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.1.12",
@@ -443,7 +443,7 @@
     "com.unity.ugui@2.0.0": {
       "name": "com.unity.ugui",
       "displayName": "Unity UI",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.ugui@23b1a4ff749d",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.ugui@23b1a4ff749d",
       "fingerprint": "23b1a4ff749d69614ac83bcec9b1eb5d286cc9f0",
       "editorCompatibility": "2019.2.0a1",
       "version": "2.0.0",
@@ -453,7 +453,7 @@
     "com.unity.mathematics@1.3.2": {
       "name": "com.unity.mathematics",
       "displayName": "Mathematics",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.mathematics@8017b507cc74",
       "fingerprint": "8017b507cc74bf0a1dd14b18aa860569f807314d",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.3.2",
@@ -463,7 +463,7 @@
     "com.unity.editorcoroutines@1.0.0": {
       "name": "com.unity.editorcoroutines",
       "displayName": "Editor Coroutines",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.editorcoroutines@7d48783e7b8c",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.editorcoroutines@7d48783e7b8c",
       "fingerprint": "7d48783e7b8cfcee5f8ef9ba787ed0d9dad4ebca",
       "editorCompatibility": "2018.1.0a1",
       "version": "1.0.0",
@@ -473,7 +473,7 @@
     "com.unity.sysroot@2.0.10": {
       "name": "com.unity.sysroot",
       "displayName": "Sysroot Base",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.sysroot@7bbbb9339c14",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.sysroot@7bbbb9339c14",
       "fingerprint": "7bbbb9339c143f6fbccaeb0a52c77b9217b35a71",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.10",
@@ -483,7 +483,7 @@
     "com.unity.sysroot.linux-x86_64@2.0.9": {
       "name": "com.unity.sysroot.linux-x86_64",
       "displayName": "Sysroot Linux x64",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.sysroot.linux-x86_64@1998d1c7730e",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.sysroot.linux-x86_64@1998d1c7730e",
       "fingerprint": "1998d1c7730e48fa49f28d983fececfc9cbd970b",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.9",
@@ -493,7 +493,7 @@
     "com.unity.render-pipelines.core@17.0.4": {
       "name": "com.unity.render-pipelines.core",
       "displayName": "Scriptable Render Pipeline Core",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.render-pipelines.core@029632be9a02",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.render-pipelines.core@029632be9a02",
       "fingerprint": "029632be9a0271571aabfba918ea32f2fe33bd70",
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.4",
@@ -503,7 +503,7 @@
     "com.unity.shadergraph@17.0.4": {
       "name": "com.unity.shadergraph",
       "displayName": "Shader Graph",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.shadergraph@de26b472816a",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.shadergraph@de26b472816a",
       "fingerprint": "de26b472816ac61e3f313fc6573f32ed59e67998",
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.4",
@@ -513,7 +513,7 @@
     "com.unity.render-pipelines.universal-config@17.0.3": {
       "name": "com.unity.render-pipelines.universal-config",
       "displayName": "Universal Render Pipeline Config",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.render-pipelines.universal-config@dd206bf35d04",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.render-pipelines.universal-config@dd206bf35d04",
       "fingerprint": "dd206bf35d0451204981fdb31d4c6831a0ee2a7e",
       "editorCompatibility": "6000.0.0a1",
       "version": "17.0.3",
@@ -523,7 +523,7 @@
     "com.unity.settings-manager@2.1.0": {
       "name": "com.unity.settings-manager",
       "displayName": "Settings Manager",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.settings-manager@41738c275190",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.settings-manager@41738c275190",
       "fingerprint": "41738c27519039c335849eb78949382f4d7a3544",
       "editorCompatibility": "2022.3.0a1",
       "version": "2.1.0",
@@ -533,7 +533,7 @@
     "com.unity.ide.visualstudio@2.0.23": {
       "name": "com.unity.ide.visualstudio",
       "displayName": "Visual Studio Editor",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.ide.visualstudio@198cdf337d13",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.ide.visualstudio@198cdf337d13",
       "fingerprint": "198cdf337d13c83ca953581515630d66b779e92b",
       "editorCompatibility": "2019.4.25f1",
       "version": "2.0.23",
@@ -543,7 +543,7 @@
     "com.unity.ide.rider@3.0.38": {
       "name": "com.unity.ide.rider",
       "displayName": "JetBrains Rider Editor",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.ide.rider@1f60b3138684",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.ide.rider@1f60b3138684",
       "fingerprint": "1f60b3138684c97af67aa8d911b1632ba916d29d",
       "editorCompatibility": "2021.3.0a1",
       "version": "3.0.38",
@@ -553,7 +553,7 @@
     "com.unity.performance.profile-analyzer@1.2.3": {
       "name": "com.unity.performance.profile-analyzer",
       "displayName": "Profile Analyzer",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.performance.profile-analyzer@a68e7bc84997",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.performance.profile-analyzer@a68e7bc84997",
       "fingerprint": "a68e7bc849973d943853204178d08a2bc7656ffe",
       "editorCompatibility": "2020.3.0a1",
       "version": "1.2.3",
@@ -563,7 +563,7 @@
     "com.unity.test-framework@1.6.0": {
       "name": "com.unity.test-framework",
       "displayName": "Test Framework",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.test-framework@0baaad2f700c",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.test-framework@0baaad2f700c",
       "fingerprint": "0baaad2f700c671c6932db856fb80e6fa04b1bde",
       "editorCompatibility": "6000.0.44f1",
       "version": "1.6.0",
@@ -573,7 +573,7 @@
     "com.unity.testtools.codecoverage@1.2.6": {
       "name": "com.unity.testtools.codecoverage",
       "displayName": "Code Coverage",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.testtools.codecoverage@205a02cbcb39",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.testtools.codecoverage@205a02cbcb39",
       "fingerprint": "205a02cbcb39584f20b51c49b853047aceb3a3a7",
       "editorCompatibility": "2019.3.0a1",
       "version": "1.2.6",
@@ -583,7 +583,7 @@
     "com.unity.searcher@4.9.3": {
       "name": "com.unity.searcher",
       "displayName": "Searcher",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.searcher@1e17ce91558d",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.searcher@1e17ce91558d",
       "fingerprint": "1e17ce91558d1d9127554adc03d275f39a7466a2",
       "editorCompatibility": "2019.1.0a1",
       "version": "4.9.3",
@@ -593,7 +593,7 @@
     "com.unity.burst@1.8.25": {
       "name": "com.unity.burst",
       "displayName": "Burst",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.burst@1df634d836b8",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.burst@1df634d836b8",
       "fingerprint": "1df634d836b8106f13dc82401a91b336d615a874",
       "editorCompatibility": "2021.3.0a1",
       "version": "1.8.25",
@@ -603,7 +603,7 @@
     "com.unity.collections@2.5.1": {
       "name": "com.unity.collections",
       "displayName": "Collections",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.collections@56bff8827a7e",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.collections@56bff8827a7e",
       "fingerprint": "56bff8827a7ef6d44fcee4f36e558a74da89c1a0",
       "editorCompatibility": "2022.3.11f1",
       "version": "2.5.1",
@@ -613,7 +613,7 @@
     "com.unity.rendering.light-transport@1.0.1": {
       "name": "com.unity.rendering.light-transport",
       "displayName": "Unity Light Transport Library",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.rendering.light-transport@9bd588f963c0",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.rendering.light-transport@9bd588f963c0",
       "fingerprint": "9bd588f963c0ca6105f0978f9cfc66444032a804",
       "editorCompatibility": "2023.3.0b1",
       "version": "1.0.1",
@@ -623,7 +623,7 @@
     "com.unity.ext.nunit@2.0.5": {
       "name": "com.unity.ext.nunit",
       "displayName": "Custom NUnit",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.ext.nunit@031a54704bff",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.ext.nunit@031a54704bff",
       "fingerprint": "031a54704bffe39e6a0324909f8eaa4565bdebf2",
       "editorCompatibility": "2019.4.0a1",
       "version": "2.0.5",
@@ -633,7 +633,7 @@
     "com.unity.nuget.mono-cecil@1.11.4": {
       "name": "com.unity.nuget.mono-cecil",
       "displayName": "Mono Cecil",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.nuget.mono-cecil@d6f9955a5d5f",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.nuget.mono-cecil@d6f9955a5d5f",
       "fingerprint": "d6f9955a5d5f84d45442ff1ad0fb694cc6e2fd62",
       "editorCompatibility": "2018.4.0a1",
       "version": "1.11.4",
@@ -643,7 +643,7 @@
     "com.unity.test-framework.performance@3.2.0": {
       "name": "com.unity.test-framework.performance",
       "displayName": "Performance testing API",
-      "resolvedPath": "D:\\GitHub\\VRRowingGame\\My project (1)\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
+      "resolvedPath": "D:\\VRRowingProject\\VRRowingGame\\VR Demo\\Library\\PackageCache\\com.unity.test-framework.performance@0840f58e4562",
       "fingerprint": "0840f58e45624f7677679a0f8b6a5137689e607f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.2.0",
