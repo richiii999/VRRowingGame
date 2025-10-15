@@ -496,6 +496,7 @@
 "Assets/VRTemplateAssets/Scripts/VideoTimeScrubControl.cs"
 "Assets/VRTemplateAssets/Scripts/XRKnob.cs"
 "Assets/VRTemplateAssets/Scripts/XRPokeFollowAffordanceFill.cs"
+"Assets/waterFloat.cs"
 -langversion:9.0
 /deterministic
 /optimize+
