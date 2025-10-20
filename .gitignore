@@ -101,3 +101,4 @@ InitTestScene*.unity*
 # Shadercache
 /VR\ Demo/Library/
 /VR\ Demo/Temp/
+VR Demo/UserSettings/EditorUserSettings.asset
