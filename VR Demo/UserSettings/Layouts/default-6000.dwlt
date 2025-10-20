@@ -353,9 +353,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 107
-    width: 528
-    height: 675
+    y: 24
+    width: 570
+    height: 589
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -418,10 +418,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 529
-    y: 312
-    width: 1070
-    height: 470
+    x: 572
+    y: 24
+    width: 1150
+    height: 589
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -956,7 +956,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.2328983, y: 0.5027265, z: -0.14275627, w: 0.8201546}
     speed: 2
-    m_Value: {x: 0.2331112, y: 0.50149363, z: -0.14240617, w: 0.8209044}
+    m_Value: {x: -0.22294565, y: 0.29068136, z: -0.06984523, w: -0.9278588}
   m_Size:
     m_Target: 7.0640626
     speed: 2
@@ -1117,9 +1117,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 808
-    width: 1600
-    height: 178
+    y: 639
+    width: 1722
+    height: 276
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1158,10 +1158,10 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: a2eb0000
-    m_LastClickedID: 60322
-    m_ExpandedIDs: 00000000d6cd0000b2d8000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 1ac70000
+    m_LastClickedID: 50970
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d6cd0000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1342,10 +1342,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1601
-    y: 107
-    width: 318
-    height: 879
+    x: 1724
+    y: 24
+    width: 180
+    height: 891
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
