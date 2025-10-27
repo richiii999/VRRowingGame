@@ -120,5 +120,6 @@ InitTestScene*.unity*
 # Shadercache
 /VR\ Demo/Library/
 /VR\ Demo/Temp/
-VR Demo/UserSettings/EditorUserSettings.asset
-VR Demo/UserSettings/Layouts/default-6000.dwlt
+VR\ Demo/UserSettings/EditorUserSettings.asset
+VR\ Demo/UserSettings/Layouts/default-6000.dwlt
+
