@@ -1,0 +1,25 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+// LevelSelectBall.cs: Changes scene when this obj is placed into the LevelSelectBasket
+// Should be attached to each level diorama on the level select scene, with the value set to the right scene.
+
+public class LevelSelectBall : MonoBehaviour{
+    public string Level = ""; // Which scene to go to?
+
+    void Start(){ 
+        if (SceneUtility.GetBuildIndexByScenePath(Level) == -1){
+            Debug.Log("Scene '"+Level+"' Doesnt exist!"); 
+            Level = ""; // Reset Level to "" to prevent errors loading invalid scene
+        }
+    }
+
+    void OnTriggerEnter(Collider other) {
+        if (Level != "" && other.tag == "LevelSelectBasket") {
+            Debug.Log("LevelSelectBall Triggered");
+            Destroy(other);
+            Debug.Log("Loading Scene: '"+Level+"'");
+            SceneManager.LoadSceneAsync(Level); 
+        }
+    }
+}
