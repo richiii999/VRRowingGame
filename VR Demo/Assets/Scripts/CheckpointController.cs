@@ -13,7 +13,7 @@ using TMPro;
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
 
-    public TMP_Text TotalTimeDisplay; // Reference to the totalTimeDisplay on the boat / UI
+    public TMP_Text BoatHUD; // Reference to the BoatHUD on the boat / UI
 
     public float time = 0.00f; // Stores the player's total time
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
@@ -32,12 +32,12 @@ public class CheckpointController : MonoBehaviour{
         checkpoints[0].GetComponent<Checkpoint>().isNext = true;
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
 
-        GameObject TotalTimeDisplayObj = GameObject.Find("TotalTimeDisplay");
-        if (TotalTimeDisplayObj) TotalTimeDisplay = TotalTimeDisplayObj.GetComponentInChildren<TMP_Text>();
-        else Debug.LogWarning("Cannot find TotalTimeDisplay Object!");
+        GameObject BoatUIObj = GameObject.Find("BoatUI");
+        if (BoatUIObj) BoatHUD = BoatUIObj.GetComponentInChildren<TMP_Text>();
+        else Debug.LogWarning("Cannot find BoatHUD Object!");
     }
 
-    void Update(){ if (!finished && TotalTimeDisplay) TotalTimeDisplay.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
+    void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
 
     public void OnCheckpoint(GameObject CP){ // Do stuff when a checkpoint is reached
         float newTime = CP.GetComponent<Checkpoint>().getTime();
@@ -58,7 +58,7 @@ public class CheckpointController : MonoBehaviour{
         else { // No next checkpoint (Player reached finish)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + time);
             finished = true;
-            TotalTimeDisplay.text += " !";
+            BoatHUD.text += " !";
         }
 
         /* Do stuff */

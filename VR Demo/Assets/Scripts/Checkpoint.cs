@@ -23,7 +23,7 @@ public class Checkpoint : MonoBehaviour{
     void Update(){ 
         if (isNext && T) { 
             if (startTime == 0.00f) startTime = Time.time;
-            T.text = (Time.time - startTime).ToString("F2"); // Round time to 2 dec places
+            T.text = (Time.time - startTime).ToString("F1"); // Round time to 2 dec places
         }
 
 
