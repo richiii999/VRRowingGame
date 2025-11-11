@@ -91,7 +91,7 @@ PrefabInstance:
     - target: {fileID: 8429981633443581383, guid: 6c8af5c8012f01440af6cb2bc3eb987c, type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[3].m_LocomotionProvider
       value: 
-      objectReference: {fileID: 866406836232131125}
+      objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581383, guid: 6c8af5c8012f01440af6cb2bc3eb987c, type: 3}
       propertyPath: m_LocomotionVignetteProviders.Array.data[0].m_OverrideParameters.m_EaseInTime
       value: 0.3
@@ -620,17 +620,6 @@ PrefabInstance:
       addedObject: {fileID: 1632400500797467239}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
---- !u!114 &866406836232131125 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7564335182967548398, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 7277802326999645147}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cd49dc1a38aff4fa00676ddd64cf4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2469343163355645486 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5096715979615469045, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
