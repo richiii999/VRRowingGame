@@ -36,4 +36,6 @@ public class Checkpoint : MonoBehaviour{
 
     // If player collides with the trigger, signal to CheckpointController
     void OnTriggerEnter(Collider other){ if (other.tag == "Player") transform.parent.gameObject.GetComponent<CheckpointController>().OnCheckpoint(transform.gameObject); }
+
+    public float getTime(){ return float.Parse(T.text); }
 }
