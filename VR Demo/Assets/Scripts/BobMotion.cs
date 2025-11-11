@@ -13,7 +13,6 @@ public class BobMotion : MonoBehaviour{
     void Start() { 
         originalY = transform.position.y; 
         bobRand = UnityEngine.Random.Range(0.00f, bobRand); // Randomly set the bobOffset
-        Debug.Log("br="+bobRand);
     
     }
     void Update(){ 
