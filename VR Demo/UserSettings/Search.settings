@@ -69,6 +69,12 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"Activate"
+	"Righty"
+	"XRI RIght"
+	"XRI Right"
+	""
+	"XRI Right/"
 ]
 searchItemFavorites = [
 ]
