@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PauseMenuActions : MonoBehaviour {
     public void recalibrate() {
-       Debug.log("Recalibrate Clicked");
+       Debug.Log("Recalibrate Clicked");
     }
     
     public void restartLevel() {
-       Debug.log("Restart Level Clicked");
+       Debug.Log("Restart Level Clicked");
     }
 
     public void returnToMainMenu() {
-        Debug.log("Return to Main Menu Clicked");
+        Debug.Log("Return to Main Menu Clicked");
     }
 }
