@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using UnityEngine;
 
 public class PauseMenuActions : MonoBehaviour {
     public void recalibrate() {
