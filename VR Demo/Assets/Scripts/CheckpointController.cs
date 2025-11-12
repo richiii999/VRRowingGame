@@ -13,6 +13,13 @@ using TMPro;
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
 
+    public TMP_Text BoatHUD; // Reference to the BoatHUD on the boat / UI
+
+    public float time = 0.00f; // Stores the player's total time
+    public float startTime = 0.00f; // At what time did the 1st CP get crossed?
+
+    public bool finished = false; // Set to true when finished
+
     void Start(){
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
         for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
@@ -24,23 +31,34 @@ public class CheckpointController : MonoBehaviour{
         // First Checkpoint: Activate immediately (but hide timer)
         checkpoints[0].GetComponent<Checkpoint>().isNext = true;
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
+
+        GameObject BoatUIObj = GameObject.Find("BoatUI");
+        if (BoatUIObj) BoatHUD = BoatUIObj.GetComponentInChildren<TMP_Text>();
+        else Debug.LogWarning("Cannot find BoatHUD Object!");
     }
 
+    void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
+
     public void OnCheckpoint(GameObject CP){ // Do stuff when a checkpoint is reached
-        Debug.Log("Checkpoint passed: " + CP.name);
+        float newTime = CP.GetComponent<Checkpoint>().getTime();
+        time += newTime;
 
         CP.GetComponent<Checkpoint>().isNext = false; // Current checkpoint becomes past
         CP.GetComponent<Checkpoint>().R.material.color = new Color(0f,0f,0f,0f);
         
         if (checkpoints.IndexOf(CP) == 0) { // First Checkpoint: Activate effects
-        
-        } 
+            time -= newTime; // Negative time for first CP, since we dont count it
+            startTime = Time.time; // Start the actual timer now
+        }
 
         if (CP.GetComponent<Checkpoint>().nextCheckpoint) { // Next checkpoint
             checkpoints[checkpoints.IndexOf(CP) + 1].GetComponent<Checkpoint>().isNext = true;
+            Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + time);
         }
         else { // No next checkpoint (Player reached finish)
-            Debug.Log("Final Checkpoint passed");
+            Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + time);
+            finished = true;
+            BoatHUD.text += " !";
         }
 
         /* Do stuff */
@@ -52,9 +70,5 @@ public class CheckpointController : MonoBehaviour{
          * each lane 1 CP is removed from the checkpoints child list to elsewhere in tree (when loading the level)
          * however it is RANDOM, so the level is different each time
          * I wonder if easy to implement, and how fun it would be */
-
-         // IDEA: Each checkpoint has a floating timer text above it, which stops when that checkpoint is passed.
-         // only THAT checkpoint's timer stops
-         // Then, when level done, tp to room or something and see all the texts above the timer
     }
 }
