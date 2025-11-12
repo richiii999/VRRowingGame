@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 9
+    x: 8
     y: 51
     width: 1902
     height: 973
@@ -941,7 +941,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 1.1466907, y: 1.1786726, z: -9.653006}
+    m_Target: {x: 1.7651176, y: 2.9685736, z: -10.097076}
     speed: 2
     m_Value: {x: 1.1466907, y: 1.1786726, z: -9.653006}
   m_RenderMode: 0
@@ -989,11 +989,11 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2510891, y: -0.49257013, z: 0.1509249, w: 0.8195179}
+    m_Target: {x: 0.19405797, y: 0.013543848, z: -0.0026841522, w: 0.9809277}
     speed: 2
     m_Value: {x: -0.2510891, y: 0.49257016, z: -0.1509249, w: -0.8195179}
   m_Size:
-    m_Target: 1.7481763
+    m_Target: 12.124356
     speed: 2
     m_Value: 1.7481763
   m_Ortho:
@@ -1196,7 +1196,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 23}
     m_SelectedIDs: 6ecf0000
     m_LastClickedID: 53102
-    m_ExpandedIDs: 000000006ecf000070cf000072cf000074cf000076cf000078cf00007acf00007ccf00007ecf0000
+    m_ExpandedIDs: 000000009cbd00009ebd0000a0bd0000a2bd0000a4bd0000a6bd0000a8bd0000aabd0000acbd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006ecf000070cf000072cf000074cf000076cf000078cf00007acf00007ccf00007ecf0000
+    m_ExpandedIDs: 000000009cbd00009ebd0000a0bd0000a2bd0000a4bd0000a6bd0000a8bd0000aabd0000acbd0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1392,8 +1392,7 @@ MonoBehaviour:
     m_SaveData: []
     m_ContainerData: []
     m_OverlaysVisible: 1
-  m_ObjectsLockedBeforeSerialization:
-  - {fileID: 0}
+  m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: e2bd0000
   m_PreviewResizer:
     m_CachedPref: 364
@@ -1404,5 +1403,5 @@ MonoBehaviour:
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
-    m_IsLocked: 1
+    m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
