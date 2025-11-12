@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef90dc89d11684682c0f96bc1fe847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  density: 500
+  density: 400
   slicesPerAxis: 2
   isConcave: 0
   voxelsLimit: 16
