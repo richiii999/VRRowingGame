@@ -3446,7 +3446,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 831497932}
         m_TargetAssemblyTypeName: PauseMenuActions, Assembly-CSharp
-        m_MethodName: restartLevel
+        m_MethodName: recalibrate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4028,7 +4028,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 831497932}
         m_TargetAssemblyTypeName: PauseMenuActions, Assembly-CSharp
-        m_MethodName: restartLevel
+        m_MethodName: returnToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
