@@ -890,7 +890,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.87, y: -3.74, z: -5}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 952816668}
@@ -1410,7 +1410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 960790167}
   m_Layer: 0
-  m_Name: Oars (1)
+  m_Name: Right Oars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3389,6 +3389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boat: {fileID: 1473898802}
+  Speed_Coffecient: 3
 --- !u!65 &1595612922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4237,7 +4238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.175118
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
       propertyPath: m_LocalPosition.y
