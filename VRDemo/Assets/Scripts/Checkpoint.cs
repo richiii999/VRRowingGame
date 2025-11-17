@@ -18,6 +18,9 @@ public class Checkpoint : MonoBehaviour{
 
     void Start(){ 
         T = GetComponentInChildren<TMP_Text>();
+
+        // Hide checkpoint glow on start
+        R.material.color = new Color( R.material.color.r, R.material.color.g, R.material.color.b, 0.00f);
     }
 
     void Update(){ 
