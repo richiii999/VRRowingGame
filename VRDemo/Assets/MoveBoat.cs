@@ -1,29 +1,48 @@
 using System.Numerics;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 
 public class MoveBoat : MonoBehaviour
 {
     public Rigidbody boat;
-    private int count;
+    public int Speed_Coffecient;
+    public bool debugBoatVelocity;
+    public bool debugFlapper;
+    private UnityEngine.Vector3 current;
+    private UnityEngine.Vector3 previous;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        count = 0;
+        current = this.transform.localPosition;
+        previous = this.transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        count = count + 1;
         UnityEngine.Vector3 flapperPosition = this.transform.position;
+        var flapperVelocity = (current - previous) / Time.deltaTime;
         if(flapperPosition.y < 0)
         {
-            boat.linearVelocity = new UnityEngine.Vector3((float)(boat.linearVelocity.x + 0.1), boat.linearVelocity.y, (float)(boat.linearVelocity.z + 0.1));
+            boat.AddForce(Speed_Coffecient*flapperVelocity);
         }
-        if(count % 100 == 0)
+        //Debug.Log("flapper position: " + flapperPosition);
+        //Debug.Log("flapper velocity: " + flapperVelocity);
+        if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity)
         {
-            Debug.Log("flapper: " + flapperPosition);
             Debug.Log("boat speed: " + boat.linearVelocity);
         }
+        if(!(boat.linearVelocity.z < 0.01 && boat.linearVelocity.z > -0.01) && debugBoatVelocity)
+        {
+            Debug.Log("boat speed: " + boat.linearVelocity);
+        }
+        if (debugFlapper && (current != previous))
+        {
+            Debug.Log("Flapper Position: " + flapperPosition);
+            Debug.Log("Relative to Boat: " + current);
+            Debug.Log("Flapper Velocity: " + flapperVelocity);
+        }
+        previous = current;
+        current = this.transform.localPosition;
     }
 }
