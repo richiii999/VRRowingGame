@@ -211,7 +211,6 @@ MonoBehaviour:
   strength: 0.02
   maxVel: 2
   moveParent: 0
-  reversed: 0
 --- !u!1 &74055387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3018,10 +3017,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d33c9793a264374fa24bbb980caaeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 1183426785}
-  Speed_Coffecient: 50
+  boat: {fileID: 39789130}
+  Speed_Coffecient: 0.2
   debugBoatVelocity: 0
-  debugFlapper: 1
+  debugFlapper: 0
 --- !u!65 &978873725
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5293,10 +5292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d33c9793a264374fa24bbb980caaeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 1183426785}
-  Speed_Coffecient: 1
+  boat: {fileID: 39789130}
+  Speed_Coffecient: 0.2
   debugBoatVelocity: 0
-  debugFlapper: 1
+  debugFlapper: 0
 --- !u!65 &2000706482
 BoxCollider:
   m_ObjectHideFlags: 0
