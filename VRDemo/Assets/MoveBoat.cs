@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MoveBoat : MonoBehaviour{
     public Rigidbody boat;
+    public Rigidbody boatMotor;
     public float Speed_Coffecient = 1.00f; // Scales the force applied to the boat
     public bool debugBoatVelocity = false; // Enable to turn on debug.log calls for the boat
     public bool debugFlapper = false; // Enable to turn on debug.log calls for the flappers
@@ -14,17 +15,17 @@ public class MoveBoat : MonoBehaviour{
     // Raycast starts at the center of the flapper, and goes straight up.
     
     void Start(){
-        current = this.transform.localPosition;
-        previous = this.transform.localPosition;
+        current = this.transform.position;
+        previous = this.transform.position;
     }
 
     void Update(){
         Vector3 flapperPosition = this.transform.position;
-        current = this.transform.localPosition;
         Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
         
-        if(flapperPosition.y < 0){ // If flapper below water
-            boat.AddForce( Quaternion.AngleAxis(90, Vector3.up) * flapperVelocity * Speed_Coffecient);
+        if(flapperPosition.y < -1){ // If flapper below water
+            boat.AddForce( flapperVelocity * Speed_Coffecient);
+            boatMotor.AddForce( flapperVelocity * Speed_Coffecient);
         }
         
         //Debug.Log("flapper position: " + flapperPosition);
@@ -43,7 +44,9 @@ public class MoveBoat : MonoBehaviour{
                 Debug.Log("Relative to Boat: " + current);
                 Debug.Log("Flapper Velocity: " + flapperVelocity);
         }
-        
+
         previous = current;
+        current = this.transform.position;
+        
     }
 }
