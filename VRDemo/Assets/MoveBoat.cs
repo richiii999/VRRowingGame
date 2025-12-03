@@ -24,7 +24,7 @@ public class MoveBoat : MonoBehaviour{
         Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
         
         if(flapperPosition.y < 0){ // If flapper below water
-            boat.AddForce( Quaternion.AngleAxis(90, Vector3.left) * flapperVelocity * Speed_Coffecient);
+            boat.AddForce( Quaternion.AngleAxis(90, Vector3.up) * flapperVelocity * Speed_Coffecient);
         }
         
         //Debug.Log("flapper position: " + flapperPosition);
