@@ -3794,6 +3794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PolyRowBoat2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3890,7 +3894,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4941046957920208932, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
 --- !u!64 &1569934707
@@ -3912,7 +3916,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2423523851264979934, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
 --- !u!64 &1569934708
@@ -3934,7 +3938,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4941046957920208932, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
 --- !u!64 &1569934709
@@ -3956,7 +3960,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -462981019419857548, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
 --- !u!64 &1569934710
@@ -3978,7 +3982,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1178006770975669452, guid: 8c34a1694347ab24fa2b1d45048d9c51, type: 3}
 --- !u!114 &1569934711
