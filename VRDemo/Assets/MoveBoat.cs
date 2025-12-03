@@ -13,6 +13,9 @@ public class MoveBoat : MonoBehaviour{
     // Idea: Instead of checking for the flapper being below water via (y < 0),
     // Can use a raycast that only collides with the water object, this works for 3d water.
     // Raycast starts at the center of the flapper, and goes straight up.
+
+    // Idea: Oars snap back to starting position when you let go
+    // Idea: Oars model needs improvement. Probably make them longer, as the current boat sits very high
     
     void Start(){
         current = this.transform.position;
@@ -24,8 +27,8 @@ public class MoveBoat : MonoBehaviour{
         Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
         
         if(flapperPosition.y < -1){ // If flapper below water
-            boat.AddForce( flapperVelocity * Speed_Coffecient);
-            boatMotor.AddForce( flapperVelocity * Speed_Coffecient);
+            boat.AddForce( -flapperVelocity * Speed_Coffecient);
+            boatMotor.AddForce( -flapperVelocity * Speed_Coffecient);
         }
         
         //Debug.Log("flapper position: " + flapperPosition);
