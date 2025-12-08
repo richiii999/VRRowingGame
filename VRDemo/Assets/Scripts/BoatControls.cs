@@ -11,7 +11,7 @@ public class BoatControls : MonoBehaviour{
         if (moveParent) boatRB = transform.parent.GetComponent<Rigidbody>();
         else boatRB = GetComponent<Rigidbody>();
 
-        Debug.Log(boatRB);
+        // Debug.Log(boatRB);
     }
 
     void Update(){ // Go forward / backward or left / right (turning) relative to the boat's current direction
