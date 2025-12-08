@@ -1,19 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoatControls : MonoBehaviour{
-    Rigidbody boat;
-    public float strength = 0.05f;
-    public float maxVel = 2f;
+    public float strength = 0.05f; // How much force applied per frame
+    public float maxVel = 2f; // Speed limit
+    public bool moveParent = false; // Use the parent's rigidbody instead of this
+    
+    Rigidbody boatRB;
 
-    void Start() {boat=GetComponent<Rigidbody>();}
+    void Start() {
+        if (moveParent) boatRB = transform.parent.GetComponent<Rigidbody>();
+        else boatRB = GetComponent<Rigidbody>();
 
-    void Update(){
-        // Go forward / backward or left / right (turning) relative to the boat's current direction
-        boat.AddForce(-transform.right * strength * Input.GetAxis("Vertical"),   ForceMode.Impulse);
-        boat.AddForce(Vector3.Normalize(Quaternion.Euler(0,-45,0) * transform.forward) * strength * Input.GetAxis("Horizontal"), ForceMode.Impulse);
+        Debug.Log(boatRB);
+    }
 
-        boat.linearVelocity = Vector3.ClampMagnitude(boat.linearVelocity, maxVel);
+    void Update(){ // Go forward / backward or left / right (turning) relative to the boat's current direction
+        boatRB.AddForce(transform.forward * strength * Input.GetAxis("Vertical"), ForceMode.Impulse);
+        boatRB.AddForce(Vector3.Normalize(Quaternion.Euler(0,0,0) * transform.right) * strength * Input.GetAxis("Horizontal"), ForceMode.Impulse);
+
+        boatRB.linearVelocity = Vector3.ClampMagnitude(boatRB.linearVelocity, maxVel); // Apply speed limit
     }
 }

@@ -2229,7 +2229,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 831497931}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2edaceccd5bd70f449781c71dec1a74d, type: 3}
+  m_Script: {fileID: 11500000, guid: aa9b74abc456d824aa1bf8bfbca5cece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &831497933
@@ -2686,8 +2686,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 831497932}
-        m_TargetAssemblyTypeName: PauseMenuActions, Assembly-CSharp
-        m_MethodName: restartLevel
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: goToLevelStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3445,8 +3445,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 831497932}
-        m_TargetAssemblyTypeName: PauseMenuActions, Assembly-CSharp
-        m_MethodName: recalibrate
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: recenter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4027,8 +4027,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 831497932}
-        m_TargetAssemblyTypeName: PauseMenuActions, Assembly-CSharp
-        m_MethodName: returnToMainMenu
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: goToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

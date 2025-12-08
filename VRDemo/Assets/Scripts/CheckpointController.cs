@@ -34,7 +34,7 @@ public class CheckpointController : MonoBehaviour{
 
         GameObject BoatUIObj = GameObject.Find("BoatUI");
         if (BoatUIObj) BoatHUD = BoatUIObj.GetComponentInChildren<TMP_Text>();
-        else Debug.LogWarning("Cannot find BoatHUD Object!");
+        else Debug.LogWarning("CheckPointController.cs: Cannot find BoatHUD Object!");
     }
 
     void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
@@ -58,7 +58,7 @@ public class CheckpointController : MonoBehaviour{
         else { // No next checkpoint (Player reached finish)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + time);
             finished = true;
-            BoatHUD.text += " !";
+            if (BoatHUD) BoatHUD.text += " !";
         }
 
         /* Do stuff */

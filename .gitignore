@@ -122,3 +122,4 @@ InitTestScene*.unity*
 /VRDemo/Temp/
 /VRDemo/UserSettings/
 
+VRDemo/.vscode/settings.json

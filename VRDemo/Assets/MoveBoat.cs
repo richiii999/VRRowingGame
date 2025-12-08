@@ -1,29 +1,55 @@
-using System.Numerics;
 using UnityEngine;
 
-public class MoveBoat : MonoBehaviour
-{
+public class MoveBoat : MonoBehaviour{
     public Rigidbody boat;
-    private int count;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        count = 0;
+    public Rigidbody boatMotor;
+    public float Speed_Coffecient = 1.00f; // Scales the force applied to the boat
+    public bool debugBoatVelocity = false; // Enable to turn on debug.log calls for the boat
+    public bool debugFlapper = false; // Enable to turn on debug.log calls for the flappers
+
+    private Vector3 current; // Current and previous coordinates of the flapper (used for physics calculation)
+    private Vector3 previous;
+
+    // Idea: Instead of checking for the flapper being below water via (y < 0),
+    // Can use a raycast that only collides with the water object, this works for 3d water.
+    // Raycast starts at the center of the flapper, and goes straight up.
+
+    // Idea: Oars snap back to starting position when you let go
+    // Idea: Oars model needs improvement. Probably make them longer, as the current boat sits very high
+    
+    void Start(){
+        current = this.transform.position;
+        previous = this.transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        count = count + 1;
-        UnityEngine.Vector3 flapperPosition = this.transform.position;
-        if(flapperPosition.y < 0)
-        {
-            boat.linearVelocity = new UnityEngine.Vector3((float)(boat.linearVelocity.x + 0.1), boat.linearVelocity.y, (float)(boat.linearVelocity.z + 0.1));
+    void Update(){
+        Vector3 flapperPosition = this.transform.position;
+        Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
+        
+        if(flapperPosition.y < -1){ // If flapper below water
+            boat.AddForce( -flapperVelocity * Speed_Coffecient);
+            boatMotor.AddForce( -flapperVelocity * Speed_Coffecient);
         }
-        if(count % 100 == 0)
-        {
-            Debug.Log("flapper: " + flapperPosition);
+        
+        //Debug.Log("flapper position: " + flapperPosition);
+        //Debug.Log("flapper velocity: " + flapperVelocity);
+        
+        if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity){
             Debug.Log("boat speed: " + boat.linearVelocity);
         }
+        
+        if(!(boat.linearVelocity.z < 0.01 && boat.linearVelocity.z > -0.01) && debugBoatVelocity){
+            Debug.Log("boat speed: " + boat.linearVelocity);
+        }
+        
+        if (debugFlapper && (current != previous)){
+                Debug.Log("Flapper Position: " + flapperPosition);
+                Debug.Log("Relative to Boat: " + current);
+                Debug.Log("Flapper Velocity: " + flapperVelocity);
+        }
+
+        previous = current;
+        current = this.transform.position;
+        
     }
 }
