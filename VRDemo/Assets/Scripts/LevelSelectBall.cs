@@ -8,18 +8,18 @@ public class LevelSelectBall : MonoBehaviour {
     public string Level = ""; // Which scene to go to?
 
     void Start() { 
-        if (SceneUtility.GetBuildIndexByScenePath(Level) == -1) {
+        if (SceneUtility.GetBuildIndexByScenePath(Level) == -1) { // Check if the Scene doesnt exist
             Debug.Log("Scene '" + Level + "' Doesnt exist!"); 
             Level = ""; // Reset Level to "" to prevent errors loading invalid scene
         }
     }
 
     void OnTriggerEnter(Collider other) {
-        if (Level != "" && other.tag == "LevelSelectBasket") {
+        if (Level != "" && other.tag == "LevelSelectBasket") { // Detect sphere in the box
             Debug.Log("LevelSelectBall Triggered");
-            Destroy(other);
+            Destroy(other); // Prevent multiple collisions by deleting the ball
             Debug.Log("Loading Scene: '"+Level+"'");
-            SceneManager.LoadSceneAsync(Level); 
+            SceneManager.LoadSceneAsync(Level);
         }
     }
 }
