@@ -402,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 206405751}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1529,6 +1529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531000864}
   - component: {fileID: 531000865}
+  - component: {fileID: 531000866}
   m_Layer: 0
   m_Name: Righthand
   m_TagString: Untagged
@@ -1622,6 +1623,18 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &531000866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531000863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20b18e8948e36d6489ac00047e02b742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &541427311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2284,7 @@ GameObject:
   - component: {fileID: 640128006}
   - component: {fileID: 640128009}
   - component: {fileID: 640128008}
-  - component: {fileID: 640128007}
+  - component: {fileID: 640128010}
   m_Layer: 0
   m_Name: XR Origin (VR) Playground
   m_TagString: Untagged
@@ -2288,25 +2301,13 @@ Transform:
   m_GameObject: {fileID: 640128005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.52, z: -0.59}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 206405752}
   m_Father: {fileID: 1183426783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &640128007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 640128005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &640128008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,6 +2339,20 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 206405751}
   m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
+--- !u!114 &640128010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640128005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 1194274360}
+  xrOrigin: {fileID: 640128009}
 --- !u!1001 &657194527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3803,6 +3818,11 @@ MonoBehaviour:
   slicesPerAxis: 2
   isConcave: 0
   voxelsLimit: 16
+--- !u!1 &1194274360 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0370bc7aab286f2429e99122ff475136, type: 3}
+  m_PrefabInstance: {fileID: 1010418174}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1230439231 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9042390136698959995, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
@@ -5931,7 +5951,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027057757}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20b18e8948e36d6489ac00047e02b742, type: 3}
   m_Name: 
