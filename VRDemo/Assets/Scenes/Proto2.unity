@@ -1530,6 +1530,7 @@ GameObject:
   - component: {fileID: 531000864}
   - component: {fileID: 531000865}
   - component: {fileID: 531000866}
+  - component: {fileID: 531000867}
   m_Layer: 0
   m_Name: Righthand
   m_TagString: Untagged
@@ -1635,6 +1636,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b18e8948e36d6489ac00047e02b742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &531000867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531000863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 1183426782}
+  xrOrigin: {fileID: 640128006}
 --- !u!1 &541427311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,7 +2316,7 @@ Transform:
   m_GameObject: {fileID: 640128005}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5920,6 +5935,7 @@ GameObject:
   - component: {fileID: 2027057758}
   - component: {fileID: 2027057760}
   - component: {fileID: 2027057759}
+  - component: {fileID: 2027057761}
   m_Layer: 0
   m_Name: Lefthand
   m_TagString: Untagged
@@ -6025,6 +6041,20 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &2027057761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027057757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boat: {fileID: 1194274360}
+  xrOrigin: {fileID: 640128006}
 --- !u!1 &2044569745
 GameObject:
   m_ObjectHideFlags: 0
