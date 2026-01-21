@@ -2944,6 +2944,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 451112575427530757, guid: 54a568060170671408f89a8a1ed7c9f2, type: 3}
   m_PrefabInstance: {fileID: 787153152}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &818019554 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4427188134159037840, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828385561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3580,6 +3585,11 @@ Transform:
   - {fileID: 1183426783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1101905466 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5639258336799609142, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1131226543 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8270855663187062767, guid: 1392f805216c47742996d4742c80721c, type: 3}
@@ -3759,7 +3769,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.9938521, y: 0.9494039, z: 10.383177}
-  m_Center: {x: 0.031449705, y: 0.6252981, z: -0.2038126}
+  m_Center: {x: 0.031449705, y: 0.45, z: -0.2038126}
 --- !u!54 &1183426785
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4164,6 +4174,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342385314}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1362260591 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5155190550788371198, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1476529837
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,6 +6111,11 @@ MonoBehaviour:
   time: 0
   startTime: 0
   finished: 0
+  soundEffects:
+  - {fileID: 2070346158}
+  - {fileID: 1362260591}
+  - {fileID: 1101905466}
+  - {fileID: 818019554}
 --- !u!4 &2044569747
 Transform:
   m_ObjectHideFlags: 0
@@ -6118,6 +6138,11 @@ Transform:
   - {fileID: 787153153}
   m_Father: {fileID: 1078464378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2070346158 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8681730470913316154, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2105090793
 PrefabInstance:
   m_ObjectHideFlags: 0
