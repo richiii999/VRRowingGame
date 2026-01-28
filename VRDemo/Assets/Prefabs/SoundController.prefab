@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6866030006704235492}
   m_Layer: 0
-  m_Name: BkgSounds
+  m_Name: BgSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1504,8 +1504,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7273863881612609029}
+  - component: {fileID: 6437843510363697850}
   m_Layer: 0
-  m_Name: SoundPlayers
+  m_Name: SoundController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1528,6 +1529,20 @@ Transform:
   - {fileID: 6866030006704235492}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6437843510363697850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6464591060795059253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e671d8434a07c2f46bb17fc6b8eed466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects: []
+  bgSounds: []
 --- !u!1 &7145484891458659929
 GameObject:
   m_ObjectHideFlags: 0
