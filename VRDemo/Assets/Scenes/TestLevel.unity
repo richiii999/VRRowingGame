@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0d0daeab91ea744968188e75f584bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 0.1
+  strength: 0.15
   maxVel: 2
   moveParent: 0
 --- !u!1001 &54934411
@@ -4885,11 +4885,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
---- !u!82 &818019554 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4427188134159037840, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
-  m_PrefabInstance: {fileID: 1307795483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &820894357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6186,11 +6181,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f5ce47825431624eab71236b6320920, type: 3}
---- !u!82 &1101905466 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5639258336799609142, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
-  m_PrefabInstance: {fileID: 1307795483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1103569182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7639,11 +7629,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
   m_PrefabInstance: {fileID: 1603050838}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1362260591 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5155190550788371198, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
-  m_PrefabInstance: {fileID: 1307795483}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1370147146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
@@ -8714,6 +8699,7 @@ MonoBehaviour:
   Speed_Coffecient: 3
   debugBoatVelocity: 0
   debugFlapper: 0
+  soundController: {fileID: 0}
 --- !u!65 &1549440866
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10739,11 +10725,7 @@ MonoBehaviour:
   time: 0
   startTime: 0
   finished: 0
-  soundEffects:
-  - {fileID: 2070346158}
-  - {fileID: 1362260591}
-  - {fileID: 1101905466}
-  - {fileID: 818019554}
+  soundController: {fileID: 0}
 --- !u!4 &2044569747
 Transform:
   m_ObjectHideFlags: 0
@@ -10827,11 +10809,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
   m_PrefabInstance: {fileID: 698789483}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2070346158 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8681730470913316154, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
-  m_PrefabInstance: {fileID: 1307795483}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2103764247
 PrefabInstance:

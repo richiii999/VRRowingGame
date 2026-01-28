@@ -19,9 +19,12 @@ public class CheckpointController : MonoBehaviour{
 
     public bool finished = false; // Set to true when finished
 
-    public List<AudioSource> soundEffects = new List<AudioSource>(); // What sound(s) to play on reaching a CP?
+    public SoundController soundController = null; // Ref to the level's SoundController to play splashes
 
     void Start(){
+        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
+        if (soundController == null) Debug.LogWarning("No soundcontroller detected");
+
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
         for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
         if (checkpoints.Count < 2) Debug.LogWarning("CheckpointController: Less than 2 checkpoints in level");
@@ -48,7 +51,7 @@ public class CheckpointController : MonoBehaviour{
         CP.GetComponent<Checkpoint>().R.material.color = new Color(0f,0f,0f,0f);
 
         // Play a sound from soundEffects (randomly chosen, if any)
-        if (soundEffects.Count > 0) soundEffects[UnityEngine.Random.Range(0,soundEffects.Count)].Play();
+        if (soundController != null) soundController.PlayRandomSound("cheer");
         
         if (checkpoints.IndexOf(CP) == 0) { // First Checkpoint: Activate effects
             time -= newTime; // Negative time for first CP, since we dont count it
