@@ -5,6 +5,9 @@ public class recalibrate : MonoBehaviour
 {
     public GameObject boat;
     public Component xrOrigin;
+    public float xOffset;
+    public float yOffset;
+    public float zOffset;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private int start;
     void Start()
@@ -17,11 +20,11 @@ public class recalibrate : MonoBehaviour
         start++;
         if (start == 10)
         {
-            xrOrigin.GetComponent<XROrigin>().MoveCameraToWorldLocation(new Vector3((float) (boat.transform.position.x-0.6),(float) (boat.transform.position.y+1.0),(float) (boat.transform.position.z+0.0)));
+            xrOrigin.GetComponent<XROrigin>().MoveCameraToWorldLocation(new Vector3((float) (boat.transform.position.x+xOffset),(float) (boat.transform.position.y+yOffset),(float) (boat.transform.position.z+zOffset)));
         }
         if ((int)Input.GetAxis("Jump") != 0)
         {
-            xrOrigin.GetComponent<XROrigin>().MoveCameraToWorldLocation(new Vector3((float) (boat.transform.position.x-0.6),(float) (boat.transform.position.y+1.0),(float) (boat.transform.position.z+0.0)));
+            xrOrigin.GetComponent<XROrigin>().MoveCameraToWorldLocation(new Vector3((float) (boat.transform.position.x+xOffset),(float) (boat.transform.position.y+yOffset),(float) (boat.transform.position.z+zOffset)));
         }
     }
 }
