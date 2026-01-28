@@ -23,6 +23,9 @@ public class MoveBoat : MonoBehaviour{
     // Idea: Oars model needs improvement. Probably make them longer, as the current boat sits very high
     
     void Start(){
+        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
+        if (soundController == null) Debug.LogWarning("No soundcontroller detected");
+
         current = this.transform.position;
         previous = this.transform.position;
     }
@@ -63,7 +66,7 @@ public class MoveBoat : MonoBehaviour{
 
     private void setUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
         underwaterTrigger = state;
-        if (underwaterTrigger && soundController) soundController.PlayRandomSound("Splash",
+        if (underwaterTrigger && soundController) soundController.PlayRandomSound("splash",
                                                                                   transform.position.x, 
                                                                                   transform.position.y, 
                                                                                   transform.position.z);
