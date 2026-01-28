@@ -1,9 +1,6 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using System;
-using System.Linq;
 
 // CheckpointController.cs: Controls the checkpoints.
 // When a checkpoint is triggered, stuff happens.
@@ -51,7 +48,7 @@ public class CheckpointController : MonoBehaviour{
         CP.GetComponent<Checkpoint>().R.material.color = new Color(0f,0f,0f,0f);
 
         // Play a sound from soundEffects (randomly chosen, if any)
-        if (soundEffects.Count != 0) soundEffects[UnityEngine.Random.Range(0,soundEffects.Count)].Play();
+        if (soundEffects.Count > 0) soundEffects[UnityEngine.Random.Range(0,soundEffects.Count)].Play();
         
         if (checkpoints.IndexOf(CP) == 0) { // First Checkpoint: Activate effects
             time -= newTime; // Negative time for first CP, since we dont count it
