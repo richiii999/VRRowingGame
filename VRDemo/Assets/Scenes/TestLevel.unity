@@ -4057,6 +4057,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+      propertyPath: BGSoundOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6464591060795059253, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
       propertyPath: m_Name
       value: SoundController
