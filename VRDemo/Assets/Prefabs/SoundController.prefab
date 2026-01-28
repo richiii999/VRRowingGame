@@ -1577,9 +1577,8 @@ MonoBehaviour:
   bgSounds: []
   cheers: []
   spamTimer: 120
-  BGSoundOnStart: 0
+  BGSoundOnStart: 1
   BGSound: {fileID: 0}
-  c: 0
 --- !u!1 &7145484891458659929
 GameObject:
   m_ObjectHideFlags: 0
