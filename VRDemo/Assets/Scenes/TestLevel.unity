@@ -7417,7 +7417,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6464591060795059253, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
       propertyPath: m_Name
-      value: SoundPlayers
+      value: SoundController
       objectReference: {fileID: 0}
     - target: {fileID: 7273863881612609029, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10369,6 +10369,7 @@ MonoBehaviour:
   Speed_Coffecient: 3
   debugBoatVelocity: 0
   debugFlapper: 0
+  soundController: {fileID: 0}
 --- !u!65 &2000706482
 BoxCollider:
   m_ObjectHideFlags: 0
