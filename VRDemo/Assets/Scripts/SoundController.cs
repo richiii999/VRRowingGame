@@ -6,7 +6,7 @@ using System.Collections.Generic;
 // Make sure splashes are 3D, other sounds can be 2D
 
 public class SoundController : MonoBehaviour{
-    // Stores references to each of the AudioSource objects by category
+    // Stores references to each of the AudioSource objects (by category)
     public List<AudioSource> splashes; 
     public List<AudioSource> bgSounds; 
     public List<AudioSource> cheers; 
@@ -19,8 +19,6 @@ public class SoundController : MonoBehaviour{
 
     public bool BGSoundOnStart = true; // Play BG sound on start?
     public AudioSource BGSound = null; // Specific BG to play, if not set, pick random
-
-    public int c = 0; // tmp
     
     void Start(){
         // Populate the SE and BG lists with their sounds
@@ -39,12 +37,9 @@ public class SoundController : MonoBehaviour{
     }
 
     void Update(){
-        // DEBUG: Play random splash effect with '['
-        if (Input.GetKeyUp(KeyCode.LeftBracket)){
-            PlayRandomSound("splash");
-        }
+        if (Input.GetKeyUp(KeyCode.LeftBracket)) PlayRandomSound("splash"); // DEBUG: Splash with '['
 
-        // Decrement timers
+        // Decrement spamTimers
         if (cheerTimer > 0) cheerTimer -= 1;
         if (splashTimer > 0) splashTimer -= 1;
     }
