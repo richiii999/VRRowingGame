@@ -13,7 +13,7 @@ public class MoveBoat : MonoBehaviour{
     private bool underwaterTrigger = false; // Trigger when enter water, resets when leaves water (ex. to play sounds)
     // Note: Use the setter setUnderwater(), do not set directly
 
-    public SoundController soundController = null; // Ref to the level's soundcontroller to play splashes
+    public SoundController soundController = null; // Ref to the level's SoundController to play splashes
 
     // Idea: Instead of checking for the flapper being below water via (y < 0),
     // Can use a raycast that only collides with the water object, this works for 3d water.
