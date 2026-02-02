@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Formats.Fbx.Exporter;
+using Unity.XR.CoreUtils;
 
 // CheckpointController.cs: Controls the checkpoints.
 // When a checkpoint is triggered, stuff happens.
@@ -12,6 +14,7 @@ using TMPro;
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
 
+    private GameObject BoatUI; // Reference to BoatUI
     public TMP_Text BoatHUD; // Reference to the BoatHUD on the boat / UI
 
     public float time = 0.00f; // Stores the player's total time
@@ -36,9 +39,9 @@ public class CheckpointController : MonoBehaviour{
         checkpoints[0].GetComponent<Checkpoint>().isNext = true;
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
 
-        GameObject BoatUIObj = GameObject.Find("BoatUI");
-        if (BoatUIObj) BoatHUD = BoatUIObj.GetComponentInChildren<TMP_Text>();
-        else Debug.LogWarning("CheckPointController.cs: Cannot find BoatHUD Object!");
+        BoatUI = GameObject.Find("BoatUI");
+        if (BoatUI) BoatHUD = BoatUI.GetComponentInChildren<TMP_Text>();
+        else Debug.LogWarning("CheckPointController.cs: Cannot find BoatUI Object!");
     }
 
     void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
@@ -64,7 +67,7 @@ public class CheckpointController : MonoBehaviour{
         }
         else { // No next checkpoint (Player reached finish)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + time);
-            finished = true;
+            OnFinish();
             if (BoatHUD) BoatHUD.text += " !";
         }
 
@@ -77,5 +80,12 @@ public class CheckpointController : MonoBehaviour{
          * each lane 1 CP is removed from the checkpoints child list to elsewhere in tree (when loading the level)
          * however it is RANDOM, so the level is different each time
          * I wonder if easy to implement, and how fun it would be */
+    }
+
+    public void OnFinish(){
+        finished = true; // Used to stop the timer ticks
+        BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
+        // ^^^ Bad practice but there isnt an easy way to get named children, so dumb
+        // I would prefer something like: BoatUI.FindChild("ButtonsGroup").SetActive() 
     }
 }
