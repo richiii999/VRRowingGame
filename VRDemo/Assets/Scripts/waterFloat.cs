@@ -248,26 +248,19 @@ public class Buoyancy : MonoBehaviour
 	/// <summary>
 	/// Calculates physics.
 	/// </summary>
-	private void FixedUpdate()
-	{
+	private void FixedUpdate(){
 		forces.Clear(); // For drawing force gizmos
 
-		foreach (var point in voxels)
-		{
+		foreach (var point in voxels){
 			var wp = transform.TransformPoint(point);
 			float waterLevel = GetWaterLevel(wp.x, wp.z);
 
-			if (wp.y - voxelHalfHeight < waterLevel)
-			{
+			if (wp.y - voxelHalfHeight < waterLevel){
 				float k = (waterLevel - wp.y) / (2 * voxelHalfHeight) + 0.5f;
-				if (k > 1)
-				{
-					k = 1f;
-				}
-				else if (k < 0)
-				{
-					k = 0f;
-				}
+
+				if (k > 1) k = 1f;
+				else if (k < 0) k = 0f;
+
                 GetComponent<Rigidbody>();
 				var velocity = GetComponent<Rigidbody>().GetPointVelocity(wp);
 				var localDampingForce = -velocity * DAMPFER * GetComponent<Rigidbody>().mass;
