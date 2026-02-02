@@ -6802,38 +6802,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.000000026077018
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.6755565
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.0280926
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8827018
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.46993357
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5645487514085864117, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 776.06
-      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer
