@@ -878,17 +878,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
   m_PrefabInstance: {fileID: 850425564}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &291076628 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4169529424599111607, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-  m_PrefabInstance: {fileID: 5789167120135560857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &299449126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7540,22 +7529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: boat
-      value: 
-      objectReference: {fileID: 1183426783}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: offset.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: offset.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: xrOrigin
-      value: 
-      objectReference: {fileID: 291076628}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.021344734
