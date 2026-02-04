@@ -7529,6 +7529,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Speed_Coffecient
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6454570026754623682, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6627120821778633924, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.021344734
