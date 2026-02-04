@@ -38,7 +38,8 @@ public class MoveBoat : MonoBehaviour{
         Vector3 flapperPosition = this.transform.position;
         Vector3 flapperVelocity = current - previous;
         //flapperVelocity = flapperVelocity + (flapperVelocity / 2);
-        if(flapperVelocity.x > (float)10 && flapperVelocity.y > (float)10 && flapperVelocity.z > (float)10)
+        flapperVelocity.y = (float)0.0;
+        if(flapperVelocity.x > (float)10 || flapperVelocity.y > (float)10 || flapperVelocity.z > (float)10)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
         }
@@ -51,7 +52,7 @@ public class MoveBoat : MonoBehaviour{
         }
         else if (underwaterTrigger) setUnderwater(false);
         
-        /*
+        
         if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity){
             Debug.Log("boat speed: " + boat.linearVelocity);
         }
@@ -63,9 +64,7 @@ public class MoveBoat : MonoBehaviour{
         if (debugFlapper && (current != previous)){
                 //Debug.Log("Flapper Position: " + current);
                 Debug.Log("Diff: " + (current - previous));
-        }
-        Debug.Log(Time.timeSinceLevelLoadAsDouble);
-        */
+        }       
 
         Vector3 relativePosition = boat.transform.position - this.transform.position;
         previous = current;
