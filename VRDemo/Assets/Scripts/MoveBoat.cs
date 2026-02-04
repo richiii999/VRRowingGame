@@ -29,25 +29,30 @@ public class MoveBoat : MonoBehaviour{
 
         waterYLevel = boat.GetComponent<Buoyancy>().waterYLevel; 
 
-        current = this.transform.position;
-        previous = this.transform.position;
+        Vector3 relativePosition = boat.transform.position - this.transform.position;
+        current = relativePosition;
+        previous = relativePosition;
     }
 
     void Update(){
         Vector3 flapperPosition = this.transform.position;
-        Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
+        Vector3 flapperVelocity = current - previous;
+        //flapperVelocity = flapperVelocity + (flapperVelocity / 2);
+        flapperVelocity.y = (float)0.0;
+        if(flapperVelocity.x < (float)0.05 && flapperVelocity.y < (float)0.05 && flapperVelocity.z < (float)0.05)
+        {
+            flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+        }
         
         if(flapperPosition.y < waterYLevel){ // If flapper below water
             if (!underwaterTrigger) setUnderwater(true);
 
-            boat.AddForce( -flapperVelocity * Speed_Coffecient);
-            boatMotor.AddForce( -flapperVelocity * Speed_Coffecient);
+            //boat.AddForce( flapperVelocity * Speed_Coffecient);
+            boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
         else if (underwaterTrigger) setUnderwater(false);
         
-        //Debug.Log("flapper position: " + flapperPosition);
-        //Debug.Log("flapper velocity: " + flapperVelocity);
-        
+        /*
         if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity){
             Debug.Log("boat speed: " + boat.linearVelocity);
         }
@@ -57,14 +62,15 @@ public class MoveBoat : MonoBehaviour{
         }
         
         if (debugFlapper && (current != previous)){
-                Debug.Log("Flapper Position: " + flapperPosition);
-                Debug.Log("Relative to Boat: " + current);
-                Debug.Log("Flapper Velocity: " + flapperVelocity);
+                //Debug.Log("Flapper Position: " + current);
+                Debug.Log("Diff: " + (current - previous));
         }
+        Debug.Log(Time.timeSinceLevelLoadAsDouble);
+        */
 
+        Vector3 relativePosition = boat.transform.position - this.transform.position;
         previous = current;
-        current = this.transform.position;
-        
+        current = relativePosition;
     }
 
     private void setUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
@@ -73,6 +79,5 @@ public class MoveBoat : MonoBehaviour{
                                                                                   transform.position.x, 
                                                                                   transform.position.y, 
                                                                                   transform.position.z);
-        
     }
 }
