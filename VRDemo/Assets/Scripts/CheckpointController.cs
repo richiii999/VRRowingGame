@@ -84,8 +84,8 @@ public class CheckpointController : MonoBehaviour{
 
     public void OnFinish(){
         finished = true; // Used to stop the timer ticks
-        BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
+        if (BoatUI != null) BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
         // ^^^ Bad practice but there isnt an easy way to get named children, so dumb
-        // I would prefer something like: BoatUI.FindChild("ButtonsGroup").SetActive() 
+        // I would prefer something like: BoatUI.Child("ButtonsGroup").SetActive() 
     }
 }
