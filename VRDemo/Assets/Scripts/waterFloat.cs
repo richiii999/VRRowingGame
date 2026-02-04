@@ -18,6 +18,8 @@ public class Buoyancy : MonoBehaviour
 	public bool isConcave = false;
 	public int voxelsLimit = 16;
 
+	public float waterYLevel = 0.0f; // Set the water Y level
+
 	private const float DAMPFER = 0.1f;
 	private const float WATER_DENSITY = 1000;
 
@@ -242,7 +244,7 @@ public class Buoyancy : MonoBehaviour
 	private float GetWaterLevel(float x, float z)
 	{
 //		return ocean == null ? 0.0f : ocean.GetWaterHeightAtLocation(x, z);
-		return 0.0f;
+		return waterYLevel; // VRRowing change to hardcode flat water
 	}
 
 	/// <summary>
