@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Unity.XR.CoreUtils;
+using UnityEngine.UIElements;
 
 // NPCRacer.cs: Controls the NPCs behavior
 // NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
@@ -13,7 +14,7 @@ public class NPCRacer : MonoBehaviour{
     private int CPTotal = 0; // How many CPs in ^^
     // Probably an easier way to do ^ , like put the CPs in a list or someth idk
 
-    public GameObject motor = null; // Ref to 'BoatMotor' obj to apply forces to
+    public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
 
     public GameObject oarL = null; // Refs to the Oars objects (to spin them)
     public GameObject oarR = null; 
@@ -41,15 +42,18 @@ public class NPCRacer : MonoBehaviour{
             lookTargetR.transform.position += new Vector3(0f, 0f, (float)Math.Sin(Time.time) * rowAnimSpan * -1);
         }
 
-        // TODO: Move towards next cp smoothly
-            // Smooth turn towards heading
-            // Move forward
-        
+        // // TODO: Move towards next cp smoothly
+        // Vector3 targetDir = currCP.position - motorRB.transform.position;
+        // float angle = Vector3.Angle(targetDir, transform.forward);
+        // // motorRB.AddForce(Vector3.Rotate(transform.forward) * speed);
+
+        // if (angle < 5.0f)
+        //     print("Close");
     }
 
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("Checkpoint") && other.transform.parent.transform == currCP){
-            Debug.Log("NPC Checkpoint");
+            Debug.Log("NP C Checkpoint");
             int currIndex = other.gameObject.transform.GetSiblingIndex();
             if (currIndex == CPTotal) Debug.Log("NPC Finished"); // Reached last CP
             else currCP = CPGroup.transform.GetChild(currIndex + 1);
