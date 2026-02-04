@@ -38,8 +38,7 @@ public class MoveBoat : MonoBehaviour{
         Vector3 flapperPosition = this.transform.position;
         Vector3 flapperVelocity = current - previous;
         //flapperVelocity = flapperVelocity + (flapperVelocity / 2);
-        flapperVelocity.y = (float)0.0;
-        if(flapperVelocity.x < (float)0.05 && flapperVelocity.y < (float)0.05 && flapperVelocity.z < (float)0.05)
+        if(flapperVelocity.x > (float)10 && flapperVelocity.y > (float)10 && flapperVelocity.z > (float)10)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
         }
@@ -47,7 +46,7 @@ public class MoveBoat : MonoBehaviour{
         if(flapperPosition.y < waterYLevel){ // If flapper below water
             if (!underwaterTrigger) setUnderwater(true);
 
-            //boat.AddForce( flapperVelocity * Speed_Coffecient);
+            //boat.AddForce(flapperVelocity * Speed_Coffecient);
             boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
         else if (underwaterTrigger) setUnderwater(false);
