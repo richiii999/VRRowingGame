@@ -2,8 +2,7 @@ using System.Collections;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
-public class recalibrate : MonoBehaviour
-{
+public class recalibrate : MonoBehaviour{
     public GameObject boat;
     public XROrigin xrOrigin;
     public Vector3 offset;
@@ -13,5 +12,5 @@ public class recalibrate : MonoBehaviour
 
     void Update(){ if (Input.GetKeyDown(KeyCode.Space)) Recalibrate(); }
 
-    void Recalibrate() { xrOrigin.GetComponent<XROrigin>().MoveCameraToWorldLocation(boat.transform.position + offset); }
+    void Recalibrate() { xrOrigin.MoveCameraToWorldLocation(boat.transform.position + offset); }
 }

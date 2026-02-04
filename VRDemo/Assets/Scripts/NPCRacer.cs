@@ -49,12 +49,6 @@ public class NPCRacer : MonoBehaviour{
 
         // if (angle < 5.0f)
         //     print("Close");
-
-    
-        
-
-
-        
     }
 
     private void OnTriggerEnter(Collider other){
