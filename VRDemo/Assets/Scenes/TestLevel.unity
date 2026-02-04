@@ -7529,10 +7529,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
-    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7572,10 +7568,6 @@ PrefabInstance:
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7184945525367198712, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: Level
-      value: TestLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
