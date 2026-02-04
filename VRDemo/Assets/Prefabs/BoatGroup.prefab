@@ -1249,7 +1249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boat: {fileID: 4249274727420233216}
   boatMotor: {fileID: 4423585689815351981}
-  Speed_Coffecient: 3
+  Speed_Coffecient: 700
   debugBoatVelocity: 0
   debugFlapper: 0
   soundController: {fileID: 0}
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 2819639191459253731}
   - component: {fileID: 5178246965568575295}
   - component: {fileID: 5768609747902409271}
-  - component: {fileID: 3947679216452357341}
+  - component: {fileID: 156930468245195669}
   m_Layer: 0
   m_Name: Righthand
   m_TagString: Untagged
@@ -1403,21 +1403,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b18e8948e36d6489ac00047e02b742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3947679216452357341
+--- !u!114 &156930468245195669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3847309398256271521}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6870c617df7857d4b8481abbddf85e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 1705753896783483294}
-  xrOrigin: {fileID: 3894546816363156191}
+  boatTF: {fileID: 6827182281671778948}
+  xrOrigin: {fileID: 4169529424599111607}
   offset: {x: 0, y: 0, z: 0}
+  key: 32
 --- !u!1 &4785947592427066512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2096,7 @@ GameObject:
   - component: {fileID: 2063187318781559577}
   - component: {fileID: 5308805847656839066}
   - component: {fileID: 1794501414882396553}
-  - component: {fileID: 6581526355201629518}
+  - component: {fileID: 4805201419989841893}
   m_Layer: 0
   m_Name: Lefthand
   m_TagString: Untagged
@@ -2201,21 +2202,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b18e8948e36d6489ac00047e02b742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6581526355201629518
+--- !u!114 &4805201419989841893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7032424186936350741}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6870c617df7857d4b8481abbddf85e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 7391555283010633025}
-  xrOrigin: {fileID: 3894546816363156191}
+  boatTF: {fileID: 6827182281671778948}
+  xrOrigin: {fileID: 4169529424599111607}
   offset: {x: 0, y: 0, z: 0}
+  key: 32
 --- !u!1 &7094703902834857790
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2642,7 @@ GameObject:
   - component: {fileID: 3894546816363156191}
   - component: {fileID: 4169529424599111607}
   - component: {fileID: 9093575254563653936}
-  - component: {fileID: 8225292514925482858}
+  - component: {fileID: 4253846761689735086}
   m_Layer: 0
   m_Name: XR Origin (VR) Playground
   m_TagString: Untagged
@@ -2695,7 +2697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &8225292514925482858
+--- !u!114 &4253846761689735086
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2704,12 +2706,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7824282511326166410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc8d9751429ecc46bfdbc4174ce4fb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6870c617df7857d4b8481abbddf85e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 7391555283010633025}
+  boatTF: {fileID: 6827182281671778948}
   xrOrigin: {fileID: 4169529424599111607}
   offset: {x: -0.15, y: 0.8, z: 0}
+  key: 32
 --- !u!1 &7940750171873549239
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,11 +3621,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0370bc7aab286f2429e99122ff475136, type: 3}
---- !u!1 &7391555283010633025 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0370bc7aab286f2429e99122ff475136, type: 3}
-  m_PrefabInstance: {fileID: 7662168397421969424}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7917263216809535483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0370bc7aab286f2429e99122ff475136, type: 3}
