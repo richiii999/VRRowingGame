@@ -13,5 +13,8 @@ public class recalibrate : MonoBehaviour{
 
     void Update(){ if (Input.GetKeyDown(key)) Calibrate(); }
 
-    void Calibrate(){ xrOrigin.MoveCameraToWorldLocation(boat.position + offset); }
+    void Calibrate(){ 
+        Debug.Log("XR Camerea Calibrated");
+        xrOrigin.MoveCameraToWorldLocation(boat.position + offset); 
+    }
 }
