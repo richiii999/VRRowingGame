@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - LevelSelectBasket
+  - Checkpoint
+  - NPCRacer
   layers:
   - Default
   - TransparentFX
