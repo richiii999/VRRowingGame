@@ -88,7 +88,7 @@ public class CheckpointController : MonoBehaviour{
     }
 
     public GameObject GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
-        if (idx < -1 || idx > checkpoints.Count) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
+        if (idx < -1 || idx > checkpoints.Count - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
         if (idx > -1) return checkpoints[idx]; // Get CP by index
         
         if (finished) return null; // No currCP, race finished

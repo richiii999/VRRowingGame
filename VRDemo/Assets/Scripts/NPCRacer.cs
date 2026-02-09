@@ -5,6 +5,8 @@ using System;
 // NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
 // pathfinding or anything, 'difficulty' can be adjusted via changing the speed variable.
 
+// NOTE: This script must be executed after CPC, see Edit>Project Settings>Script Execution Order
+
 
 public class NPCRacer : MonoBehaviour{
     public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
@@ -21,7 +23,10 @@ public class NPCRacer : MonoBehaviour{
     public float animSpan = 4.0f; // How wide the row anim move the oars
     public float animSpeed = 3.0f; // Speed of animation
 
-    void Start(){ if (CPC == null) Debug.LogWarning("NPC CPC not set!"); }
+    void Start(){ 
+        if (CPC == null) Debug.LogError("NPC CPC not set!"); 
+        else {currCPidx = 0; currCP = CPC.GetCP(); } // NOTE: This script must be executed after CPC 
+    }
         
     void Update(){
         if (oarL != null && oarR != null){ // Make the oars "row" in a loop by pointing towards moving targets
