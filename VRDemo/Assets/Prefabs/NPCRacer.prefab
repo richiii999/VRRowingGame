@@ -286,8 +286,8 @@ MonoBehaviour:
   oarR: {fileID: 3352634827589173933}
   lookTargetL: {fileID: 8137002858167935909}
   lookTargetR: {fileID: 9052142841116643874}
-  speed: 2
-  animSpan: 4
+  speed: 1.2
+  animSpan: 3.5
   animSpeed: 3
 --- !u!65 &1394019286887054936
 BoxCollider:
@@ -320,7 +320,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 2
   m_Drag: 0.5
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.4
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
