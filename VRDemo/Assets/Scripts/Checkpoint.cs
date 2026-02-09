@@ -38,7 +38,7 @@ public class Checkpoint : MonoBehaviour{
     }
 
     // If player collides with the trigger, signal to CheckpointController
-    void OnTriggerEnter(Collider other){ if (other.tag == "Player") transform.parent.gameObject.GetComponent<CheckpointController>().OnCheckpoint(transform.gameObject); }
+    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) transform.parent.gameObject.GetComponent<CheckpointController>().OnCheckpoint(transform.gameObject); }
 
     public float getTime(){ return float.Parse(T.text); }
 }

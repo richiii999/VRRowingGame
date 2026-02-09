@@ -9,6 +9,7 @@ public class MoveBoat : MonoBehaviour{
 
     private Vector3 current; // Current and previous coordinates of the flapper (used for physics calculation)
     private Vector3 previous;
+    private float waterYLevel = 0.0f; // Water's Y level (grabbed from waterFloat.cs on the boat group)
 
     private bool underwaterTrigger = false; // Trigger when enter water, resets when leaves water (ex. to play sounds)
     // Note: Use the setter setUnderwater(), do not set directly
@@ -26,25 +27,32 @@ public class MoveBoat : MonoBehaviour{
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
 
-        current = this.transform.position;
-        previous = this.transform.position;
+        waterYLevel = boat.GetComponent<Buoyancy>().waterYLevel; 
+
+        Vector3 relativePosition = boat.transform.position - this.transform.position;
+        current = relativePosition;
+        previous = relativePosition;
     }
 
     void Update(){
         Vector3 flapperPosition = this.transform.position;
-        Vector3 flapperVelocity = (current - previous) / Time.deltaTime;
+        Vector3 flapperVelocity = current - previous;
+        //flapperVelocity = flapperVelocity + (flapperVelocity / 2);
+        flapperVelocity.y = (float)0.0;
+        if(flapperVelocity.x < (float)0.05 && flapperVelocity.y < (float)0.05 && flapperVelocity.z < (float)0.05)
+        {
+            flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+        }
         
-        if(flapperPosition.y < -1){ // If flapper below water
+        if(flapperPosition.y < waterYLevel){ // If flapper below water
             if (!underwaterTrigger) setUnderwater(true);
 
-            boat.AddForce( -flapperVelocity * Speed_Coffecient);
-            boatMotor.AddForce( -flapperVelocity * Speed_Coffecient);
+            //boat.AddForce( flapperVelocity * Speed_Coffecient);
+            boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
         else if (underwaterTrigger) setUnderwater(false);
         
-        //Debug.Log("flapper position: " + flapperPosition);
-        //Debug.Log("flapper velocity: " + flapperVelocity);
-        
+        /*
         if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity){
             Debug.Log("boat speed: " + boat.linearVelocity);
         }
@@ -54,14 +62,15 @@ public class MoveBoat : MonoBehaviour{
         }
         
         if (debugFlapper && (current != previous)){
-                Debug.Log("Flapper Position: " + flapperPosition);
-                Debug.Log("Relative to Boat: " + current);
-                Debug.Log("Flapper Velocity: " + flapperVelocity);
+                //Debug.Log("Flapper Position: " + current);
+                Debug.Log("Diff: " + (current - previous));
         }
+        Debug.Log(Time.timeSinceLevelLoadAsDouble);
+        */
 
+        Vector3 relativePosition = boat.transform.position - this.transform.position;
         previous = current;
-        current = this.transform.position;
-        
+        current = relativePosition;
     }
 
     private void setUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
@@ -70,6 +79,5 @@ public class MoveBoat : MonoBehaviour{
                                                                                   transform.position.x, 
                                                                                   transform.position.y, 
                                                                                   transform.position.z);
-        
     }
 }
