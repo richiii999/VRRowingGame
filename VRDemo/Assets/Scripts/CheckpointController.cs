@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Formats.Fbx.Exporter;
-using Unity.XR.CoreUtils;
 
 // CheckpointController.cs: Controls the checkpoints.
 // When a checkpoint is triggered, stuff happens.
@@ -87,5 +85,22 @@ public class CheckpointController : MonoBehaviour{
         if (BoatUI != null) BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
         // ^^^ Bad practice but there isnt an easy way to get named children, so dumb
         // I would prefer something like: BoatUI.Child("ButtonsGroup").SetActive() 
+    }
+
+    public GameObject GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
+        if (idx < -1 || idx > checkpoints.Count) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
+        if (idx > -1) return checkpoints[idx]; // Get CP by index
+        
+        if (finished) return null; // No currCP, race finished
+        else foreach (GameObject CP in checkpoints){ if (CP.GetComponent<Checkpoint>().isNext) return CP; }
+        Debug.LogWarning("Cannot find currCP!"); return null; // Should never exit loop ^ without returning
+    }
+
+    public GameObject GetNextCP(int idx = -1){ // Returns the CP after the idx / currCP, or null if none/finished/lastCP
+        GameObject CP = GetCP(idx);
+        if (CP == null) return null;
+
+        CP = CP.GetComponent<Checkpoint>().nextCheckpoint;
+        return (CP == null) ? null : CP; // Null if currCP is the last checkpoint, else nextCP exists
     }
 }

@@ -1,7 +1,5 @@
 using UnityEngine;
 using System;
-using Unity.XR.CoreUtils;
-using UnityEngine.UIElements;
 
 // NPCRacer.cs: Controls the NPCs behavior
 // NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
@@ -9,14 +7,12 @@ using UnityEngine.UIElements;
 
 
 public class NPCRacer : MonoBehaviour{
-    public GameObject CPGroup = null; // Ref to CheckpointGroup so the NPC
-    private Transform currCP = null; // Set on start from ^
-    private int CPTotal = 0; // How many CPs in ^^
-    // Probably an easier way to do ^ , like put the CPs in a list or someth idk
+    public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
+    private GameObject currCP = null; // Set from ^
+    private int currCPidx = 0;
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
-
-    public GameObject oarL = null; // Refs to the Oars objects (to spin them)
+    public GameObject oarL = null; // Refs to the Oars & Look objects (to spin them)
     public GameObject oarR = null; 
     public GameObject lookTargetL = null;
     public GameObject lookTargetR = null;
@@ -25,14 +21,7 @@ public class NPCRacer : MonoBehaviour{
     public float animSpan = 4.0f; // How wide the row anim move the oars
     public float animSpeed = 3.0f; // Speed of animation
 
-    void Start(){ 
-        if (CPGroup == null) Debug.LogWarning("NPC CPGroup not set!"); 
-        else {
-            currCP = CPGroup.transform.GetChild(0);
-            CPTotal = CPGroup.transform.childCount;
-        }
-        
-    }
+    void Start(){ if (CPC == null) Debug.LogWarning("NPC CPC not set!"); }
         
     void Update(){
         if (oarL != null && oarR != null){ // Make the oars "row" in a loop by pointing towards moving targets
@@ -47,16 +36,20 @@ public class NPCRacer : MonoBehaviour{
             lookTargetR.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin);
         }
 
-        // Move towards next cp smoothly via adding force to motor
-        motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.position, speed));
+        // Move towards next cp smoothly via adding force to boatMotor
+        Vector3 forceVec = Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position;
+        motorRB.AddForce(forceVec);
     }
 
-    private void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Checkpoint") && other.transform.parent.transform == currCP){
-            Debug.Log("NP C Checkpoint");
-            int currIndex = other.gameObject.transform.GetSiblingIndex();
-            if (currIndex == CPTotal) Debug.Log("NPC Finished"); // Reached last CP
-            else currCP = CPGroup.transform.GetChild(currIndex + 1);
+    private void OnTriggerEnter(Collider other){ // NPC Checkpoint
+        if (other.CompareTag("Checkpoint") && other.transform.parent == currCP){
+            Debug.Log("NPC Checkpoint");
+
+            currCPidx += 1;
+            currCP = CPC.GetNextCP(currCPidx);
+            if (currCP == null) Debug.Log("NPC Finished"); // Reached last CP
+
+            Debug.Log(currCP);
         }
     }
     
