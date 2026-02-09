@@ -6,15 +6,14 @@ using UnityEditor;
 #endif
 
 public class MenuActions : MonoBehaviour {
-    private string MainMenuSceneName = "MainMenu";
-    private string LevelSelectSceneName = "LevelSelect";
-
+    public static string MainMenuSceneName = "MainMenu";
+    public static string LevelSelectSceneName = "LevelSelect";
 
 
     /* Main Menu */
     public void goToLevelSelect() {
         Debug.Log("Level Select Clicked");
-        SceneManager.LoadSceneAsync(LevelSelectSceneName); 
+        SceneManager.LoadSceneAsync(MenuActions.LevelSelectSceneName); 
     }
 
     public void quitGame() {
@@ -24,22 +23,5 @@ public class MenuActions : MonoBehaviour {
         #else
             Application.Quit();
         #endif
-    }
-
-
-
-
-
-    /* Pause Menu */
-    public void goToMainMenu() {
-        Debug.Log("Return to Main Menu Clicked");
-        SceneManager.LoadSceneAsync(MainMenuSceneName); 
-    }
-    public void recenter() {
-       Debug.Log("Re-Center Clicked");
-    }
-    
-    public void goToLevelStart() { // Restart Level 
-       Debug.Log("Restart Level Clicked");
     }
 }
