@@ -21,8 +21,9 @@ public class NPCRacer : MonoBehaviour{
     public GameObject lookTargetL = null;
     public GameObject lookTargetR = null;
 
-    public float speed = 1.0f; // How fast the NPC goes along their track
-    public float rowAnimSpan = 4.0f; // How wide the row anim move the oars
+    public float speed = 3.0f; // How fast the NPC goes along their track
+    public float animSpan = 4.0f; // How wide the row anim move the oars
+    public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
         if (CPGroup == null) Debug.LogWarning("NPC CPGroup not set!"); 
@@ -38,17 +39,16 @@ public class NPCRacer : MonoBehaviour{
             oarL.transform.LookAt(lookTargetL.transform);
             oarR.transform.LookAt(lookTargetR.transform);
 
-            lookTargetL.transform.position += new Vector3(0f, 0f, (float)Math.Sin(Time.time) * rowAnimSpan);
-            lookTargetR.transform.position += new Vector3(0f, 0f, (float)Math.Sin(Time.time) * rowAnimSpan * -1);
+            float sin = (float)Math.Sin(Time.time * animSpeed) * animSpan; // Sinwave movement pattern
+
+            Vector3 boatPos = motorRB.transform.position;
+
+            lookTargetL.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin * -1);
+            lookTargetR.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin);
         }
 
-        // // TODO: Move towards next cp smoothly
-        // Vector3 targetDir = currCP.position - motorRB.transform.position;
-        // float angle = Vector3.Angle(targetDir, transform.forward);
-        // // motorRB.AddForce(Vector3.Rotate(transform.forward) * speed);
-
-        // if (angle < 5.0f)
-        //     print("Close");
+        // Move towards next cp smoothly via adding force to motor
+        motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.position, speed));
     }
 
     private void OnTriggerEnter(Collider other){
