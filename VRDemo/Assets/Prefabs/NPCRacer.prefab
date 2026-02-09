@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 413402396448393765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.6902367, y: -1.3261924, z: 1.0804694}
+  m_LocalPosition: {x: 0, y: 0, z: 4}
   m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58,7 +58,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!138 &4505508005721994737
 FixedJoint:
@@ -161,11 +161,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 1, z: 8}
+  m_Size: {x: 2, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &985228506014433406
 MonoBehaviour:
@@ -209,7 +209,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!138 &4973871817962852734
 FixedJoint:
@@ -279,14 +279,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54500750ec59def46b111715f883ede3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CPGroup: {fileID: 0}
-  motor: {fileID: 0}
+  CPC: {fileID: 0}
+  currCP: {fileID: 0}
+  motorRB: {fileID: 6965445308331046567}
   oarL: {fileID: 1988732290479623907}
   oarR: {fileID: 3352634827589173933}
   lookTargetL: {fileID: 8137002858167935909}
   lookTargetR: {fileID: 9052142841116643874}
-  speed: 1
-  rowAnimSpan: 0.03
+  speed: 2
+  animSpan: 4
+  animSpeed: 3
 --- !u!65 &1394019286887054936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -317,7 +319,7 @@ Rigidbody:
   m_GameObject: {fileID: 6137230102774592427}
   serializedVersion: 4
   m_Mass: 2
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -333,7 +335,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!114 &4282830590837703487
 MonoBehaviour:
@@ -454,7 +456,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
