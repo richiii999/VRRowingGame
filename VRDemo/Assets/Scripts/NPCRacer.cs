@@ -19,8 +19,8 @@ public class NPCRacer : MonoBehaviour{
     public GameObject lookTargetL = null;
     public GameObject lookTargetR = null;
 
-    public float speed = 3.0f; // How fast the NPC goes along their track
-    public float animSpan = 4.0f; // How wide the row anim move the oars
+    public float speed = 1.0f; // How fast the NPC goes along their track
+    public float animSpan = 10.0f; // How wide the row anim move the oars
     public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
@@ -30,15 +30,15 @@ public class NPCRacer : MonoBehaviour{
         
     void Update(){
         if (oarL != null && oarR != null){ // Make the oars "row" in a loop by pointing towards moving targets
+            float sin = (float)Math.Sin(Time.time * animSpeed) * animSpan; // sin movement
+            Vector3 side = motorRB.transform.forward * sin; // fwd component
+            Vector3 fwd = motorRB.transform.right * 10.0f; // side component
+
+            lookTargetL.transform.position = motorRB.transform.position + fwd + side;
+            lookTargetR.transform.position = motorRB.transform.position + fwd - side;
+
             oarL.transform.LookAt(lookTargetL.transform);
             oarR.transform.LookAt(lookTargetR.transform);
-
-            float sin = (float)Math.Sin(Time.time * animSpeed) * animSpan; // Sinwave movement pattern
-
-            Vector3 boatPos = motorRB.transform.position;
-
-            lookTargetL.transform.position = new Vector3(boatPos.x - 5, boatPos.y, boatPos.z + animSpan * sin * -1); // wtf z y x ?
-            lookTargetR.transform.position = new Vector3(boatPos.x - 5, boatPos.y, boatPos.z + animSpan * sin);
         }
 
         // Move towards next cp smoothly via adding force to boatMotor
