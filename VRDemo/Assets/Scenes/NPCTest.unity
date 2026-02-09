@@ -7331,6 +7331,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 224909172}
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: animSpan
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: animSpeed
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: rowAnimSpan
       value: 4
       objectReference: {fileID: 0}
@@ -7340,7 +7348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Constraints
-      value: 16
+      value: 62
       objectReference: {fileID: 0}
     - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_IsKinematic

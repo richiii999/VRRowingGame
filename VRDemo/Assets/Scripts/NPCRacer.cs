@@ -37,8 +37,8 @@ public class NPCRacer : MonoBehaviour{
 
             Vector3 boatPos = motorRB.transform.position;
 
-            lookTargetL.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin * -1); // wtf z y x ?
-            lookTargetR.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin);
+            lookTargetL.transform.position = new Vector3(boatPos.x - 5, boatPos.y, boatPos.z + animSpan * sin * -1); // wtf z y x ?
+            lookTargetR.transform.position = new Vector3(boatPos.x - 5, boatPos.y, boatPos.z + animSpan * sin);
         }
 
         // Move towards next cp smoothly via adding force to boatMotor
