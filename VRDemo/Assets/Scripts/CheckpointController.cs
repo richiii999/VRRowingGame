@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Formats.Fbx.Exporter;
 using Unity.XR.CoreUtils;
+using UnityEngine.XR.Interaction.Toolkit;
 
 // CheckpointController.cs: Controls the checkpoints.
 // When a checkpoint is triggered, stuff happens.
@@ -23,7 +24,7 @@ public class CheckpointController : MonoBehaviour{
     public bool finished = false; // Set to true when finished
 
     public SoundController soundController = null; // Ref to the level's SoundController to play splashes
-
+    public GameObject enableRayOnFinish = null;
     void Start(){
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
@@ -42,6 +43,7 @@ public class CheckpointController : MonoBehaviour{
         BoatUI = GameObject.Find("BoatUI");
         if (BoatUI) BoatHUD = BoatUI.GetComponentInChildren<TMP_Text>();
         else Debug.LogWarning("CheckPointController.cs: Cannot find BoatUI Object!");
+        enableRayOnFinish.SetActive(false);
     }
 
     void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
@@ -87,5 +89,6 @@ public class CheckpointController : MonoBehaviour{
         if (BoatUI != null) BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
         // ^^^ Bad practice but there isnt an easy way to get named children, so dumb
         // I would prefer something like: BoatUI.Child("ButtonsGroup").SetActive() 
+        enableRayOnFinish.SetActive(true);
     }
 }
