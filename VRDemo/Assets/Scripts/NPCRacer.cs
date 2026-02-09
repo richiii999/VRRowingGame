@@ -10,7 +10,7 @@ using System;
 
 public class NPCRacer : MonoBehaviour{
     public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    private GameObject currCP = null; // Set from ^
+    public GameObject currCP = null; // Set from ^
     private int currCPidx = 0;
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
@@ -47,14 +47,11 @@ public class NPCRacer : MonoBehaviour{
     }
 
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
-        if (other.CompareTag("Checkpoint") && other.transform.parent == currCP){
+        if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP){
             Debug.Log("NPC Checkpoint");
 
-            currCPidx += 1;
-            currCP = CPC.GetNextCP(currCPidx);
             if (currCP == null) Debug.Log("NPC Finished"); // Reached last CP
-
-            Debug.Log(currCP);
+            else { currCPidx += 1; currCP = CPC.GetNextCP(currCPidx); Debug.Log(currCP); }
         }
     }
     
