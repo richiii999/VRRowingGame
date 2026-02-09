@@ -7254,6 +7254,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1854658154969170173, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854658154969170173, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854658154969170173, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2866355137305266062, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -7303,8 +7315,12 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: CPC
+      value: 
+      objectReference: {fileID: 1443970430}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: speed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: CPGroup
@@ -7320,7 +7336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Drag
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Constraints

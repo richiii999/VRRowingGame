@@ -37,21 +37,18 @@ public class NPCRacer : MonoBehaviour{
 
             Vector3 boatPos = motorRB.transform.position;
 
-            lookTargetL.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin * -1);
+            lookTargetL.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin * -1); // wtf z y x ?
             lookTargetR.transform.position = new Vector3(boatPos.z + 5, 2f, boatPos.x + sin);
         }
 
         // Move towards next cp smoothly via adding force to boatMotor
-        Vector3 forceVec = Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position;
-        motorRB.AddForce(forceVec);
+        if (currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
     }
 
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
         if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP){
-            Debug.Log("NPC Checkpoint");
-
-            if (currCP == null) Debug.Log("NPC Finished"); // Reached last CP
-            else { currCPidx += 1; currCP = CPC.GetNextCP(currCPidx); Debug.Log(currCP); }
+            currCP = CPC.GetNextCP(currCPidx); currCPidx += 1; Debug.Log("NPC Checkpoint");
+            if (currCP == null) Debug.Log("NPC Finished");
         }
     }
     
