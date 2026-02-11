@@ -8,12 +8,13 @@ public class BoatUI : MonoBehaviour{
     public Transform boatBackUIAnchor = null;
     public GameObject rayToEnableOnFinish = null; // On parent boatObject
 
-    public TextMeshProUGUI timerTextFront = null; // Refs to child objects
+    public TextMeshProUGUI timerTextFront = null; // Refs to child objects, set in editor for the prefab
     public TextMeshProUGUI timerTextBack = null;
     public GameObject menuButton = null;
     public GameObject nextButton = null;
     public GameObject retryButton = null;
-    
+    public GameObject angleNeedle = null;
+
     void Start(){
         timerTextFront.text = "Pass the Checkpoint to start!";
         timerTextBack.text = "Pass the Checkpoint to start!";
@@ -35,6 +36,11 @@ public class BoatUI : MonoBehaviour{
             timerTextFront.text = "Time: " + t.ToString("F1"); 
             timerTextBack.text  = "Time: " + t.ToString("F1"); 
         }
+    }
+
+    public void SetUIAngle(float a = 0.0f){ // Rotates the AngleNeedle image according to the supplied angle, (+) = left, (-) = right
+        Vector3 rotation = new Vector3(0f,0f, 33f + a); // 33 is the center value
+        angleNeedle.transform.Rotate(rotation);
     }
 
     public void FinishButton(bool win = true){ // Activate next level (true) / retry (false) button, and the main menu & ray. Called from outside on level finish
