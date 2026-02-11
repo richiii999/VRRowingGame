@@ -41,14 +41,9 @@ public class BoatUI : MonoBehaviour{
         }
     }
 
-    public void SetUIAngle(float a = 0.0f){ // Rotates the AngleNeedle image according to the supplied angle, (+) = left, (-) = right
-        // a 
-        Vector3 rotation = new Vector3(0f,0f, a - angleNeedle.transform.localRotation.z); // 33 is the center value
-        // Not in degrees idk
-
-        angleNeedle.transform.Rotate(rotation, Space.Self);
-        Debug.Log("a = " + a.ToString() + "localRotZ = " + angleNeedle.transform.localRotation.z.ToString());
-
+    public void SetUIAngle(float a = 0.0f){ // Rotates the AngleNeedle image according to the supplied angle in degrees, (+) = left, (-) = right
+        angleNeedle.transform.localEulerAngles = new Vector3(0f, 0f, 33f + a); // 33 is center position
+        Debug.Log(a);
     }
 
     public void FinishButton(bool win = true){ // Activate next level (true) / retry (false) button, and the main menu & ray. Called from outside on level finish

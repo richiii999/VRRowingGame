@@ -44,9 +44,9 @@ public class CheckpointController : MonoBehaviour{
     }
 
     void Update(){ 
-        if (!finished && BoatUI) {
+        if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
             BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
-            // BoatUI.SetUIAngle(currCP.GetComponent<Checkpoint>().GetRelativeAngle(BoatUI.gameObject));
+            BoatUI.SetUIAngle(currCP.GetComponent<Checkpoint>().GetRelativeAngle(BoatUI.gameObject));
         }
     }
 

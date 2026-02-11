@@ -44,9 +44,7 @@ public class Checkpoint : MonoBehaviour{
     public float GetTime(){ return float.Parse(T.text); }
 
     public float GetRelativeAngle(GameObject obj){ // Gets the relative angle (in XZ-plane) of the gameobject to the center of the CP, 0 = X+, 180 = X-
-        Vector3 pos1 = new Vector3(obj.transform.position.x, 0f, obj.transform.position.z);
-        Vector3 pos2 = new Vector3(transform.position.x,     0f, transform.position.z);
-        
-        return Vector3.Angle(pos1, pos2);
+        return Vector3.Angle(transform.up, obj.transform.position);
+
     }
 }
