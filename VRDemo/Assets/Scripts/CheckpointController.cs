@@ -18,9 +18,10 @@ public class CheckpointController : MonoBehaviour{
     public float time = 0.00f; // Stores the player's total time
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished
-
+    public GameObject rayToEnableOnFinish = null;
 
     void Start(){
+        rayToEnableOnFinish.SetActive(false);
         // Connections to other objects (if present)
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
@@ -70,6 +71,7 @@ public class CheckpointController : MonoBehaviour{
     }
 
     public void OnFinish(){
+        rayToEnableOnFinish.SetActive(true);
         finished = true; // Stop timers
         if (BoatUI != null) BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
         // ^^^ Bad practice but there isnt an easy way to get named children, so dumb I would prefer something like: BoatUI.Child("ButtonsGroup").SetActive() 
