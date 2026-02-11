@@ -5401,8 +5401,8 @@ Transform:
   m_GameObject: {fileID: 1520997109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 253.616, y: 1, z: 47.967}
+  m_LocalPosition: {x: -123.4, y: -2, z: 0}
+  m_LocalScale: {x: 150, y: 1, z: 47.967}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 143465704}
@@ -7293,6 +7293,10 @@ PrefabInstance:
       propertyPath: CPC
       value: 
       objectReference: {fileID: 1443970430}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: animSpan
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer

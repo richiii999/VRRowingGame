@@ -68,16 +68,6 @@ public class CheckpointController : MonoBehaviour{
             OnFinish();
             if (BoatHUD) BoatHUD.text += " !";
         }
-
-        /* Do stuff */
-        // Idea: Animation or some kind of visual change when a checkpoint is passed
-        // First: Start the timer, weather effects, music change, etc.
-        // Last: End the timer, effects, etc.
-
-        /* Crazy level idea: 2 parrallel lanes of checkpoints (A & B), 
-         * each lane 1 CP is removed from the checkpoints child list to elsewhere in tree (when loading the level)
-         * however it is RANDOM, so the level is different each time
-         * I wonder if easy to implement, and how fun it would be */
     }
 
     public void OnFinish(){

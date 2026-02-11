@@ -286,7 +286,7 @@ MonoBehaviour:
   oarR: {fileID: 3352634827589173933}
   lookTargetL: {fileID: 8137002858167935909}
   lookTargetR: {fileID: 9052142841116643874}
-  speed: 1.2
+  speed: 1
   animSpan: 3.5
   animSpeed: 3
 --- !u!65 &1394019286887054936

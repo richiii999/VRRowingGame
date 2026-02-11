@@ -10,7 +10,7 @@ using System;
 
 public class NPCRacer : MonoBehaviour{
     public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    public GameObject currCP = null; // Set from ^
+    private GameObject currCP = null; // Set from ^
     private int currCPidx = 0;
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
@@ -31,8 +31,8 @@ public class NPCRacer : MonoBehaviour{
     void Update(){
         if (oarL != null && oarR != null){ // Make the oars "row" in a loop by pointing towards moving targets
             float sin = (float)Math.Sin(Time.time * animSpeed) * animSpan; // sin movement
-            Vector3 side = motorRB.transform.forward * sin; // fwd component
-            Vector3 fwd = motorRB.transform.right * 10.0f; // side component
+            Vector3 side = motorRB.transform.forward * sin; // side-to-side looktarget movement
+            Vector3 fwd = motorRB.transform.right * 10.0f; // forward looktarget position
 
             lookTargetL.transform.position = motorRB.transform.position + fwd + side;
             lookTargetR.transform.position = motorRB.transform.position + fwd - side;
@@ -48,8 +48,18 @@ public class NPCRacer : MonoBehaviour{
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
         if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP){
             currCP = CPC.GetNextCP(currCPidx); currCPidx += 1; Debug.Log("NPC Checkpoint");
-            if (currCP == null) Debug.Log("NPC Finished");
+            if (currCP == null) {
+                Debug.Log("NPC Finished");
+                animSpan = 0f; // Stop rowing anim
+            }
         }
     }
-    
 }
+
+// Alternate rowing animation code that rows faster/slower according to current velocity.
+// Removed because I couldnt get it to look good, but it does work.
+// animTimer = (animTimer + Time.deltaTime) % (2*math.PI); // sin movement
+// float sin = (float) Math.Sin(animTimer * animSpeed * (math.abs(motorRB.linearVelocity.x) + math.abs(motorRB.linearVelocity.z))); 
+// 
+// Vector3 side = motorRB.transform.forward * (sin % (animSpan * 2*math.PI));
+// Vector3 fwd = motorRB.transform.right * 10.0f;
