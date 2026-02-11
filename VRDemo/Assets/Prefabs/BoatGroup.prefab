@@ -4084,6 +4084,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1175122378961766678, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+      propertyPath: rayToEnableOnFinish
+      value: 
+      objectReference: {fileID: 6910775299949548509}
     - target: {fileID: 1423381007634482887, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_Layer
       value: 0

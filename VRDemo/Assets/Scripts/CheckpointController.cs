@@ -17,11 +17,9 @@ public class CheckpointController : MonoBehaviour{
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished
-    public GameObject rayToEnableOnFinish = null;
+    
 
     void Start(){
-        rayToEnableOnFinish.SetActive(false);
-      
         // Connections to other objects (if present, not all are required)
         GameObject searchObj = GameObject.Find("SoundController");
         if (searchObj == null) Debug.LogWarning("No soundcontroller detected");
@@ -70,8 +68,6 @@ public class CheckpointController : MonoBehaviour{
             finished = true; // Stop timers
 
             if (BoatUI) BoatUI.FinishButton(playerOrNPC);
-          
-            rayToEnableOnFinish.SetActive(true);
         }
     }
 
