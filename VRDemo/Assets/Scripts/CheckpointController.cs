@@ -41,10 +41,10 @@ public class CheckpointController : MonoBehaviour{
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
     }
 
-    void Update(){ if (!finished && BoatUI) BoatUI.SetTimerText( (startTime != 0.00f) ? 0f : totalTime ); }
+    void Update(){ if (!finished && BoatUI) BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); }
 
     public void OnCheckpoint(GameObject CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
-        float newTime = CP.GetComponent<Checkpoint>().getTime();
+        float newTime = CP.GetComponent<Checkpoint>().GetTime();
         totalTime += newTime;
 
         CP.GetComponent<Checkpoint>().isNext = false; // Current checkpoint becomes past

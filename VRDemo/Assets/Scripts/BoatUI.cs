@@ -28,12 +28,12 @@ public class BoatUI : MonoBehaviour{
 
         if (win){
             nextButton.SetActive(true); 
-            timerText.text += ", You Win!";
+            timerText.text += "\nYou Win!";
             timerText.color = Color.yellow;
         }
         else{
             retryButton.SetActive(true);
-            timerText.text += ", You Lose!";
+            timerText.text += "\nYou Lose!";
             timerText.color = Color.red;
         }
     }
