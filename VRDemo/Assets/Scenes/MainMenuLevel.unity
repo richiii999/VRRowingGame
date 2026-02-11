@@ -931,9 +931,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1078464378}
     m_Modifications:
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: debugFlapper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1745154029}
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Speed_Coefficient
+      value: 700
+      objectReference: {fileID: 0}
     - target: {fileID: 1705753896783483294, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Name
       value: BoatGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: boatTF
+      value: 
+      objectReference: {fileID: 517989517}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: xrOrigin
+      value: 
+      objectReference: {fileID: 1193653984}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: lookTarget
+      value: 
+      objectReference: {fileID: 828385562}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: debugFlapper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1745154029}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Speed_Coefficient
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7349,6 +7385,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7824282511326166410, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
   m_PrefabInstance: {fileID: 81912887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1193653984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4169529424599111607, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 81912887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193653981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1210123396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451112575427530757, guid: 54a568060170671408f89a8a1ed7c9f2, type: 3}
@@ -9637,6 +9684,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
   m_PrefabInstance: {fileID: 1489754398}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745154029 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e671d8434a07c2f46bb17fc6b8eed466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1745509427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
