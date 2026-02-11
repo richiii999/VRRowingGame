@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Threading;
 
 
 public class MainMenuManager : MonoBehaviour {
@@ -56,9 +57,10 @@ public class MainMenuManager : MonoBehaviour {
 
     //MARK: - Toggle Game System
     // will set all objects in our objectsToDisableInMenu list equal to state
-    private void ToggleGameSystem(bool state) {
-        gameCamera?.SetActive(state);
+    private void ToggleGameSystem(bool state) {        
         mainMenuCamera?.SetActive(!state);
+        Thread.Sleep(10);
+        gameCamera?.SetActive(state);
 
         foreach (GameObject obj in objectsToDisableInMenu) {
             obj?.SetActive(state);

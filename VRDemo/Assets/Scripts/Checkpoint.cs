@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections;
 using TMPro;
 
 // Checkpoint.cs: Signals the parent CheckpointController when a CP is crossed
@@ -9,6 +8,7 @@ using TMPro;
 // Note: The Checkpoint prefab object has a kinematic rigidbody, it cannot sense the child trigger without it.
 
 public class Checkpoint : MonoBehaviour{
+    private CheckpointController CPC; // Ref to the CPC
     public GameObject nextCheckpoint; // Which CP is next? (None = finish)
     public Renderer R; // The CheckpointTrigger's Renderer
     public TMP_Text T; // TimerText obj
@@ -18,6 +18,8 @@ public class Checkpoint : MonoBehaviour{
 
     void Start(){ 
         T = GetComponentInChildren<TMP_Text>();
+        CPC = transform.parent.gameObject.GetComponent<CheckpointController>();
+        if (CPC == null) Debug.LogError("Checkpoint cannot find CPC!");
 
         // Hide checkpoint glow on start
         R.material.color = new Color( R.material.color.r, R.material.color.g, R.material.color.b, 0.00f);
@@ -29,16 +31,15 @@ public class Checkpoint : MonoBehaviour{
             T.text = (Time.time - startTime).ToString("F1"); // Round time to 2 dec places
         }
 
-
         if (isNext && R) R.material.color = new Color( // Active checkpoint Glow effect
-            R.material.color.r,
-            R.material.color.g,
-            R.material.color.b,
-            Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) ); // Adjust the float to change glow amount
+                                                R.material.color.r,
+                                                R.material.color.g,
+                                                R.material.color.b,
+                                                Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) ); // Adjust the float to change glow amount
     }
 
     // If player collides with the trigger, signal to CheckpointController
-    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) transform.parent.gameObject.GetComponent<CheckpointController>().OnCheckpoint(transform.gameObject); }
+    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) CPC.OnCheckpoint(transform.gameObject, other.CompareTag("Player")); }
 
-    public float getTime(){ return float.Parse(T.text); }
+    public float GetTime(){ return float.Parse(T.text); }
 }
