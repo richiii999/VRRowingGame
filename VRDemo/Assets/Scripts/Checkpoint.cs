@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections;
 using TMPro;
 
 // Checkpoint.cs: Signals the parent CheckpointController when a CP is crossed
@@ -29,12 +28,11 @@ public class Checkpoint : MonoBehaviour{
             T.text = (Time.time - startTime).ToString("F1"); // Round time to 2 dec places
         }
 
-
         if (isNext && R) R.material.color = new Color( // Active checkpoint Glow effect
-            R.material.color.r,
-            R.material.color.g,
-            R.material.color.b,
-            Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) ); // Adjust the float to change glow amount
+                                                R.material.color.r,
+                                                R.material.color.g,
+                                                R.material.color.b,
+                                                Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) ); // Adjust the float to change glow amount
     }
 
     // If player collides with the trigger, signal to CheckpointController
