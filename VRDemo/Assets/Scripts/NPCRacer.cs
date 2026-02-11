@@ -10,7 +10,7 @@ using System;
 
 public class NPCRacer : MonoBehaviour{
     public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    private GameObject currCP = null; // Set from ^
+    public GameObject currCP = null; // Set from ^
     private int currCPidx = 0;
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
@@ -24,8 +24,12 @@ public class NPCRacer : MonoBehaviour{
     public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
-        if (CPC == null) Debug.LogError("NPC CPC not set!"); 
-        else {currCPidx = 0; currCP = CPC.GetCP(); } // NOTE: This script must be executed after CPC 
+        if (CPC == null) Debug.LogError("NPC CPC not set!"); // NOTE: This script must be executed after CPC 
+        else {
+            if (currCP == null) currCP = CPC.GetCP();
+            else currCPidx = CPC.checkpoints.IndexOf(currCP);
+        }
+            
     }
         
     void Update(){
