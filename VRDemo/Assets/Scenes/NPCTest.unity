@@ -5060,10 +5060,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoints: []
   BoatHUD: {fileID: 0}
+  soundController: {fileID: 0}
   time: 0
   startTime: 0
   finished: 0
-  soundController: {fileID: 0}
 --- !u!4 &1443970431
 Transform:
   m_ObjectHideFlags: 0
@@ -7293,10 +7293,6 @@ PrefabInstance:
       propertyPath: CPC
       value: 
       objectReference: {fileID: 1443970430}
-    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: animSpan
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer
