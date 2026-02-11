@@ -11,24 +11,25 @@ using TMPro;
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
     
-    private GameObject BoatUI; // Reference to BoatUI
-    public TMP_Text BoatHUD; // Reference to the BoatHUD on the boat / UI
-    public SoundController soundController = null; // Ref to the level's SoundController to play splashes
+    private BoatUI BoatUI = null; // Ref Player's BoatUI
+    private SoundController soundController = null; // Ref to the level's SoundController to play cheers
 
-    public float time = 0.00f; // Stores the player's total time
+    public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished
     public GameObject rayToEnableOnFinish = null;
 
     void Start(){
         rayToEnableOnFinish.SetActive(false);
-        // Connections to other objects (if present)
-        soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
-        if (soundController == null) Debug.LogWarning("No soundcontroller detected");
+      
+        // Connections to other objects (if present, not all are required)
+        GameObject searchObj = GameObject.Find("SoundController");
+        if (searchObj == null) Debug.LogWarning("No soundcontroller detected");
+        else soundController = searchObj.GetComponent<SoundController>();
 
-        BoatUI = GameObject.Find("BoatUI");
-        if (BoatUI) BoatHUD = BoatUI.GetComponentInChildren<TMP_Text>();
-        else Debug.LogWarning("CheckPointController.cs: Cannot find BoatUI Object!");
+        searchObj = GameObject.Find("BoatUI");
+        if (searchObj == null) Debug.LogError("Cannot find BoatUI Object!");
+        else BoatUI = searchObj.GetComponent<BoatUI>();
 
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
         for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
@@ -37,16 +38,16 @@ public class CheckpointController : MonoBehaviour{
         // In each checkpoint (except the last), set 'nextCheckpoint' to the one after it 
         for (int i = 0; i < checkpoints.Count - 1; i++) checkpoints[i].GetComponent<Checkpoint>().nextCheckpoint = checkpoints[i + 1];
     
-        // First Checkpoint: Activate immediately (but hide timer)
+        // First Checkpoint is active from start (but ignored timer)
         checkpoints[0].GetComponent<Checkpoint>().isNext = true;
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
     }
 
-    void Update(){ if (!finished && BoatHUD) BoatHUD.text = (startTime != 0.00f) ? "Total Time = " + (Time.time - startTime).ToString("F1") : "Pass the Checkpoint to start!"; }
+    void Update(){ if (!finished && BoatUI) BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); }
 
-    public void OnCheckpoint(GameObject CP){ // Do stuff when a checkpoint is reached
-        float newTime = CP.GetComponent<Checkpoint>().getTime();
-        time += newTime;
+    public void OnCheckpoint(GameObject CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
+        float newTime = CP.GetComponent<Checkpoint>().GetTime();
+        totalTime += newTime;
 
         CP.GetComponent<Checkpoint>().isNext = false; // Current checkpoint becomes past
         CP.GetComponent<Checkpoint>().R.material.color = new Color(0f,0f,0f,0f);
@@ -55,26 +56,23 @@ public class CheckpointController : MonoBehaviour{
         if (soundController != null) soundController.PlayRandomSound("cheer");
         
         if (checkpoints.IndexOf(CP) == 0) { // First Checkpoint: Activate effects
-            time -= newTime; // Negative time for first CP, since we dont count it
+            totalTime -= newTime; // Negative time for first CP, since we dont count it
             startTime = Time.time; // Start the actual timer now
         }
 
         if (CP.GetComponent<Checkpoint>().nextCheckpoint) { // Next checkpoint
             checkpoints[checkpoints.IndexOf(CP) + 1].GetComponent<Checkpoint>().isNext = true;
-            Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + time);
+            Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + totalTime);
         }
         else { // No next checkpoint (Player reached finish)
-            Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + time);
-            OnFinish();
-            if (BoatHUD) BoatHUD.text += " !";
-        }
-    }
+            Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
+            
+            finished = true; // Stop timers
 
-    public void OnFinish(){
-        rayToEnableOnFinish.SetActive(true);
-        finished = true; // Stop timers
-        if (BoatUI != null) BoatUI.transform.GetChild(0).GetChild(1).gameObject.SetActive(true); // Show the menu / level buttons
-        // ^^^ Bad practice but there isnt an easy way to get named children, so dumb I would prefer something like: BoatUI.Child("ButtonsGroup").SetActive() 
+            if (BoatUI) BoatUI.FinishButton(playerOrNPC);
+          
+            rayToEnableOnFinish.SetActive(true);
+        }
     }
 
     public GameObject GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
