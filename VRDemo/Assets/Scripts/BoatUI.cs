@@ -3,6 +3,9 @@ using TMPro;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
 
+// TODO: Test if the menu buttons work with raycast hand on finish level.
+// TODO add level select orbs to MM prefab, also redo MM prefab platform as one prefab instead of 2
+
 public class BoatUI : MonoBehaviour{
     public Transform boatFrontUIAnchor = null; // refs to boat UI anchors (on boat prefab)
     public Transform boatBackUIAnchor = null;
@@ -39,10 +42,12 @@ public class BoatUI : MonoBehaviour{
     }
 
     public void SetUIAngle(float a = 0.0f){ // Rotates the AngleNeedle image according to the supplied angle, (+) = left, (-) = right
-        Vector3 rotation = new Vector3(0f,0f, 33f + a - angleNeedle.transform.rotation.z); // 33 is the center value
-        angleNeedle.transform.Rotate(rotation);
-        Debug.Log(a);
-        Debug.Log(angleNeedle.transform.rotation.z);
+        // a 
+        Vector3 rotation = new Vector3(0f,0f, a - angleNeedle.transform.localRotation.z); // 33 is the center value
+        // Not in degrees idk
+
+        angleNeedle.transform.Rotate(rotation, Space.Self);
+        Debug.Log("a = " + a.ToString() + "localRotZ = " + angleNeedle.transform.localRotation.z.ToString());
 
     }
 

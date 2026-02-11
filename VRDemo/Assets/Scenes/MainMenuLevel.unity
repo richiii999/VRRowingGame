@@ -931,6 +931,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1078464378}
     m_Modifications:
+    - target: {fileID: 1474234367453537939, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: boatUI
+      value: 
+      objectReference: {fileID: 1460625984}
     - target: {fileID: 1705753896783483294, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Name
       value: BoatGroup
@@ -1002,6 +1006,22 @@ PrefabInstance:
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163900945407206064, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409128556261414351, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7591578
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409128556261414351, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6509067
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409128556261414351, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 81.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8609,6 +8629,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
   m_PrefabInstance: {fileID: 1459817200}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1460625984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1246443432141638256, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 81912887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1471556547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10720,6 +10745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoints: []
+  currCP: {fileID: 0}
   totalTime: 0
   startTime: 0
   finished: 0
