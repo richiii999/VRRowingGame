@@ -16,10 +16,12 @@ public class CheckpointController : MonoBehaviour{
 
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
-    public bool finished = false;
-
+    public bool finished = false; // Set to true when finished
+    public GameObject rayToEnableOnFinish = null;
 
     void Start(){
+        rayToEnableOnFinish.SetActive(false);
+      
         // Connections to other objects (if present, not all are required)
         GameObject searchObj = GameObject.Find("SoundController");
         if (searchObj == null) Debug.LogWarning("No soundcontroller detected");
@@ -68,9 +70,10 @@ public class CheckpointController : MonoBehaviour{
             finished = true; // Stop timers
 
             if (BoatUI) BoatUI.FinishButton(playerOrNPC);
+          
+            rayToEnableOnFinish.SetActive(true);
         }
     }
-
 
     public GameObject GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
         if (idx < -1 || idx > checkpoints.Count - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
