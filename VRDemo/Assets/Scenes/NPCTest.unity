@@ -998,11 +998,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
---- !u!54 &224909172 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6965445308331046567, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-  m_PrefabInstance: {fileID: 1962650282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &228454163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5065,10 +5060,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoints: []
   BoatHUD: {fileID: 0}
+  soundController: {fileID: 0}
   time: 0
   startTime: 0
   finished: 0
-  soundController: {fileID: 0}
 --- !u!4 &1443970431
 Transform:
   m_ObjectHideFlags: 0
@@ -5406,8 +5401,8 @@ Transform:
   m_GameObject: {fileID: 1520997109}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
-  m_LocalScale: {x: 253.616, y: 1, z: 47.967}
+  m_LocalPosition: {x: -123.4, y: -2, z: 0}
+  m_LocalScale: {x: 150, y: 1, z: 47.967}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 143465704}
@@ -7254,10 +7249,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2866355137305266062, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7298,33 +7289,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4262509863762269131, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_Constraints
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: CPGroup
+      propertyPath: CPC
       value: 
-      objectReference: {fileID: 1443970429}
-    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: motorRB
-      value: 
-      objectReference: {fileID: 224909172}
-    - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_Constraints
-      value: 16
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1443970430}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer
-      objectReference: {fileID: 0}
-    - target: {fileID: 6965445308331046567, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_Constraints
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 9175099577952242652, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: m_Size.z
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
