@@ -6,17 +6,17 @@ using UnityEditor;
 #endif
 
 public class MenuActions : MonoBehaviour {
-    public static string MainMenuSceneName = "TestLevel";
+    public static string MainMenuSceneName = "MainMenuLevel";
     public static string LevelSelectSceneName = "LevelSelect";
 
 
     /* Main Menu */
-    public void goToLevelSelect() {
+    public void GoToLevelSelect() {
         Debug.Log("Level Select Clicked");
         SceneManager.LoadSceneAsync(MenuActions.LevelSelectSceneName); 
     }
 
-    public void quitGame() {
+    public static void QuitGame() {
         Debug.Log("Quit Clicked");
         #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
