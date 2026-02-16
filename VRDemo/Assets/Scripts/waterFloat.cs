@@ -19,7 +19,11 @@ public class Buoyancy : MonoBehaviour
 	public int voxelsLimit = 16;
 
 	public float waterYLevel = 0.0f; // Set the water Y level
-
+	public GameObject leftFlapper;
+	public GameObject rightFlapper;
+	public float featheringCoefficientWhenNeither = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
+	public float featheringCoefficientWhenOnlyOne = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
+	public float featheringCoefficientWhenBoth = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
 	private const float DAMPFER = 0.1f;
 	private const float WATER_DENSITY = 1000;
 
@@ -267,6 +271,28 @@ public class Buoyancy : MonoBehaviour
 				var velocity = GetComponent<Rigidbody>().GetPointVelocity(wp);
 				var localDampingForce = -velocity * DAMPFER * GetComponent<Rigidbody>().mass;
 				var force = localDampingForce + Mathf.Sqrt(k) * localArchimedesForce;
+
+				//change deceleration here
+				if(
+					leftFlapper.transform.position.y > waterLevel /*&& orientation is correct */ &&
+					rightFlapper.transform.position.y > waterLevel /*&& orientation is correct */
+				) {
+					force.x *= featheringCoefficientWhenBoth;
+					force.z *= featheringCoefficientWhenBoth;
+				} else {
+					if(leftFlapper.transform.position.y > waterLevel /*&& orientation is correct */)
+					{
+						force.x *= featheringCoefficientWhenOnlyOne;
+						force.z *= featheringCoefficientWhenOnlyOne;
+					} else if(rightFlapper.transform.position.y > waterLevel /*&& orientation is correct */){
+						force.x *= featheringCoefficientWhenOnlyOne;
+						force.z *= featheringCoefficientWhenOnlyOne;
+					} else {
+						force.x *= featheringCoefficientWhenNeither;
+						force.z *= featheringCoefficientWhenNeither;
+					}					
+				}
+
 				GetComponent<Rigidbody>().AddForceAtPosition(force, wp);
 
 				forces.Add(new[] { wp, force }); // For drawing force gizmos

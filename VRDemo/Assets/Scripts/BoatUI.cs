@@ -3,17 +3,19 @@ using TMPro;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
 
+// TODO: Test if the menu buttons work with raycast hand on finish level.
+// TODO add level select orbs to MM prefab, also redo MM prefab platform as one prefab instead of 2
+
 public class BoatUI : MonoBehaviour{
-    public TextMeshProUGUI timerText = null; // Refs to child objects
+    public GameObject rayToEnableOnFinish = null; // On parent boatObject
+
+    public TextMeshProUGUI timerText = null; // Refs to child objects, set in editor for the prefab
     public GameObject menuButton = null;
     public GameObject nextButton = null;
     public GameObject retryButton = null;
-    public GameObject rayToEnableOnFinish = null; // On parent boatObject
-    
-    
+    public GameObject angleNeedle = null;
+
     void Start(){
-        if (timerText == null || menuButton == null || nextButton == null || retryButton == null || rayToEnableOnFinish == null) Debug.LogError("BoatUI a reference!");
-        
         timerText.text = "Pass the Checkpoint to start!";
         menuButton.SetActive(false);
         nextButton.SetActive(false);
@@ -22,10 +24,14 @@ public class BoatUI : MonoBehaviour{
     }
 
     public void SetTimerText(float t = 0.0f){
-        if (t != 0.0f) timerText.text = "Time: " + t.ToString("F1");
+        if (t != 0.0f) { 
+            timerText.text = "Time: " + t.ToString("F1"); 
+        }
     }
 
-    public void FinishButton(bool win = true){ // Activate next level (true) / retry (false) button, and the main menu & ray. Called from outside on level finish
+    public void SetUIAngle(float a = 0.0f){ angleNeedle.transform.localEulerAngles = new Vector3(0f, 90f, a); } // Rotates the AngleNeedle
+
+    public void FinishButton(bool win = true){ // Activate level / menu button & VR hand ray. Called from outside on level finish
         menuButton.SetActive(true); 
         rayToEnableOnFinish.SetActive(true);
 

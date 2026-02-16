@@ -1,11 +1,15 @@
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using System.Collections;
+using Unity.XR.CoreUtils;
+using UnityEngine;
 
-public class recalibrate : MonoBehaviour{
-    public Transform boat;
+public class VRCalibration : MonoBehaviour{
+    public Transform boatTF;
     public XROrigin xrOrigin;
-    public Vector3 offset;
+    public Transform lookTarget; // Point camera at this obj
+    
+    public Vector3 offset; // Dial this in to feel good
     public KeyCode key;
 
     void Start(){ StartCoroutine(LateStart(0.5f)); } // Delay starting calibration by a short time
@@ -13,8 +17,8 @@ public class recalibrate : MonoBehaviour{
 
     void Update(){ if (Input.GetKeyDown(key)) Calibrate(); }
 
-    void Calibrate(){ 
-        Debug.Log("XR Camerea Calibrated");
-        xrOrigin.MoveCameraToWorldLocation(boat.position + offset); 
+    void Calibrate() { 
+        xrOrigin.MoveCameraToWorldLocation(boatTF.position + offset); 
+        xrOrigin.gameObject.transform.LookAt(lookTarget);
     }
 }

@@ -184,6 +184,11 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -1
+  leftFlapper: {fileID: 6137230102774592427}
+  rightFlapper: {fileID: 6137230102774592427}
+  featheringCoefficientWhenNeither: 1
+  featheringCoefficientWhenOnlyOne: 1
+  featheringCoefficientWhenBoth: 1
 --- !u!54 &4262509863762269131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -354,6 +359,11 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -1
+  leftFlapper: {fileID: 6137230102774592427}
+  rightFlapper: {fileID: 6137230102774592427}
+  featheringCoefficientWhenNeither: 1
+  featheringCoefficientWhenOnlyOne: 1
+  featheringCoefficientWhenBoth: 1
 --- !u!1 &6276848721647369659
 GameObject:
   m_ObjectHideFlags: 0
