@@ -50,7 +50,7 @@ public class MoveBoat : MonoBehaviour{
         if(flapperPosition.y < waterYLevel){ // If flapper below water
             if (!underwaterTrigger) setUnderwater(true);
 
-            //boat.AddForce( flapperVelocity * Speed_Coffecient);
+            //boat.AddForce(flapperVelocity * Speed_Coffecient);
             boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
         else if (underwaterTrigger) setUnderwater(false);
