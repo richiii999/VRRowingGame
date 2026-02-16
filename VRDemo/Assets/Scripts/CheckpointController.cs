@@ -67,6 +67,7 @@ public class CheckpointController : MonoBehaviour{
 
         if (CP.GetComponent<Checkpoint>().nextCheckpoint) { // Next checkpoint
             checkpoints[checkpoints.IndexOf(CP) + 1].GetComponent<Checkpoint>().isNext = true;
+            currCP = CP.GetComponent<Checkpoint>().nextCheckpoint;
             // Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + totalTime);
         }
         else { // No next checkpoint (Player reached finish)
