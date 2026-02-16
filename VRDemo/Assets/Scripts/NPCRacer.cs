@@ -53,7 +53,7 @@ public class NPCRacer : MonoBehaviour{
     // BUG: NPC's entire hitbox is a trigger so it counts for the checkpoint but not this, which only detects the yellow trigger (the intended trigger)
     // Not going to fix however since 1. idk how 2. its not a big deal, I extended the yellow trigger in the CP to be inside the buoys so this is minimal issue.
         if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP){
-            currCP = CPC.GetNextCP(currCPidx); currCPidx += 1; Debug.Log("NPC Checkpoint");
+            currCP = CPC.GetNextCP(currCPidx); currCPidx += 1; 
             if (currCP == null) {
                 Debug.Log("NPC Finished");
                 animSpan = 0f; // Stop rowing anim

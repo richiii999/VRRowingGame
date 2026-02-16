@@ -42,4 +42,13 @@ public class Checkpoint : MonoBehaviour{
     void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) CPC.OnCheckpoint(transform.gameObject, other.CompareTag("Player")); }
 
     public float GetTime(){ return float.Parse(T.text); }
+
+    public float GetRelativeAngle(GameObject target){ // Gets the relative angle (deg in XZ-plane) of target's fwd to the center of the CP, 0 = X+, 180 = X-
+        // A = BoatFace, B = BoatPos, C = CP pos
+        Vector2 A = new Vector2(target.transform.forward.x,  target.transform.forward.z).normalized;
+        Vector2 B = new Vector2(0f, 0f);
+        Vector2 C = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.z - transform.position.z).normalized;
+
+        return Vector2.SignedAngle(B-A, C-B);
+    }
 }

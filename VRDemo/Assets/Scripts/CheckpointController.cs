@@ -10,6 +10,7 @@ using TMPro;
 
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
+    public GameObject currCP = null;
     
     private BoatUI BoatUI = null; // Ref Player's BoatUI
     private SoundController soundController = null; // Ref to the level's SoundController to play cheers
@@ -32,6 +33,7 @@ public class CheckpointController : MonoBehaviour{
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
         for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
         if (checkpoints.Count < 2) Debug.LogWarning("CheckpointController: Less than 2 checkpoints in level");
+        else currCP = checkpoints[0];
 
         // In each checkpoint (except the last), set 'nextCheckpoint' to the one after it 
         for (int i = 0; i < checkpoints.Count - 1; i++) checkpoints[i].GetComponent<Checkpoint>().nextCheckpoint = checkpoints[i + 1];
@@ -41,7 +43,12 @@ public class CheckpointController : MonoBehaviour{
         checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
     }
 
-    void Update(){ if (!finished && BoatUI) BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); }
+    void Update(){ 
+        if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
+            BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
+            BoatUI.SetUIAngle(currCP.GetComponent<Checkpoint>().GetRelativeAngle(BoatUI.gameObject));
+        }
+    }
 
     public void OnCheckpoint(GameObject CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
         float newTime = CP.GetComponent<Checkpoint>().GetTime();
@@ -60,7 +67,8 @@ public class CheckpointController : MonoBehaviour{
 
         if (CP.GetComponent<Checkpoint>().nextCheckpoint) { // Next checkpoint
             checkpoints[checkpoints.IndexOf(CP) + 1].GetComponent<Checkpoint>().isNext = true;
-            Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + totalTime);
+            currCP = CP.GetComponent<Checkpoint>().nextCheckpoint;
+            // Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + totalTime);
         }
         else { // No next checkpoint (Player reached finish)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
