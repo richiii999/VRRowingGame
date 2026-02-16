@@ -1298,6 +1298,8 @@ Transform:
   m_Children:
   - {fileID: 6691176615877223572}
   - {fileID: 3525032132816280513}
+  - {fileID: 8076829648953309494}
+  - {fileID: 2537396688458775184}
   m_Father: {fileID: 3894546816363156191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5178246965568575295
@@ -2750,6 +2752,7 @@ Transform:
   m_Children:
   - {fileID: 1227629089395018461}
   - {fileID: 1890333942535012114}
+  - {fileID: 3890280850341833649}
   m_Father: {fileID: 3894546816363156191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5308805847656839066
@@ -3330,7 +3333,6 @@ MonoBehaviour:
   xrOrigin: {fileID: 4169529424599111607}
   offset: {x: -0.15, y: 0.8, z: 0}
   key: 32
-  positionOffset: {x: 0, y: -0.35, z: 0}
 --- !u!1 &7940750171873549239
 GameObject:
   m_ObjectHideFlags: 0
