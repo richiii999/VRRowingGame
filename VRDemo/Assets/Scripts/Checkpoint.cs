@@ -43,8 +43,9 @@ public class Checkpoint : MonoBehaviour{
 
     public float GetTime(){ return float.Parse(T.text); }
 
-    public float GetRelativeAngle(GameObject obj){ // Gets the relative angle (in XZ-plane) of the gameobject to the center of the CP, 0 = X+, 180 = X-
-        return Vector3.Angle(transform.up, obj.transform.position);
-
+    public float GetRelativeAngle(GameObject obj){ // Gets the relative angle (deg in XZ-plane) of the gameobject's fwd to the center of the CP, 0 = X+, 180 = X-
+        // From: https://discussions.unity.com/t/how-to-get-euler-angle-from-gameobject-a-to-gameobject-b-in-gameobject-as-local-x-z-plane/1693185/3
+        var fwd = transform.InverseTransformDirection(obj.transform.forward).normalized;
+        return Mathf.Atan2(fwd.z, fwd.x) * Mathf.Rad2Deg;
     }
 }

@@ -3035,6 +3035,10 @@ PrefabInstance:
       propertyPath: waterYLevel
       value: -0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 2057006199141564088, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Name
+      value: AngleGaugeTop
+      objectReference: {fileID: 0}
     - target: {fileID: 2902262067092249736, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3081,15 +3085,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416318906594249110, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5416318906594249110, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.66
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5416318906594249110, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.87
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: 5445440753979210689, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Layer
@@ -3123,37 +3127,45 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6583893754033413860, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: boatBackUIAnchor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583893754033413860, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: boatFrontUIAnchor
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
       value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.021344734
+      value: 0.0123982355
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.010252893
+      value: 0.010252953
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00000014071077
+      value: -0.00018596278
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70705706
+      value: -0.7216227
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.008385861
+      value: -0.008558628
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70705706
+      value: -0.692185
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.008385863
+      value: 0.008209491
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3161,7 +3173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -272.386
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -3184,7 +3196,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8155492774273460392, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+    - {fileID: 2000336620010343107, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
