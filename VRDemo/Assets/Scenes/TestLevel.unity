@@ -2953,10 +2953,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 2057006199141564088, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Name
       value: AngleGaugeTop
@@ -2989,17 +2985,9 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: positionOffset.y
       value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: Speed_Coffecient
-      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4565758529932095939, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Layer
@@ -3029,14 +3017,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6023829933436711854, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 6309548587792694830, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3048,18 +3028,6 @@ PrefabInstance:
     - target: {fileID: 6569356870193751386, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Layer
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6583893754033413860, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: boatBackUIAnchor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6583893754033413860, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: boatFrontUIAnchor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
