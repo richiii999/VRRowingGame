@@ -1275,6 +1275,8 @@ Transform:
   m_Children:
   - {fileID: 6691176615877223572}
   - {fileID: 3525032132816280513}
+  - {fileID: 8076829648953309494}
+  - {fileID: 2537396688458775184}
   m_Father: {fileID: 3894546816363156191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5178246965568575295
@@ -2689,6 +2691,7 @@ Transform:
   m_Children:
   - {fileID: 1227629089395018461}
   - {fileID: 1890333942535012114}
+  - {fileID: 3890280850341833649}
   m_Father: {fileID: 3894546816363156191}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5308805847656839066
@@ -4079,7 +4082,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9042390136698959995, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4929694475241183827}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7493850326893221398, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9161037195113239397}
   m_SourcePrefab: {fileID: 100100000, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
 --- !u!114 &265997296540131525 stripped
 MonoBehaviour:
@@ -4092,6 +4098,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6827d146acb8e7e4e963de4cd09a5d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3238069184090440164 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7493850326893221398, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+  m_PrefabInstance: {fileID: 5408946226331899890}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9161037195113239397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3238069184090440164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RaycastTriggerInteraction: 1
 --- !u!4 &3921907419946168201 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9042390136698959995, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
