@@ -939,6 +939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: rayInteracter
+      value: 
+      objectReference: {fileID: 1479203944}
     - target: {fileID: 3921907419946168201, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -2081,12 +2085,12 @@ PrefabInstance:
       objectReference: {fileID: 1590413402}
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: objectsToDisableInMenu.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: 'objectsToDisableInMenu.Array.data[0]'
       value: 
-      objectReference: {fileID: 2121493406}
+      objectReference: {fileID: 1618138193}
     - target: {fileID: 2285747167492710531, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.7671723
@@ -9095,6 +9099,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2618934544155307533, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
   m_PrefabInstance: {fileID: 1650978313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1618138193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 89540549844271529, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 81912887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1620215741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
@@ -9181,7 +9190,7 @@ PrefabInstance:
     - target: {fileID: 914054108795168044, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
+      objectReference: {fileID: 1974479073}
     - target: {fileID: 914054108795168044, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
@@ -9189,6 +9198,14 @@ PrefabInstance:
     - target: {fileID: 914054108795168044, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MainMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 959675927437708475, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1974479073}
+    - target: {fileID: 959675927437708475, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11093,11 +11110,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
   m_PrefabInstance: {fileID: 776785807}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2121493406 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1246443432141638256, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-  m_PrefabInstance: {fileID: 81912887}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2132681893 stripped
 Transform:
