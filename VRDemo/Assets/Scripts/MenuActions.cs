@@ -6,7 +6,7 @@ using UnityEditor;
 #endif
 
 public class MenuActions : MonoBehaviour {
-    public static string MainMenuSceneName = "MainMenu";
+    public static string MainMenuSceneName = "TestLevel";
     public static string LevelSelectSceneName = "LevelSelect";
 
 
