@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Unity.Mathematics;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
 
