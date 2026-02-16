@@ -817,7 +817,6 @@ MonoBehaviour:
   boat: {fileID: 4249274727420233216}
   boatMotor: {fileID: 4423585689815351981}
   Speed_Coffecient: 700
-  debugBoatVelocity: 0
   debugFlapper: 0
   soundController: {fileID: 0}
 --- !u!1 &1705753896783483294
@@ -925,6 +924,11 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
+  leftFlapper: {fileID: 3573951574267041401}
+  rightFlapper: {fileID: 1378962303487593168}
+  featheringCoefficientWhenNeither: 1
+  featheringCoefficientWhenOnlyOne: 1
+  featheringCoefficientWhenBoth: 1
 --- !u!1 &2360001629362316586
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +1002,11 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
+  leftFlapper: {fileID: 3573951574267041401}
+  rightFlapper: {fileID: 1378962303487593168}
+  featheringCoefficientWhenNeither: 1
+  featheringCoefficientWhenOnlyOne: 1
+  featheringCoefficientWhenBoth: 1
 --- !u!54 &6454570026754623682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1198,7 +1207,6 @@ MonoBehaviour:
   boat: {fileID: 4249274727420233216}
   boatMotor: {fileID: 4423585689815351981}
   Speed_Coffecient: 700
-  debugBoatVelocity: 0
   debugFlapper: 0
   soundController: {fileID: 0}
 --- !u!1 &3759435225402288425
@@ -1456,6 +1464,11 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
+  leftFlapper: {fileID: 3573951574267041401}
+  rightFlapper: {fileID: 1378962303487593168}
+  featheringCoefficientWhenNeither: 1
+  featheringCoefficientWhenOnlyOne: 1
+  featheringCoefficientWhenBoth: 1
 --- !u!54 &6627120821778633924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3252,11 +3265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6870c617df7857d4b8481abbddf85e72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boat: {fileID: 6827182281671778948}
-  xrOrigin: {fileID: 4169529424599111607}
-  offset: {x: -0.15, y: 0.8, z: 0}
+  boatTF: {fileID: 0}
+  xrOrigin: {fileID: 0}
+  lookTarget: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
   key: 32
-  positionOffset: {x: 0, y: -0.35, z: 0}
 --- !u!1 &7940750171873549239
 GameObject:
   m_ObjectHideFlags: 0
