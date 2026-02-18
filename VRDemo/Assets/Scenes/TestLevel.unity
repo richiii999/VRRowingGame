@@ -2937,6 +2937,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 987250966593879111, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.037
+      objectReference: {fileID: 0}
+    - target: {fileID: 987250966593879111, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.839
+      objectReference: {fileID: 0}
+    - target: {fileID: 987250966593879111, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.91
+      objectReference: {fileID: 0}
     - target: {fileID: 1293101414375660499, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -7578,6 +7590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkpoints: []
   currCP: {fileID: 0}
+  soundController: {fileID: 0}
   totalTime: 0
   startTime: 0
   finished: 0
@@ -7792,7 +7805,7 @@ PrefabInstance:
       objectReference: {fileID: 1473006246}
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: skipMainMenu
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: mainMenuCamera

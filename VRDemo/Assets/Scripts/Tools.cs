@@ -33,7 +33,13 @@ public static class Tools{
         return searchComp;
     }
 
-    // TODO: CP.GetRelativeAngle()); replace with .GRA(A, B, C) with gameobject and vec3 (from position) overloads
+    // Gets the relative angle (deg in XZ-plane) of A's fwd to B.
+    public static float XZAngleBetween(GameObject A, GameObject B){ 
+        Vector2 a = new Vector2(B.transform.forward.x,  B.transform.forward.z).normalized;
+        Vector2 c = new Vector2(B.transform.position.x - A.transform.position.x, B.transform.position.z - A.transform.position.z).normalized;
+
+        return Vector2.SignedAngle(a * -1, c);
+    }
 
     public static void QuitGame(){ // Quits the game, even in the editor
         #if UNITY_STANDALONE
