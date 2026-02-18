@@ -5,6 +5,8 @@ using UnityEngine;
 // NOTE: All funcs here should be 'public static fn()' to allow access and use from anywhere. 
 // Import can also be 'using static Tools'. Calling a func from tools does not require Tools.fn(), you can just call fn() directly
 
+// TODO: combine more funcs that are duplicated to here.
+
 public static class Tools{
 
     // Standardized initialization of references to GameObjects/Components in scripts, since we do it so often.
