@@ -1,6 +1,8 @@
 using UnityEngine;
 using System;
 
+using static Tools;
+
 // NPCRacer.cs: Controls the NPCs behavior
 // NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
 // pathfinding or anything, 'difficulty' can be adjusted via changing the speed variable.
@@ -9,7 +11,7 @@ using System;
 
 
 public class NPCRacer : MonoBehaviour{
-    public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
+    private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
     public GameObject currCP = null; // Set from ^
     private int currCPidx = 0;
 
@@ -24,11 +26,9 @@ public class NPCRacer : MonoBehaviour{
     public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
-        if (CPC == null) Debug.LogError("NPC CPC not set!"); // NOTE: This script must be executed after CPC 
-        else {
-            if (currCP == null) currCP = CPC.GetCP();
-            else currCPidx = CPC.checkpoints.IndexOf(currCP);
-        }
+        CPC = RefToComp<CheckpointController>("CheckpointGroup"); // NOTE: This script must be executed after CPC 
+        if (currCP == null) currCP = CPC.GetCP();
+        else currCPidx = CPC.checkpoints.IndexOf(currCP);
             
     }
         

@@ -2,18 +2,22 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
+using static Tools;
+
 // CheckpointController.cs: Controls the checkpoints and their timers.
 // When trigger a CP, next one's timer starts, when trigger the last one, print the cumulative time.
 
 // Note: There must be atleast 2 checkpoints for it to have a proper start / finish.
 // Note: The checkpoints must be in order in the Scene Tree
 
+// TODO Change many CP.Comp<CP> to just use the comp directly perhaps. ex. currCP is no longer a GB but rather a <CP> ref directly
+
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
     public GameObject currCP = null;
     
     private BoatUI BoatUI = null; // Ref Player's BoatUI
-    private SoundController soundController = null; // Ref to the level's SoundController to play cheers
+    public SoundController soundController = null; // Ref to the level's SoundController to play cheers
 
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
@@ -21,14 +25,8 @@ public class CheckpointController : MonoBehaviour{
     
 
     void Start(){
-        // Connections to other objects (if present, not all are required)
-        GameObject searchObj = GameObject.Find("SoundController");
-        if (searchObj == null) Debug.LogWarning("No soundcontroller detected");
-        else soundController = searchObj.GetComponent<SoundController>();
-
-        searchObj = GameObject.Find("BoatUI");
-        if (searchObj == null) Debug.LogError("Cannot find BoatUI Object!");
-        else BoatUI = searchObj.GetComponent<BoatUI>();
+        soundController = RefToComp<SoundController>("SoundController");
+        BoatUI = RefToComp<BoatUI>("BoatUI", false); // mustExist=false, ex. NPC testing scene with no player
 
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
         for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
@@ -85,7 +83,7 @@ public class CheckpointController : MonoBehaviour{
         
         if (finished) return null; // No currCP, race finished
         else foreach (GameObject CP in checkpoints){ if (CP.GetComponent<Checkpoint>().isNext) return CP; }
-        Debug.LogWarning("Cannot find currCP!"); return null; // Should never exit loop ^ without returning
+        Debug.LogError("Cannot find currCP!"); return null; // Should never exit loop ^ without returning
     }
 
     public GameObject GetNextCP(int idx = -1){ // Returns the CP after the idx / currCP, or null if invalid idx/none/finished/lastCP

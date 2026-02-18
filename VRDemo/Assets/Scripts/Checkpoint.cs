@@ -2,6 +2,8 @@ using UnityEngine;
 using System;
 using TMPro;
 
+using static Tools;
+
 // Checkpoint.cs: Signals the parent CheckpointController when a CP is crossed
 
 // Note: Checkpoints are controlled by their parent object, 'Checkpoints' via the script 'CheckpointController'
@@ -18,8 +20,7 @@ public class Checkpoint : MonoBehaviour{
 
     void Start(){ 
         T = GetComponentInChildren<TMP_Text>();
-        CPC = transform.parent.gameObject.GetComponent<CheckpointController>();
-        if (CPC == null) Debug.LogError("Checkpoint cannot find CPC!");
+        CPC = RefToComp<CheckpointController>("CheckpointGroup");
 
         // Hide checkpoint glow on start
         R.material.color = new Color( R.material.color.r, R.material.color.g, R.material.color.b, 0.00f);
