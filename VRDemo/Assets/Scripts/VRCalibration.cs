@@ -1,8 +1,6 @@
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using System.Collections;
-using Unity.XR.CoreUtils;
-using UnityEngine;
 
 public class VRCalibration : MonoBehaviour{
     public Transform boatTF;
