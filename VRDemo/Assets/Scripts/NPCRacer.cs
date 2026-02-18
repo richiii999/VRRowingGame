@@ -25,10 +25,8 @@ public class NPCRacer : MonoBehaviour{
     public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
-        CPC = RefToComp<CheckpointController>("CheckpointGroup"); // NOTE: This script must be executed after CPC 
-        if (currCP == null) currCP = CPC.GetCP();
-        currCPidx = CPC.checkpoints.IndexOf(currCP);
-            
+        CPC = RefToComp<CheckpointController>("CheckpointGroup"); 
+        if (currCP == null) currCP = CPC.GetCP(); // NOTE: This script must be executed after CPC 
     }
         
     void Update(){

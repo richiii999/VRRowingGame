@@ -14,10 +14,7 @@ public static class Tools{
     // 'mustExist' False: return null if not found (ex. reference may or may not exist, intended). True: LogError and halt
     public static GameObject RefToObj(string path, bool mustExist = true){
         GameObject searchObj = GameObject.Find(path);
-        if (searchObj == null) {
-            Debug.LogWarning("Could not find Obj: " + path);
-            if (mustExist) QuitGame();
-        }
+        if (searchObj == null && mustExist) QuitGame("Could not find required Obj: " + path);
         return searchObj;
     }
     public static Component RefToComp<Component>(string path, bool mustExist = true){
@@ -25,10 +22,7 @@ public static class Tools{
         Component searchComp = default; // Components cannot be NULL (even tho it can be idk)
         if (searchObj != null) { // Check to prevent double-warning of null obj (RefToObj() already warns this)
             searchComp = searchObj.GetComponent<Component>();
-            if (searchComp == null) {
-                Debug.LogWarning("Could not find Component in Obj: " + path); 
-                if (mustExist) QuitGame();
-            }
+            if (searchComp == null && mustExist) QuitGame("Could not find required Component in Obj: " + path);
         }
         return searchComp;
     }
@@ -41,7 +35,9 @@ public static class Tools{
         return Vector2.SignedAngle(a * -1, c);
     }
 
-    public static void QuitGame(){ // Quits the game, even in the editor
+    public static void QuitGame(string errorStr="Unspecified Error"){ // Quits the game with an error (even in the editor)
+        Debug.LogError(errorStr);
+
         #if UNITY_STANDALONE
             Application.Quit();
         #endif

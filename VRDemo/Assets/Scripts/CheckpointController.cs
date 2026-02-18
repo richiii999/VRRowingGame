@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using TMPro;
 
 using static Tools;
+using System.Linq;
 
 // CheckpointController.cs: Controls the checkpoints and their timers.
 // When trigger a CP, next one's timer starts, when trigger the last one, print the cumulative time.
 
-// Note: There must be atleast 2 checkpoints for it to have a proper start / finish.
-// Note: The checkpoints must be in order in the Scene Tree
-
-// TODO Change many CP.Comp<CP> to just use the comp directly perhaps. ex. currCP is no longer a GB but rather a <CP> ref directly
+// Note: The checkpoints must be child objects of this, and in order, in the SceneTree
 
 public class CheckpointController : MonoBehaviour{
-    public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
-    public Checkpoint currCP = null;
+    public List<Checkpoint> checkpoints; // Stores references to each of the checkpoint gameObjects
+    private int currCPidx = 0;
     
     private BoatUI BoatUI = null; // Ref Player's BoatUI
     public SoundController soundController = null; // Ref to the level's SoundController to play cheers
@@ -29,46 +27,37 @@ public class CheckpointController : MonoBehaviour{
         BoatUI = RefToComp<BoatUI>("BoatUI", false); // mustExist=false, ex. NPC testing scene with no player
 
         // First, find all the checkpoints (children of the 'Checkpoints' gameObj)
-        for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).gameObject);
-        if (checkpoints.Count < 2) Debug.LogWarning("CheckpointController: Less than 2 checkpoints in level");
-        else currCP = checkpoints[0];
-
-        // In each checkpoint (except the last), set 'nextCheckpoint' to the one after it 
-        for (int i = 0; i < checkpoints.Count - 1; i++) checkpoints[i].GetComponent<Checkpoint>().nextCheckpoint = checkpoints[i + 1];
+        for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).GetComponent<Checkpoint>());
+        if (checkpoints.Count == 0) QuitGame("No checkpoints detected!");
     
         // First Checkpoint is active from start (but ignored timer)
-        checkpoints[0].GetComponent<Checkpoint>().isNext = true;
-        checkpoints[0].GetComponentInChildren<TMP_Text>().color = new Color(0f,0f,0f,0f);
+        checkpoints[0].isNext = true;
+        checkpoints[0].timerTxt.color = new Color(0f,0f,0f,0f);
     }
 
     void Update(){ 
         if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
             BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
-            BoatUI.SetUIAngle(XZAngleBetween(currCP, BoatUI.gameObject));
+            BoatUI.SetUIAngle(XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject));
         }
     }
 
-    public void OnCheckpoint(GameObject CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
-        float newTime = CP.GetComponent<Checkpoint>().GetTime();
+    public void OnCheckpoint(Checkpoint CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
+        float newTime = CP.GetTime();
         totalTime += newTime;
 
-        CP.GetComponent<Checkpoint>().isNext = false; // Current checkpoint becomes past
-        CP.GetComponent<Checkpoint>().R.material.color = new Color(0f,0f,0f,0f);
+        CP.isNext = false; // Current checkpoint becomes past
+        CP.SetGlowAlpha(0f); 
+        soundController.PlayRandomSound("cheer");
 
-        // Play a sound from soundEffects (randomly chosen, if any)
-        if (soundController != null) soundController.PlayRandomSound("cheer");
-        
-        if (checkpoints.IndexOf(CP) == 0) { // First Checkpoint: Activate effects
+        if (CP == checkpoints[0]) { // First CP: Activate effects
             totalTime -= newTime; // Negative time for first CP, since we dont count it
             startTime = Time.time; // Start the actual timer now
         }
 
-        if (CP.GetComponent<Checkpoint>().nextCheckpoint) { // Next checkpoint
-            checkpoints[checkpoints.IndexOf(CP) + 1].GetComponent<Checkpoint>().isNext = true;
-            currCP = CP.GetComponent<Checkpoint>().nextCheckpoint;
-            // Debug.Log("Checkpoint passed: " + CP.name + " Time = " + newTime + " totalTime = " + totalTime);
-        }
-        else { // No next checkpoint (Player reached finish)
+        if (CP != checkpoints.Last()) currCPidx += 1; // Middle CP
+    
+        else { // Final CP (may also be first if only 1, thats fine)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
             
             finished = true; // Stop timers
@@ -77,17 +66,12 @@ public class CheckpointController : MonoBehaviour{
         }
     }
 
-    public GameObject GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
+    public Checkpoint GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
         if (idx < -1 || idx > checkpoints.Count - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
         if (idx > -1) return checkpoints[idx]; // Get CP by index
         
-        if (finished) return null; // No currCP, race finished
-        else foreach (GameObject CP in checkpoints){ if (CP.GetComponent<Checkpoint>().isNext) return CP; }
-        Debug.LogError("Cannot find currCP!"); return null; // Should never exit loop ^ without returning
+        return finished ? null : checkpoints[currCPidx]; // Finished means no currCP
     }
 
-    public GameObject GetNextCP(int idx = -1){ // Returns the CP after the idx / currCP, or null if invalid idx/none/finished/lastCP
-        GameObject CP = GetCP(idx);
-        return (CP == null) ? null : CP.GetComponent<Checkpoint>().nextCheckpoint; // Null if no currCP, else nextCP (which may also be null if curr is final CP)
-    }
+    public Checkpoint GetNextCP(Checkpoint CP){ return GetCP(checkpoints.IndexOf(CP) + 1); }
 }
