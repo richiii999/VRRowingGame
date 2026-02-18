@@ -44,6 +44,7 @@ public class MoveBoat : MonoBehaviour{
         if(flapperVelocity.magnitude > 0.5)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+            Debug.Log("Magnitude too big");
         }
         
         //check if underwater. If yes add force and change underwater state
