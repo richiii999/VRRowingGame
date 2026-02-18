@@ -14,7 +14,7 @@ using static Tools;
 
 public class CheckpointController : MonoBehaviour{
     public List<GameObject> checkpoints; // Stores references to each of the checkpoint gameObjects
-    public GameObject currCP = null;
+    public Checkpoint currCP = null;
     
     private BoatUI BoatUI = null; // Ref Player's BoatUI
     public SoundController soundController = null; // Ref to the level's SoundController to play cheers

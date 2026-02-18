@@ -11,36 +11,32 @@ using static Tools;
 
 public class Checkpoint : MonoBehaviour{
     private CheckpointController CPC; // Ref to the CPC
-    public GameObject nextCheckpoint; // Which CP is next? (None = finish)
-    public Renderer R; // The CheckpointTrigger's Renderer
-    public TMP_Text T; // TimerText obj
+    public Material glowfield; // The CheckpointTrigger's Renderer
+    public TMP_Text timerTxt; // TimerText obj
     public bool isNext = false; // Is this checkpoint the next one?
     public float startTime = 0.00f; // At what time did this CP become active?
     
-
     void Start(){ 
-        T = GetComponentInChildren<TMP_Text>();
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
 
         // Hide checkpoint glow on start
-        R.material.color = new Color( R.material.color.r, R.material.color.g, R.material.color.b, 0.00f);
+        SetGlowAlpha(0f);
     }
 
     void Update(){ 
-        if (isNext && T) { 
-            if (startTime == 0.00f) startTime = Time.time;
-            T.text = (Time.time - startTime).ToString("F1"); // Round time to 2 dec places
+        if (isNext) { 
+            SetGlowAlpha( Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) );
+            
+            if (startTime == 0.00f) startTime = Time.time; // First CP doesnt count timer
+            timerTxt.text = (Time.time - startTime).ToString("F1"); // Round time to 2 dec places
         }
 
-        if (isNext && R) R.material.color = new Color( // Active checkpoint Glow effect
-                                                R.material.color.r,
-                                                R.material.color.g,
-                                                R.material.color.b,
-                                                Mathf.Abs(((float)Math.Sin(Time.time)) * 0.7f) ); // Adjust the float to change glow amount
     }
 
-    // If player collides with the trigger, signal to CheckpointController
-    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) CPC.OnCheckpoint(transform.gameObject, other.CompareTag("Player")); }
+    // Signal Player/NPC collisions to CheckpointController
+    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) CPC.OnCheckpoint(gameObject, other.CompareTag("Player")); }
 
-    public float GetTime(){ return float.Parse(T.text); }
+    private void SetGlowAlpha(float a){ glowfield.color = new Color( glowfield.color.r, glowfield.color.g, glowfield.color.b, a); }
+
+    public float GetTime(){ return float.Parse(timerTxt.text); }
 }

@@ -4,15 +4,14 @@ using System;
 using static Tools;
 
 // NPCRacer.cs: Controls the NPCs behavior
-// NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
-// pathfinding or anything, 'difficulty' can be adjusted via changing the speed variable.
+// NPCs automatically row to each checkpoint in order. CurrCP can be set in the editor to make them start farther along (ex. main menu NPCs)
 
 // NOTE: This script must be executed after CPC, see Edit>Project Settings>Script Execution Order
 
 
 public class NPCRacer : MonoBehaviour{
     private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    public GameObject currCP = null; // Set from ^
+    public Checkpoint currCP = null; // If not set, uses ^ to find first CP.
     private int currCPidx = 0;
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
@@ -28,7 +27,7 @@ public class NPCRacer : MonoBehaviour{
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup"); // NOTE: This script must be executed after CPC 
         if (currCP == null) currCP = CPC.GetCP();
-        else currCPidx = CPC.checkpoints.IndexOf(currCP);
+        currCPidx = CPC.checkpoints.IndexOf(currCP);
             
     }
         
@@ -61,11 +60,3 @@ public class NPCRacer : MonoBehaviour{
         }
     }
 }
-
-// Alternate rowing animation code that rows faster/slower according to current velocity.
-// Removed because I couldnt get it to look good, but it does work.
-// animTimer = (animTimer + Time.deltaTime) % (2*math.PI); // sin movement
-// float sin = (float) Math.Sin(animTimer * animSpeed * (math.abs(motorRB.linearVelocity.x) + math.abs(motorRB.linearVelocity.z))); 
-// 
-// Vector3 side = motorRB.transform.forward * (sin % (animSpan * 2*math.PI));
-// Vector3 fwd = motorRB.transform.right * 10.0f;
