@@ -308,11 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb69a863a1a23e74dbe6321301071bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextCheckpoint: {fileID: 0}
-  R: {fileID: 5055754676061486051}
-  T: {fileID: 0}
+  glowfield: {fileID: 5055754676061486051}
+  timerTxt: {fileID: 792885292389182303}
   isNext: 0
-  startTime: 0
 --- !u!54 &1659956757017625313
 Rigidbody:
   m_ObjectHideFlags: 0
