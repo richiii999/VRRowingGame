@@ -973,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Constraints
-      value: 94
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: boatTF
