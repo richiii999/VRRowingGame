@@ -6984,6 +6984,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4094520403232694531, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
+      propertyPath: Level
+      value: TestLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 5383918646097018846, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
       propertyPath: m_Name
       value: LSPrefab
@@ -9549,6 +9553,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731578284633561556, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210828268647635303, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}

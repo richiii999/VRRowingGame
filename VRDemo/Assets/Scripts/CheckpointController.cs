@@ -47,7 +47,7 @@ public class CheckpointController : MonoBehaviour{
 
         CP.isNext = false; // Current checkpoint becomes past
         CP.SetGlowAlpha(0f); 
-        soundController.PlayRandomSound("cheer");
+        soundController.PlayRandomSound("cheer", transform.position.x, transform.position.y, transform.position.z);
 
         if (CP == checkpoints[0]) { totalTime -= newTime; startTime = Time.time; } // First CP: Dont count time
         if (CP != checkpoints.Last()) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
