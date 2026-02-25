@@ -22,4 +22,9 @@ public class LevelSelectBall : MonoBehaviour {
             SceneManager.LoadSceneAsync(Level);
         }
     }
+
+    public void DetachJoint()
+    {
+        Destroy(gameObject.GetComponent<SpringJoint>());
+    }
 }

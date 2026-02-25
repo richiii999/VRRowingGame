@@ -41,9 +41,10 @@ public class MoveBoat : MonoBehaviour{
 
         //spazzing out prevention
         //currently a bandaid fix. Instead, the hands should deattached when they get too far from the object.
-        if(flapperVelocity.x > (float)5 && flapperVelocity.y > (float)5 && flapperVelocity.z > (float)5)
+        if(flapperVelocity.magnitude > 0.5)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+            Debug.Log("Magnitude too big");
         }
         
         //check if underwater. If yes add force and change underwater state
@@ -57,7 +58,7 @@ public class MoveBoat : MonoBehaviour{
         
         //debug code
         if (debugFlapper){
-            Debug.Log(transform.rotation);
+            Debug.Log(flapperVelocity.magnitude);
         }
 
         //setting positions 

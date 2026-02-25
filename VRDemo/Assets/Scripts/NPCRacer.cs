@@ -1,17 +1,17 @@
 using UnityEngine;
 using System;
 
+using static Tools;
+
 // NPCRacer.cs: Controls the NPCs behavior
-// NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
-// pathfinding or anything, 'difficulty' can be adjusted via changing the speed variable.
+// NPCs automatically row to each checkpoint in order. CurrCP can be set in the editor to make them start farther along (ex. main menu NPCs)
 
 // NOTE: This script must be executed after CPC, see Edit>Project Settings>Script Execution Order
 
 
 public class NPCRacer : MonoBehaviour{
-    public CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    public GameObject currCP = null; // Set from ^
-    private int currCPidx = 0;
+    private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
+    public Checkpoint currCP = null; // If not set, uses ^ to find first CP.
 
     public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
     public GameObject oarL = null; // Refs to the Oars & Look objects (to spin them)
@@ -24,12 +24,8 @@ public class NPCRacer : MonoBehaviour{
     public float animSpeed = 3.0f; // Speed of animation
 
     void Start(){ 
-        if (CPC == null) Debug.LogError("NPC CPC not set!"); // NOTE: This script must be executed after CPC 
-        else {
-            if (currCP == null) currCP = CPC.GetCP();
-            else currCPidx = CPC.checkpoints.IndexOf(currCP);
-        }
-            
+        CPC = RefToComp<CheckpointController>("CheckpointGroup"); 
+        if (currCP == null) currCP = CPC.GetCP(); // NOTE: This script must be executed after CPC 
     }
         
     void Update(){
@@ -52,8 +48,8 @@ public class NPCRacer : MonoBehaviour{
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
     // BUG: NPC's entire hitbox is a trigger so it counts for the checkpoint but not this, which only detects the yellow trigger (the intended trigger)
     // Not going to fix however since 1. idk how 2. its not a big deal, I extended the yellow trigger in the CP to be inside the buoys so this is minimal issue.
-        if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP){
-            currCP = CPC.GetNextCP(currCPidx); currCPidx += 1; 
+        if (other.CompareTag("Checkpoint") && other.transform.parent.gameObject == currCP.gameObject){
+            currCP = CPC.GetNextCP(currCP); 
             if (currCP == null) {
                 Debug.Log("NPC Finished");
                 animSpan = 0f; // Stop rowing anim
@@ -61,11 +57,3 @@ public class NPCRacer : MonoBehaviour{
         }
     }
 }
-
-// Alternate rowing animation code that rows faster/slower according to current velocity.
-// Removed because I couldnt get it to look good, but it does work.
-// animTimer = (animTimer + Time.deltaTime) % (2*math.PI); // sin movement
-// float sin = (float) Math.Sin(animTimer * animSpeed * (math.abs(motorRB.linearVelocity.x) + math.abs(motorRB.linearVelocity.z))); 
-// 
-// Vector3 side = motorRB.transform.forward * (sin % (animSpan * 2*math.PI));
-// Vector3 fwd = motorRB.transform.right * 10.0f;
