@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
 
 using static Tools;
 using System;
@@ -21,7 +19,9 @@ public class CheckpointController : MonoBehaviour{
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
 
-
+    private float sumScoreTimeSurplus = 0.0f; // How much extra time (above Scoretime per CP) the player accumulated
+    private float sumAngleGradeSurplus = 0.0f; // How many degrees above straightline (per CP) the player was.
+    private int score = 0; 
     
 
     void Start(){
@@ -55,7 +55,7 @@ public class CheckpointController : MonoBehaviour{
         soundController.PlayRandomSound("cheer", transform.position.x, transform.position.y, transform.position.z);
 
         if (CP == checkpoints[0]) { totalTime -= newTime; startTime = Time.time; } // First CP: Dont count time
-        if (CP != checkpoints.Last()) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
+        if (CP != checkpoints[checkpoints.Length - 1]) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
         else { // Final CP (may also be first if only 1, thats fine)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
             FinishRace(true);

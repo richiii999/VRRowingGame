@@ -15,6 +15,8 @@ public class Checkpoint : MonoBehaviour{
     public TMP_Text timerTxt; // TimerText obj
     public bool isNext = false; // Is this checkpoint the currently active one?
     private float startTime = 0.00f; // At what time did this CP become active?
+
+    public float scoreTime = 10.0f; // How many seconds for full score?
     
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
