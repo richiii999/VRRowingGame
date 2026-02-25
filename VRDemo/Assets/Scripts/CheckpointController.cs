@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using static Tools;
+using System;
 
 // CheckpointController.cs: Controls the checkpoints and their timers.
 // When trigger a CP, next one's timer starts, when trigger the last one, print the cumulative time.
@@ -10,7 +11,7 @@ using static Tools;
 // Note: The checkpoints must be child objects of this, in order, in the SceneTree
 
 public class CheckpointController : MonoBehaviour{
-    public List<Checkpoint> checkpoints;
+    public Checkpoint[] checkpoints;
     private int currCPidx = 0;
     
     private BoatUI BoatUI = null;
@@ -28,8 +29,8 @@ public class CheckpointController : MonoBehaviour{
         BoatUI = RefToComp<BoatUI>("BoatUI", false); // mustExist=false, ex. NPC testing scene with no player
 
         // Init checkpoints[] (children of the this gameObj)
-        for (int i = 0; i < transform.childCount; i++) checkpoints.Add(transform.GetChild(i).GetComponent<Checkpoint>());
-        if (checkpoints.Count == 0) QuitGame("No checkpoints detected!");
+        checkpoints = GetComponentsInChildren<Checkpoint>(gameObject);
+        if (checkpoints.Length == 0) QuitGame("No checkpoints detected!");
     
         // First Checkpoint is active from start (but ignored timer)
         checkpoints[0].isNext = true;
@@ -62,19 +63,20 @@ public class CheckpointController : MonoBehaviour{
     }
 
     public Checkpoint GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
-        if (idx < -1 || idx > checkpoints.Count - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
+        if (idx < -1 || idx > checkpoints.Length - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
         if (idx > -1) return checkpoints[idx]; // Get CP by index
         
         return finished ? null : checkpoints[currCPidx]; // Finished means no currCP
     }
 
-    public Checkpoint GetNextCP(Checkpoint CP){ return GetCP(checkpoints.IndexOf(CP) + 1); }
+    public Checkpoint GetNextCP(Checkpoint CP){ return GetCP(Array.IndexOf(checkpoints, CP) + 1); }
 
     public void FinishRace(bool playerOrNPC){
-        if (!finished){
-            finished = true; // Stop timers
-            Debug.Log("Race Finished, " + ((playerOrNPC)?("Player"):("NPC")) + " wins!");
-            if (BoatUI) BoatUI.FinishButton(playerOrNPC);
-        }
+        if (finished) { Debug.LogError("Multiple FinishRace() call!"); return; } // Only finish once
+
+        for(int i = 0; i < checkpoints.Length; i++) {checkpoints[i].isNext = false; } // Disable all CPs (ex. in case player loses)
+        finished = true; // Stop timers
+        Debug.Log("Race Finished, " + ((playerOrNPC)?("Player"):("NPC")) + " wins!");
+        if (BoatUI) BoatUI.FinishButton(playerOrNPC);
     }
 }
