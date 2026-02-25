@@ -34,7 +34,7 @@ public class Checkpoint : MonoBehaviour{
     }
 
     // Signal Player/NPC collisions to CheckpointController
-    void OnTriggerEnter(Collider other){ if (isNext && (other.CompareTag("Player") || other.CompareTag("NPCRacer"))) CPC.OnCheckpoint(this, other.CompareTag("Player")); }
+    void OnTriggerEnter(Collider other){ if (isNext && other.CompareTag("Player")) CPC.OnCheckpoint(this); }
 
     public void SetGlowAlpha(float a){ glowfield.material.color = new Color( glowfield.material.color.r, glowfield.material.color.g, glowfield.material.color.b, a); }
 

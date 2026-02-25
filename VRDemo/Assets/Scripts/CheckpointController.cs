@@ -19,6 +19,8 @@ public class CheckpointController : MonoBehaviour{
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
+
+
     
 
     void Start(){
@@ -41,7 +43,9 @@ public class CheckpointController : MonoBehaviour{
         }
     }
 
-    public void OnCheckpoint(Checkpoint CP, bool playerOrNPC = true){ // Do stuff when a checkpoint is reached
+    public void OnCheckpoint(Checkpoint CP){ // Do stuff when a checkpoint is reached
+        if (finished) return; // Dont count CPs after finish (ex. NPC beats player)
+        
         float newTime = CP.GetTime();
         totalTime += newTime;
 
@@ -53,8 +57,7 @@ public class CheckpointController : MonoBehaviour{
         if (CP != checkpoints.Last()) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
         else { // Final CP (may also be first if only 1, thats fine)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
-            finished = true; // Stop timers
-            if (BoatUI) BoatUI.FinishButton(playerOrNPC);
+            FinishRace(true);
         }
     }
 
@@ -66,4 +69,12 @@ public class CheckpointController : MonoBehaviour{
     }
 
     public Checkpoint GetNextCP(Checkpoint CP){ return GetCP(checkpoints.IndexOf(CP) + 1); }
+
+    public void FinishRace(bool playerOrNPC){
+        if (!finished){
+            finished = true; // Stop timers
+            Debug.Log("Race Finished, " + ((playerOrNPC)?("Player"):("NPC")) + " wins!");
+            if (BoatUI) BoatUI.FinishButton(playerOrNPC);
+        }
+    }
 }
