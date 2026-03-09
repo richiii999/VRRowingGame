@@ -11,7 +11,8 @@ using static Tools;
 
 public class Checkpoint : MonoBehaviour{
     private CheckpointController CPC; // Ref to the CPC
-    public Renderer glowfield; // The CheckpointTrigger's Renderer (to access material color as INSTANCE not the base color)
+    public Renderer PostL; // The CheckpointTrigger's Renderer (to access material color as INSTANCE not the base color)
+    public Renderer PostR;
     public TMP_Text timerTxt; // TimerText obj
     public bool isNext = false; // Is this checkpoint the currently active one?
     private float startTime = 0.00f; // At what time did this CP become active?
@@ -21,8 +22,7 @@ public class Checkpoint : MonoBehaviour{
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
 
-        // Hide checkpoint glow on start
-        SetGlowAlpha(0f);
+        SetGlowAlpha(0f); // Hide checkpoint glow on start
     }
 
     void Update(){ 
@@ -38,7 +38,10 @@ public class Checkpoint : MonoBehaviour{
     // Signal Player/NPC collisions to CheckpointController
     void OnTriggerEnter(Collider other){ if (isNext && other.CompareTag("Player")) CPC.OnCheckpoint(this); }
 
-    public void SetGlowAlpha(float a){ glowfield.material.color = new Color( glowfield.material.color.r, glowfield.material.color.g, glowfield.material.color.b, a); }
+    public void SetGlowAlpha(float a){ 
+        PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); 
+        // PostR.material.color = PostL.material.color;
+    }
 
     public float GetTime(){ return float.Parse(timerTxt.text); }
 }
