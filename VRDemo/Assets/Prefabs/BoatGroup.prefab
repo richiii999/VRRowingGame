@@ -451,6 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 7032424186936350741}
+  addRotation: 0
 --- !u!1 &206434421647701227
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,6 +3280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 3847309398256271521}
+  addRotation: 0
 --- !u!1 &7824282511326166410
 GameObject:
   m_ObjectHideFlags: 0
