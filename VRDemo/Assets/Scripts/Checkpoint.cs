@@ -17,7 +17,7 @@ public class Checkpoint : MonoBehaviour{
     public bool isNext = false; // Is this checkpoint the currently active one?
     private float startTime = 0.00f; // At what time did this CP become active?
 
-    public float scoreTime = 10.0f; // How many seconds for full score?
+    public float scoreTime = 10.0f; // How many seconds for full score? (Reach slower than this = less score given)
     
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
@@ -36,7 +36,13 @@ public class Checkpoint : MonoBehaviour{
     }
 
     // Signal Player/NPC collisions to CheckpointController
-    void OnTriggerEnter(Collider other){ if (isNext && other.CompareTag("Player")) CPC.OnCheckpoint(this); }
+    void OnTriggerEnter(Collider other){ 
+        if (isNext && other.CompareTag("Player")) {
+            CPC.OnCheckpoint(this); 
+
+        }
+        
+    }
 
     public void SetGlowAlpha(float a){ 
         PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.Mathematics;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
 
@@ -14,6 +15,10 @@ public class BoatUI : MonoBehaviour{
     public GameObject nextButton = null;
     public GameObject retryButton = null;
     public GameObject angleNeedle = null;
+
+    private int scoreTime = 0; // How much extra time (above Scoretime per CP) the player accumulated
+    private int angleGrade = 0; // How many degrees above straightline (per CP) the player was.
+    // Total Score is just the sum of these two displayed at the end
 
     void Start(){
         timerText.text = "Pass the Checkpoint to start!";
@@ -46,4 +51,10 @@ public class BoatUI : MonoBehaviour{
             timerText.color = Color.red;
         }
     }
+
+    // ratio should usually be (checkpointTime / scoretime), and gets capped at 1 (so faster != more score)
+    public void ScoreByTimeRatio(float ratio = 1.0f){scoreTime += 100 * (int)( math.max(ratio, 1.0) ); }
+    
+    // maxAngle of the boat pointing away from the checkpoint (capped at 90 = perpendicular facing direction)
+    public void ScoreByAngleGrade(float maxAngle = 0.0f){angleGrade += 100 * (int)( (math.max(maxAngle, 90) - 90) / -90); }
 }

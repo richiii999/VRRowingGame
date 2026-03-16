@@ -18,12 +18,7 @@ public class CheckpointController : MonoBehaviour{
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
-
-    private float sumScoreTimeSurplus = 0.0f; // How much extra time (above Scoretime per CP) the player accumulated
-    private float sumAngleGradeSurplus = 0.0f; // How many degrees above straightline (per CP) the player was.
-    private int score = 0; 
     
-
     void Start(){
         soundController = RefToComp<SoundController>("SoundController");
         BoatUI = RefToComp<BoatUI>("BoatUI", false); // mustExist=false, ex. NPC testing scene with no player
