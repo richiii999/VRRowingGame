@@ -73,13 +73,13 @@ public class CheckpointController : MonoBehaviour{
 
     public Checkpoint GetNextCP(Checkpoint CP){ return GetCP(Array.IndexOf(checkpoints, CP) + 1); }
 
-    public void FinishRace(bool playerOrNPC){
+    public void FinishRace(bool isPlayer){
         if (finished) { Debug.LogError("Multiple FinishRace() call!"); return; } // Only finish once
 
         for(int i = 0; i < checkpoints.Length; i++) {checkpoints[i].isNext = false; } // Disable all CPs (ex. in case player loses)
         finished = true; // Stop timers
-        Debug.Log("Race Finished, " + ((playerOrNPC)?("Player"):("NPC")) + " wins!");
-        if (BoatUI) BoatUI.FinishButton(playerOrNPC);
+        Debug.Log("Race Finished, " + ((isPlayer)?("Player"):("NPC")) + " wins!");
+        if (BoatUI) BoatUI.FinishButton(isPlayer);
     }
 
     public void ResetMaxAngle() { Debug.Log($"maxAngle reset, was {maxAngle}"); maxAngle = 0.0f; }

@@ -50,8 +50,11 @@ public class NPCRacer : MonoBehaviour{
             currCP = CPC.GetNextCP(currCP); 
             if (currCP == null) {
                 Debug.Log("NPC Finished");
-                CPC.FinishRace(false); // NPC wins race
                 animSpan = 0f; // Stop rowing anim
+                
+                if (CPC.finished == false) { // only call end game if NPC wins
+                    CPC.FinishRace(isPlayer: false);
+                }
             }
         }
     }
