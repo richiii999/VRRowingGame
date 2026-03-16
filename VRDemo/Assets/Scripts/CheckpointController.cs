@@ -41,7 +41,7 @@ public class CheckpointController : MonoBehaviour{
             BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
 
             currAngle = XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject);
-            maxAngle = math.max(maxAngle, currAngle);
+            maxAngle = math.max(maxAngle, math.abs(currAngle));
             BoatUI.SetUIAngle(currAngle);
         }
     }
@@ -56,7 +56,10 @@ public class CheckpointController : MonoBehaviour{
         CP.SetGlowAlpha(0f); 
         soundController.PlayRandomSound("cheer", transform.position.x, transform.position.y, transform.position.z);
 
-        if (CP == checkpoints[0]) { totalTime -= newTime; startTime = Time.time; } // First CP: Dont count time
+        if (CP == checkpoints[0]) { // First CP: Dont count time or score
+            totalTime -= newTime; startTime = Time.time;
+            BoatUI.ResetScore();
+        } 
         if (CP != checkpoints[checkpoints.Length - 1]) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
         else { // Final CP (may also be first if only 1, thats fine)
             Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);

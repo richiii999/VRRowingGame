@@ -17,7 +17,7 @@ public class Checkpoint : MonoBehaviour{
     public bool isNext = false; // Is this checkpoint the currently active one?
     private float startTime = 0.00f; // At what time did this CP become active?
 
-    public float scoreTime = 10.0f; // How many seconds for full score? (Reach slower than this = less score given)
+    public float scoreTime = 6.0f; // How many seconds for full score? (Reach slower than this = less score given)
     
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
@@ -39,8 +39,10 @@ public class Checkpoint : MonoBehaviour{
     void OnTriggerEnter(Collider other){ 
         if (isNext && other.CompareTag("Player")) {
             CPC.OnCheckpoint(this); 
-            other.GetComponentInChildren<BoatUI>();
-
+            other.GetComponentInChildren<BoatUI>().ScoreByTimeRatio( scoreTime / (Time.time - startTime));
+            other.GetComponentInChildren<BoatUI>().ScoreByMaxAngle( CPC.maxAngle );
+            Debug.Log($"MaxAngle = {CPC.maxAngle}");
+            CPC.ResetMaxAngle();
         }
         
     }

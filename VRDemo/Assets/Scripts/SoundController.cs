@@ -46,7 +46,7 @@ public class SoundController : MonoBehaviour{
     // BUG (bad design): why cant I have a Vector3(0,0,0) as default param? So dumb to separate it to xyz
     public void PlayRandomSound(string category = "none", float x = 0f, float y = 0f, float z = 0f){ 
         currSound = null; // Reset currSound to prevent double play of sound effects
-        Debug.Log(category);
+        // Debug.Log(category);
         switch (category){
             case "splash": 
                 if (splashTimer == 0) {

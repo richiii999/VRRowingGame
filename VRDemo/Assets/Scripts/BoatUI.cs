@@ -17,7 +17,7 @@ public class BoatUI : MonoBehaviour{
     public GameObject angleNeedle = null;
 
     private int scoreTime = 0; // How much extra time (above Scoretime per CP) the player accumulated
-    private int angleGrade = 0; // How many degrees above straightline (per CP) the player was.
+    private int scoreAngle = 0; // How many degrees above straightline (per CP) the player was.
     // Total Score is just the sum of these two displayed at the end
 
     void Start(){
@@ -52,9 +52,20 @@ public class BoatUI : MonoBehaviour{
         }
     }
 
-    // ratio should usually be (checkpointTime / scoretime), and gets capped at 1 (so faster != more score)
-    public void ScoreByTimeRatio(float ratio = 1.0f){scoreTime += 100 * (int)( math.max(ratio, 1.0) ); }
+    public void ResetScore(){ scoreTime = 0; scoreAngle = 0;}
+
+    // ratio should usually be (scoretime / checkpointTime), and gets capped at 1
+    public void ScoreByTimeRatio(float ratio = 1.0f){
+        scoreTime += (int)(100 * math.min(ratio, 1.0) ); 
+        Debug.Log($"Scored time = {scoreTime}, ratio = {ratio}");
+        
+    }
     
     // maxAngle of the boat pointing away from the checkpoint (capped at 90 = perpendicular facing direction)
-    public void ScoreByAngleGrade(float maxAngle = 0.0f){angleGrade += 100 * (int)( (math.max(maxAngle, 90) - 90) / -90); }
+    public void ScoreByMaxAngle(float maxAngle = 0.0f){
+        maxAngle = math.max(maxAngle, 90f);
+        scoreAngle += 100 * (int)( (math.min(maxAngle, 90) - 90) / -90); 
+        Debug.Log($"Scored ang = {scoreAngle}, maxAng = {maxAngle}");
+    
+    }
 }
