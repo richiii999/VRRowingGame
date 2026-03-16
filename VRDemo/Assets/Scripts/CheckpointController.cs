@@ -2,6 +2,7 @@ using UnityEngine;
 
 using static Tools;
 using System;
+using Unity.Mathematics;
 
 // CheckpointController.cs: Controls the checkpoints and their timers.
 // When trigger a CP, next one's timer starts, when trigger the last one, print the cumulative time.
@@ -18,6 +19,9 @@ public class CheckpointController : MonoBehaviour{
     public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
+
+    private float currAngle = 0.0f; // Current vvv
+    public float maxAngle = 0.0f; // Maximum angle of the player facing away from each checkpoint (resets per CP). For scoring
     
     void Start(){
         soundController = RefToComp<SoundController>("SoundController");
@@ -35,7 +39,10 @@ public class CheckpointController : MonoBehaviour{
     void Update(){ 
         if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
             BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
-            BoatUI.SetUIAngle(XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject));
+
+            currAngle = XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject);
+            maxAngle = math.max(maxAngle, currAngle);
+            BoatUI.SetUIAngle(currAngle);
         }
     }
 
@@ -74,4 +81,6 @@ public class CheckpointController : MonoBehaviour{
         Debug.Log("Race Finished, " + ((playerOrNPC)?("Player"):("NPC")) + " wins!");
         if (BoatUI) BoatUI.FinishButton(playerOrNPC);
     }
+
+    public void ResetMaxAngle() { Debug.Log($"maxAngle reset, was {maxAngle}"); maxAngle = 0.0f; }
 }

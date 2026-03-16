@@ -39,6 +39,7 @@ public class Checkpoint : MonoBehaviour{
     void OnTriggerEnter(Collider other){ 
         if (isNext && other.CompareTag("Player")) {
             CPC.OnCheckpoint(this); 
+            other.GetComponentInChildren<BoatUI>();
 
         }
         
