@@ -10,16 +10,19 @@ using static Tools;
 // Note: The Checkpoint prefab object has a kinematic rigidbody, it cannot sense the child trigger without it.
 
 public class Checkpoint : MonoBehaviour{
-    private CheckpointController CPC; // Ref to the CPC
+    CheckpointController CPC; // Ref to the CPC
+    
     public Renderer PostL; // The CheckpointTrigger's Renderer (to access material color as INSTANCE not the base color)
     public Renderer PostR;
     public TMP_Text timerTxt; // TimerText obj
+
     public bool isNext = false; // Is this checkpoint the currently active one?
     private float startTime = 0.00f; // At what time did this CP become active?
 
     public float scoreTime = 6.0f; // How many seconds for full score? (Reach slower than this = less score given)
     
     void Start(){ 
+        // set ref
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
 
         SetGlowAlpha(0f); // Hide checkpoint glow on start
@@ -40,10 +43,8 @@ public class Checkpoint : MonoBehaviour{
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
         CPC.OnCheckpoint(this); 
-        other.GetComponentInChildren<BoatUI>().Score( (scoreTime / (Time.time - startTime)), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
+        other.GetComponentInChildren<BoatUI>().Score( scoreTime / (Time.time - startTime), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
     }
 
     public void SetGlowAlpha(float a){ if (PostL) PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); }
-
-    public float GetTime(){ return float.Parse(timerTxt.text); }
 }

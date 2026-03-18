@@ -13,18 +13,17 @@ public class CheckpointController : MonoBehaviour{
     public Checkpoint[] checkpoints;
     private int currCPidx = 0; // index instead of reference, to make getting the next one easier.
     
-    private BoatUI BoatUI = null;
-    public SoundController soundController = null; // To play cheers
+    BoatUI BoatUI = null;
+    SoundController soundController = null; // To play cheers
 
-    public float totalTime = 0.00f; // Total time spent on all checkpoints (except 1st)
-    public float startTime = 0.00f; // At what time did the 1st CP get crossed?
+    float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
 
     private float currAngle = 0.0f; // Angle of the player facing away from each checkpoint (resets per CP). For scoring
     public float maxAngle   = 0.0f; // Max value of ^, reset when player reaches CP
     
     void Start(){
-        soundController = RefToComp<SoundController>("SoundController");
+        soundController = RefToComp<SoundController>("SoundController", mustExist: false);
         BoatUI = RefToComp<BoatUI>("BoatUI", mustExist: false); // mustExist: false, ex. NPC testing scene with no player
 
         // Init checkpoints[] (children of the this gameObj)
@@ -38,7 +37,7 @@ public class CheckpointController : MonoBehaviour{
 
     void Update(){ 
         if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
-            BoatUI.SetTimerText( (startTime != 0.00f) ? Time.time - startTime : 0f ); 
+            BoatUI.SetTimerText( (startTime == 0.00f) ? 0f : Time.time - startTime); 
 
             currAngle = XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject);
             maxAngle = math.max(maxAngle, math.abs(currAngle));
@@ -48,23 +47,22 @@ public class CheckpointController : MonoBehaviour{
 
     public void OnCheckpoint(Checkpoint CP){ // Do stuff when a checkpoint is reached
         if (finished) return; // Dont count CPs after finish (ex. NPC beats player)
-        
-        float newTime = CP.GetTime();
-        totalTime += newTime;
 
         CP.isNext = false; // Current checkpoint becomes past
         CP.SetGlowAlpha(0f); 
-        soundController.PlayRandomSound("cheer", transform.position.x, transform.position.y, transform.position.z);
+        if (soundController) soundController.PlayRandomSound("cheer", transform.position.x, transform.position.y, transform.position.z);
 
-        if (CP == checkpoints[0]) { // First CP: Dont count time or score
-            totalTime -= newTime; startTime = Time.time;
+        // First CP: Dont count time or score
+        if (CP == checkpoints[0]) { 
+            startTime = Time.time;
             BoatUI.ResetScore();
         } 
-        if (CP != checkpoints[checkpoints.Length - 1]) checkpoints[currCPidx += 1].isNext = true; // Middle CP: Activate next
-        else { // Final CP (may also be first if only 1, thats fine)
-            Debug.Log("Final Checkpoint passed," + " Time = " + newTime + " totalTime = " + totalTime);
-            FinishRace(true);
-        }
+
+        // Middle CP: Activate next CP
+        if (CP != checkpoints[checkpoints.Length - 1]) checkpoints[currCPidx += 1].isNext = true; 
+        
+        // Final CP (may also be first if only 1, thats fine), finish the race
+        else FinishRace(true); 
     }
 
     public Checkpoint GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
@@ -81,7 +79,7 @@ public class CheckpointController : MonoBehaviour{
 
         for(int i = 0; i < checkpoints.Length; i++) {checkpoints[i].isNext = false; } // Disable all CPs (ex. in case player loses)
         finished = true; // Stop timers
-        Debug.Log("Race Finished, " + ((isPlayer)?("Player"):("NPC")) + " wins!");
+        Debug.Log($"Race Finished, {(isPlayer ? "Player" : "NPC")} wins!");
         if (BoatUI) BoatUI.Finish(isPlayer);
     }
 

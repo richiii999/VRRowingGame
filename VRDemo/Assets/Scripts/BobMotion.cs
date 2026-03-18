@@ -10,13 +10,13 @@ public class BobMotion : MonoBehaviour{
 
     void Start() { 
         originalY = transform.position.y; 
-        bobRand = UnityEngine.Random.Range(0.00f, bobRand); // Randomly set the bobOffset
-    
+        bobRand = UnityEngine.Random.Range(0.00f, bobRand); // Randomly set the bobOffset (otherwise all bobbers in sync with eachother)
     }
+
     void Update(){ 
         transform.position = new Vector3(
             transform.position.x,
             originalY + ((float)Math.Sin(Time.time + bobRand) * bobStrength),
             transform.position.z); 
-        }
+    }
 }
