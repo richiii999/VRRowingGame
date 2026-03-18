@@ -40,8 +40,7 @@ public class Checkpoint : MonoBehaviour{
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
         CPC.OnCheckpoint(this); 
-        other.GetComponentInChildren<BoatUI>().Score( (scoreTime / (Time.time - startTime)), CPC.maxAngle);
-        CPC.ResetMaxAngle();
+        other.GetComponentInChildren<BoatUI>().Score( (scoreTime / (Time.time - startTime)), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
     }
 
     public void SetGlowAlpha(float a){ if (PostL) PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); }

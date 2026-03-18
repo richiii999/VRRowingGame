@@ -85,5 +85,5 @@ public class CheckpointController : MonoBehaviour{
         if (BoatUI) BoatUI.FinishButton(isPlayer);
     }
 
-    public void ResetMaxAngle() { Debug.Log($"maxAngle reset, was {maxAngle}"); maxAngle = 0.0f; }
+    public float ResetMaxAngle() { float a = maxAngle; maxAngle = 0.0f; return a; } // Resets maxAngle, returning the value it was before resetting.
 }
