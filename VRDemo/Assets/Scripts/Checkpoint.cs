@@ -35,22 +35,16 @@ public class Checkpoint : MonoBehaviour{
 
     }
 
-    // Signal Player/NPC collisions to CheckpointController
+    // Signal Player collisions to CheckpointController
     void OnTriggerEnter(Collider other){ 
-        if (isNext && other.CompareTag("Player")) {
-            CPC.OnCheckpoint(this); 
-            other.GetComponentInChildren<BoatUI>().ScoreByTimeRatio( scoreTime / (Time.time - startTime));
-            other.GetComponentInChildren<BoatUI>().ScoreByMaxAngle( CPC.maxAngle );
-            Debug.Log($"MaxAngle = {CPC.maxAngle}");
-            CPC.ResetMaxAngle();
-        }
+        if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
+        CPC.OnCheckpoint(this); 
+        other.GetComponentInChildren<BoatUI>().Score( (scoreTime / (Time.time - startTime)), CPC.maxAngle);
+        CPC.ResetMaxAngle();
     }
 
-    public void SetGlowAlpha(float a){ 
-        PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); 
-        // PostR.material.color = PostL.material.color;
-    }
+    public void SetGlowAlpha(float a){ if (PostL) PostL.material.color = new Color( PostL.material.color.r, PostL.material.color.g, PostL.material.color.b, a); }
 
     public float GetTime(){ return float.Parse(timerTxt.text); }
 }

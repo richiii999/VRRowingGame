@@ -54,18 +54,14 @@ public class BoatUI : MonoBehaviour{
 
     public void ResetScore(){ scoreTime = 0; scoreAngle = 0;}
 
-    // ratio should usually be (scoretime / checkpointTime), and gets capped at 1
-    public void ScoreByTimeRatio(float ratio = 1.0f){
-        scoreTime += (int)(100 * math.min(ratio, 1.0) ); 
-        Debug.Log($"Scored time = {scoreTime}, ratio = {ratio}");
-        
-    }
-    
+    // timeRatio should usually be (scoretime / checkpointTime), and gets capped at 1
     // maxAngle of the boat pointing away from the checkpoint (capped at 90 = perpendicular facing direction)
-    public void ScoreByMaxAngle(float maxAngle = 0.0f){
+    public void Score(float timeRatio = 1.0f, float maxAngle = 0.0f){
+        scoreTime += (int)(100 * math.min(timeRatio, 1.0) ); 
+        Debug.Log($"Scored time = {scoreTime}, timeRatio = {timeRatio}");
+        
         maxAngle = math.max(maxAngle, 90f);
         scoreAngle += 100 * (int)( (math.min(maxAngle, 90) - 90) / -90); 
         Debug.Log($"Scored ang = {scoreAngle}, maxAng = {maxAngle}");
-    
     }
 }
