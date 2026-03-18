@@ -1,26 +1,27 @@
 using TMPro;
 using UnityEngine;
-
+using Unity.Mathematics;
 using static Tools;
 
-// ScoreUI: Attached to BoatUI, updates score each checkpoint, and displays a combined score at the end.
-
+// ScoreUI: Attached to BoatUI, updates scores each checkpoint, and displays a combined score at the end.
+// Note: The public CheckpointScore() should be called by CheckpointController, while the private UpdateScoreUI() is what actually sets the values
 
 public class ScoreUI : MonoBehaviour{
-    public BoatUI boatUI = null;
-
     // Refs to child text boxes
-    private TextMeshProUGUI totalVal = null;
-    private TextMeshProUGUI timeVal  = null;
-    private TextMeshProUGUI timeInc  = null;
-    private TextMeshProUGUI angleVal = null;
-    private TextMeshProUGUI angleInc = null;
+    TextMeshProUGUI totalVal = null;
+    TextMeshProUGUI timeVal  = null;
+    TextMeshProUGUI timeInc  = null;
+    TextMeshProUGUI angleVal = null;
+    TextMeshProUGUI angleInc = null;
 
-    private Color incColor = default; // ref to color (idk how to set colors properly, this a dumb way bruh)
-    private int R = 127; // Correct color values (light-green: #7FFF7F)
-    private int G = 255;
-    private int B = 127;
-    private int A = 255;
+    // Correct color values (light-green: #7FFF7F), idk how to set colors properly, this a dumb way bruh
+    readonly byte R = 127; 
+    readonly byte G = 255;
+    readonly byte B = 127;
+
+    int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
+    int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
+    // Total Score is just the sum of these two displayed at the end
 
     void Start(){
         // set refs
@@ -30,23 +31,58 @@ public class ScoreUI : MonoBehaviour{
         angleVal = RefToComp<TextMeshProUGUI>("AngleValue");
         angleInc = RefToComp<TextMeshProUGUI>("AngleInc");
 
-        totalVal.transform.parent.gameObject.SetActive(false); // Hide totalScore on start, it shows up when the race is finished
-
-        // timeInc.faceColor = new Color(255, 128, 0, 0); // Hide incs on start
-        // angleInc.faceColor = new Color(255, 128, 0, 0);
+        // Hide stuff on start
+        totalVal.transform.parent.gameObject.SetActive(false); 
+        IncrementScore();
+        timeInc.faceColor  = new Color32(R, G, B, 0);
+        angleInc.faceColor = new Color32(R, G, B, 0);
     }
 
-    void Update(){
-        A = timeInc.faceColor.a; // Decrement alpha each frame to fade out the score increments
-        if (A > 0) timeInc.faceColor = new Color(R,G,B, A-2); 
-        Debug.Log($"{timeInc.faceColor.a}");
+    void Update(){ 
+        if (timeInc.faceColor.a > 0) { // Fade out the score increments
+            timeInc.faceColor = new Color32(R, G, B, (byte)(timeInc.faceColor.a - 1)); 
+            angleInc.faceColor = timeInc.faceColor;
+        } 
     }
 
-    void Score(int time = 0, int angle = 0){
-        timeInc.text = $"(+{time})";
-        angleInc.text = $"(+{angle})";
+    // Updates score by player performance each CP
+    public void CheckpointScore(float timeRatio = 1.0f, float maxAngle = 0.0f){
+        // timeRatio is just (scoretime / checkpointTime)
+        // maxAngle of the boat pointing away from the checkpoint's fwd in XZ-plane
+        
+        int scoreTimeInc = (int)(100 * timeRatio);
+        
+        maxAngle = math.abs(maxAngle); // direction doesnt matter
+        int scoreAngleInc = (int)(100 * (1.0f - (maxAngle / 180f)));
+        
+        IncrementScore(scoreTimeInc, scoreAngleInc);
+    }
 
-        timeVal.text = $"{boatUI.scoreTime}";
-        angleVal.text = $"{boatUI.scoreAngle}";
+    // Sets all score to 0
+    public void ResetScore(){
+        scoreTime  = 0;
+        scoreAngle = 0;
+
+        IncrementScore();
+        totalVal.text = $"{scoreTime + scoreAngle}"; // In case totalScore is visible (shouldnt happen I dont think)
+    }
+
+    // Updates the score values and UI
+    private void IncrementScore(int timeIncAmt = 0, int angleIncAmt = 0){
+        scoreTime  += timeIncAmt;
+        scoreAngle += angleIncAmt;
+        
+        timeInc.text  = $"(+{timeIncAmt})";
+        angleInc.text = $"(+{angleIncAmt})";
+        timeInc.faceColor  = new Color32(R, G, B, 255);
+        angleInc.faceColor = new Color32(R, G, B, 255);
+        
+        timeVal.text  = $"{scoreTime}";
+        angleVal.text = $"{scoreAngle}";
+    }
+
+    public void ShowTotalScore(bool state){
+        totalVal.transform.parent.gameObject.SetActive(true); 
+        totalVal.text = $"{scoreTime + scoreAngle}";
     }
 }

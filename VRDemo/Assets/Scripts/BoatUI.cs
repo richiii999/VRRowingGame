@@ -2,7 +2,11 @@ using UnityEngine;
 using TMPro;
 using Unity.Mathematics;
 
+using static Tools;
+
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
+    // Idea: Devscore perhaps grabbed from level idk or boatUI has an array that is compared against.
+    // (get mav to set devscore lmao)
 
 public class BoatUI : MonoBehaviour{
     public GameObject rayToEnableOnFinish = null; // On parent boatObject
@@ -12,13 +16,14 @@ public class BoatUI : MonoBehaviour{
     public GameObject nextButton = null;
     public GameObject retryButton = null;
     public GameObject angleNeedle = null;
-    public GameObject scoreUI = null;
+    private ScoreUI scoreUI = null;
 
-    public int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
-    public int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
-    // Total Score is just the sum of these two displayed at the end
+    
 
     void Start(){
+        // set refs
+        scoreUI = RefToComp<ScoreUI>("ScoreUI");
+
         timerText.text = "Pass the Checkpoint to start!";
         menuButton.SetActive(false);
         nextButton.SetActive(false);
@@ -46,24 +51,7 @@ public class BoatUI : MonoBehaviour{
         }
     }
 
-    // score text with the (+- asdfasdf) that fades out when set. Score reset also in red.
-    // Angle score and time score are separate.
-    // total score displayed at end on top perhaps.
-    // Devscore perhaps grabbed from level idk or boatUI has an array that is compared against.
-    // (get mav to set devscore lmao)
+    public void ResetScore(){ scoreUI.ResetScore(); } // Exposes ResetScore to stuff that references BoatUI
 
-    public void ResetScore(){ scoreTime = 0; scoreAngle = 0; }
-
-    // timeRatio is just (scoretime / checkpointTime)
-    // maxAngle of the boat pointing away from the checkpoint's fwd in XZ-plane
-    public void Score(float timeRatio = 1.0f, float maxAngle = 0.0f){
-        int scoreTimeInc = (int)(100 * timeRatio);
-        scoreTime += scoreTimeInc;
-        // Debug.Log($"Scored time = {scoreTime} (+{scoreTimeInc}), timeRatio = {timeRatio}");
-        
-        maxAngle = math.abs(maxAngle); // direction doesnt matter
-        int scoreAngleInc = (int)(100 * (1.0f - (maxAngle / 180f)));
-        scoreAngle += scoreAngleInc; 
-        // Debug.Log($"Scored ang = {scoreAngle} (+{scoreAngleInc}), maxAng = {maxAngle}");
-    }
+    
 }
