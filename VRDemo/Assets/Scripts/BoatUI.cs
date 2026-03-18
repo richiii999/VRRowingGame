@@ -45,6 +45,12 @@ public class BoatUI : MonoBehaviour{
         }
     }
 
+    // score text with the (+- asdfasdf) that fades out when set. Score reset also in red.
+    // Angle score and time score are separate.
+    // total score displayed at end on top perhaps.
+    // Devscore perhaps grabbed from level idk or boatUI has an array that is compared against.
+    // (get mav to set devscore lmao)
+
     public void ResetScore(){ scoreTime = 0; scoreAngle = 0; }
 
     // timeRatio is just (scoretime / checkpointTime)
