@@ -82,7 +82,7 @@ public class CheckpointController : MonoBehaviour{
         for(int i = 0; i < checkpoints.Length; i++) {checkpoints[i].isNext = false; } // Disable all CPs (ex. in case player loses)
         finished = true; // Stop timers
         Debug.Log("Race Finished, " + ((isPlayer)?("Player"):("NPC")) + " wins!");
-        if (BoatUI) BoatUI.FinishButton(isPlayer);
+        if (BoatUI) BoatUI.Finish(isPlayer);
     }
 
     public float ResetMaxAngle() { float a = maxAngle; maxAngle = 0.0f; return a; } // Resets maxAngle, returning the value it was before resetting.

@@ -3,11 +3,15 @@ using UnityEngine;
 using Unity.Mathematics;
 using static Tools;
 
-// ScoreUI: Attached to BoatUI, updates scores each checkpoint, and displays a combined score at the end.
+// ScoreUI: Stores scores, updates them with each checkpoint, and displays a combined score at the end.
 // Note: The public CheckpointScore() should be called by CheckpointController, while the private UpdateScoreUI() is what actually sets the values
+
+// Idea: Devscore perhaps grabbed from level idk or boatUI has an array that is compared against.
+// (get mav to set devscore lmao)
 
 public class ScoreUI : MonoBehaviour{
     // Refs to child text boxes
+    GameObject totalLabel = null;
     TextMeshProUGUI totalVal = null;
     TextMeshProUGUI timeVal  = null;
     TextMeshProUGUI timeInc  = null;
@@ -25,6 +29,7 @@ public class ScoreUI : MonoBehaviour{
 
     void Start(){
         // set refs
+        totalLabel = RefToObj("TotalLabel");
         totalVal = RefToComp<TextMeshProUGUI>("TotalValue");
         timeVal  = RefToComp<TextMeshProUGUI>("TimeValue");
         timeInc  = RefToComp<TextMeshProUGUI>("TimeInc");
@@ -32,7 +37,7 @@ public class ScoreUI : MonoBehaviour{
         angleInc = RefToComp<TextMeshProUGUI>("AngleInc");
 
         // Hide stuff on start
-        totalVal.transform.parent.gameObject.SetActive(false); 
+        totalLabel.SetActive(false); 
         IncrementScore();
         timeInc.faceColor  = new Color32(R, G, B, 0);
         angleInc.faceColor = new Color32(R, G, B, 0);
@@ -81,8 +86,8 @@ public class ScoreUI : MonoBehaviour{
         angleVal.text = $"{scoreAngle}";
     }
 
-    public void ShowTotalScore(bool state){
-        totalVal.transform.parent.gameObject.SetActive(true); 
+    public void ShowTotalScore(bool state = true){
+        totalLabel.SetActive(state); 
         totalVal.text = $"{scoreTime + scoreAngle}";
     }
 }

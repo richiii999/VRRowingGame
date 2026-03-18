@@ -1,12 +1,9 @@
 using UnityEngine;
 using TMPro;
-using Unity.Mathematics;
 
 using static Tools;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
-    // Idea: Devscore perhaps grabbed from level idk or boatUI has an array that is compared against.
-    // (get mav to set devscore lmao)
 
 public class BoatUI : MonoBehaviour{
     public GameObject rayToEnableOnFinish = null; // On parent boatObject
@@ -17,8 +14,6 @@ public class BoatUI : MonoBehaviour{
     public GameObject retryButton = null;
     public GameObject angleNeedle = null;
     private ScoreUI scoreUI = null;
-
-    
 
     void Start(){
         // set refs
@@ -35,7 +30,9 @@ public class BoatUI : MonoBehaviour{
 
     public void SetUIAngle(float a = 0.0f){ angleNeedle.transform.localEulerAngles = new Vector3(0f, 90f, a); } // Rotates the AngleNeedle
 
-    public void FinishButton(bool win = true){ // Activate level / menu button & VR hand ray. Called from outside on level finish
+    public void Finish(bool win = true){ // Activate level / menu button & VR hand ray. Called from outside on level finish
+        scoreUI.ShowTotalScore();
+        
         menuButton.SetActive(true); 
         rayToEnableOnFinish.SetActive(true);
 
@@ -51,7 +48,7 @@ public class BoatUI : MonoBehaviour{
         }
     }
 
-    public void ResetScore(){ scoreUI.ResetScore(); } // Exposes ResetScore to stuff that references BoatUI
-
-    
+    // Old Interfaces (dont remove since other stuff depends on it)
+    public void ResetScore(){ scoreUI.ResetScore();  scoreUI.ShowTotalScore(false); }
+    public void Score(float timeRatio = 0f, float maxAngle = 0f){ scoreUI.CheckpointScore(timeRatio, maxAngle); }
 }
