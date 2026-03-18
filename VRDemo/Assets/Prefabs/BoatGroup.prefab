@@ -214,7 +214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2420217584895715035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: orient, Assembly-CSharp
         m_MethodName: set_enabled
         m_Mode: 6
@@ -253,7 +253,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2420217584895715035}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: orient, Assembly-CSharp
         m_MethodName: set_enabled
         m_Mode: 6
@@ -963,8 +963,8 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
-  leftFlapper: {fileID: 3573951574267041401}
-  rightFlapper: {fileID: 1378962303487593168}
+  leftHand: {fileID: 4519042813569102091}
+  rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
   featheringCoefficientWhenOnlyOne: 1
   featheringCoefficientWhenBoth: 1
@@ -1041,8 +1041,8 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
-  leftFlapper: {fileID: 3573951574267041401}
-  rightFlapper: {fileID: 1378962303487593168}
+  leftHand: {fileID: 4519042813569102091}
+  rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
   featheringCoefficientWhenOnlyOne: 1
   featheringCoefficientWhenBoth: 1
@@ -1492,8 +1492,8 @@ MonoBehaviour:
   isConcave: 0
   voxelsLimit: 16
   waterYLevel: -0.75
-  leftFlapper: {fileID: 3573951574267041401}
-  rightFlapper: {fileID: 1378962303487593168}
+  leftHand: {fileID: 4519042813569102091}
+  rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
   featheringCoefficientWhenOnlyOne: 1
   featheringCoefficientWhenBoth: 1
@@ -3043,7 +3043,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2396853422085264726}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: orient, Assembly-CSharp
         m_MethodName: set_enabled
         m_Mode: 6
@@ -3082,7 +3082,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2396853422085264726}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: orient, Assembly-CSharp
         m_MethodName: set_enabled
         m_Mode: 6
@@ -3831,6 +3831,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a52787f7b8626004e828e7be6d738e7f, type: 3}
   m_PrefabInstance: {fileID: 2647023276893347195}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2917616178247901226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a52787f7b8626004e828e7be6d738e7f, type: 3}
+  m_PrefabInstance: {fileID: 2647023276893347195}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3636573888367578202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3903,6 +3908,11 @@ PrefabInstance:
 --- !u!4 &3890280850341833649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 735bf3271691dd44892a0c49ea1ce35a, type: 3}
+  m_PrefabInstance: {fileID: 3636573888367578202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4519042813569102091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 735bf3271691dd44892a0c49ea1ce35a, type: 3}
   m_PrefabInstance: {fileID: 3636573888367578202}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4806992193864143945
