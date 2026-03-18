@@ -342,6 +342,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1784,7 +1788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5713,6 +5717,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f5ce47825431624eab71236b6320920, type: 3}
   m_PrefabInstance: {fileID: 527637821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1383756358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7824282511326166410, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 99480707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1395918516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7501,6 +7510,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: boat
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: offset.x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: xrOrigin
+      value: 
+      objectReference: {fileID: 291076628}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Speed_Coffecient
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: debugBoatVelocity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.7671723
+      objectReference: {fileID: 0}
     - target: {fileID: 897484507526882494, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: m_Name
       value: _MainMenuManager
@@ -7508,7 +7561,7 @@ PrefabInstance:
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: gameCamera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1383756358}
     - target: {fileID: 1483339892435180669, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: menuCanvas
       value: 
@@ -7556,50 +7609,6 @@ PrefabInstance:
     - target: {fileID: 2285747167492710531, guid: 4aa53279d673b0941858d5f4911c3e19, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: boat
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: offset.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: offset.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: xrOrigin
-      value: 
-      objectReference: {fileID: 291076628}
-    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: Speed_Coffecient
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: debugBoatVelocity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterYLevel
-      value: -0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.7671723
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
