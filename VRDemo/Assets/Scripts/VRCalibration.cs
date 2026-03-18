@@ -2,6 +2,9 @@ using Unity.XR.CoreUtils;
 using UnityEngine;
 using System.Collections;
 
+// VRCalibration: Resets the position (but not direction) of the XROrigin according to the set values.
+// Note: Values should be recalibrated anytime XROrigin (or any parent of it) are changed
+
 public class VRCalibration : MonoBehaviour{
     public Transform boatTF;
     public XROrigin xrOrigin;

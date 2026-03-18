@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// MoveBoat: Controls the forces applied to BoatMotor from the Oars' Flappers
+
 public class MoveBoat : MonoBehaviour{
     public Rigidbody boat;
     public Rigidbody boatMotor;

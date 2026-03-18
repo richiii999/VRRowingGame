@@ -2,20 +2,15 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.XR;
-using System;
 
-public class HandPresence : MonoBehaviour
-{
+// HandPresence: Detects VR Hand-Controller inputs
+
+public class HandPresence : MonoBehaviour{
     private InputDevice targetDevice;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // Debug.Log("START!");
-        StartCoroutine(GetDevices(1.0f));
-    }
+
+    void Start(){ StartCoroutine(GetDevices(1.0f)); }
     
-    IEnumerator GetDevices(float delayTime)
-    {
+    IEnumerator GetDevices(float delayTime){
         yield return new WaitForSeconds(delayTime);
         List<InputDevice> devices = new List<InputDevice>();
         InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;

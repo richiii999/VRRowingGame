@@ -1,17 +1,17 @@
 using UnityEngine;
-
-using static Tools;
 using System;
 using Unity.Mathematics;
 
-// CheckpointController.cs: Controls the checkpoints and their timers.
+using static Tools;
+
+// CheckpointController: Controls the checkpoints and their timers.
 // When trigger a CP, next one's timer starts, when trigger the last one, print the cumulative time.
 
 // Note: The checkpoints must be child objects of this, in order, in the SceneTree
 
 public class CheckpointController : MonoBehaviour{
     public Checkpoint[] checkpoints;
-    private int currCPidx = 0;
+    private int currCPidx = 0; // index instead of reference, to make getting the next one easier.
     
     private BoatUI BoatUI = null;
     public SoundController soundController = null; // To play cheers
@@ -20,20 +20,20 @@ public class CheckpointController : MonoBehaviour{
     public float startTime = 0.00f; // At what time did the 1st CP get crossed?
     public bool finished = false; // Set to true when finished (read from outside to do stuff when level is done)
 
-    private float currAngle = 0.0f; // Current vvv
-    public float maxAngle = 0.0f; // Maximum angle of the player facing away from each checkpoint (resets per CP). For scoring
+    private float currAngle = 0.0f; // Angle of the player facing away from each checkpoint (resets per CP). For scoring
+    public float maxAngle   = 0.0f; // Max value of ^, reset when player reaches CP
     
     void Start(){
         soundController = RefToComp<SoundController>("SoundController");
-        BoatUI = RefToComp<BoatUI>("BoatUI", false); // mustExist=false, ex. NPC testing scene with no player
+        BoatUI = RefToComp<BoatUI>("BoatUI", mustExist: false); // mustExist: false, ex. NPC testing scene with no player
 
         // Init checkpoints[] (children of the this gameObj)
         checkpoints = GetComponentsInChildren<Checkpoint>(gameObject);
         if (checkpoints.Length == 0) QuitGame("No checkpoints detected!");
     
-        // First Checkpoint is active from start (but ignored timer)
+        // First Checkpoint is active from start 
         checkpoints[0].isNext = true;
-        checkpoints[0].timerTxt.color = new Color(0f,0f,0f,0f);
+        checkpoints[0].timerTxt.color = new Color(0f,0f,0f,0f); // Hide 1st CP timer
     }
 
     void Update(){ 

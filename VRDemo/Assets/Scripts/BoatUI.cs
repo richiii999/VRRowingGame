@@ -4,9 +4,6 @@ using Unity.Mathematics;
 
 // BoatUI: Contains funcs for activating the boatUI buttons and win/lose text.
 
-// TODO: Test if the menu buttons work with raycast hand on finish level.
-// TODO add level select orbs to MM prefab, also redo MM prefab platform as one prefab instead of 2
-
 public class BoatUI : MonoBehaviour{
     public GameObject rayToEnableOnFinish = null; // On parent boatObject
 
@@ -16,8 +13,8 @@ public class BoatUI : MonoBehaviour{
     public GameObject retryButton = null;
     public GameObject angleNeedle = null;
 
-    private int scoreTime = 0; // How much extra time (above Scoretime per CP) the player accumulated
-    private int scoreAngle = 0; // How many degrees above straightline (per CP) the player was.
+    private int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
+    private int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
     // Total Score is just the sum of these two displayed at the end
 
     void Start(){
@@ -28,11 +25,7 @@ public class BoatUI : MonoBehaviour{
         rayToEnableOnFinish.SetActive(false);
     }
 
-    public void SetTimerText(float t = 0.0f){
-        if (t != 0.0f) { 
-            timerText.text = "Time: " + t.ToString("F1"); 
-        }
-    }
+    public void SetTimerText(float t = 0.0f){ if (t != 0.0f) timerText.text = "Time: " + t.ToString("F1"); }
 
     public void SetUIAngle(float a = 0.0f){ angleNeedle.transform.localEulerAngles = new Vector3(0f, 90f, a); } // Rotates the AngleNeedle
 

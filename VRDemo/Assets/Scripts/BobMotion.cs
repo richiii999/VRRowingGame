@@ -1,12 +1,12 @@
 using UnityEngine;
 using System;
 
-// BobMotion.cs: Makes the gameObject bob up and down gently over time
+// BobMotion: Makes the gameObject bob up and down gently over time
 
 public class BobMotion : MonoBehaviour{
     public float bobStrength = 0.50f; // How strong the effect is
     public float bobRand = 30.0f; // Range of random starting position
-    float originalY = 0.00f;
+    float originalY = 0.00f; // Centerpoint of sin motion
 
     void Start() { 
         originalY = transform.position.y; 

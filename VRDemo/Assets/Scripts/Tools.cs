@@ -7,8 +7,6 @@ using UnityEngine;
 
 // Issues:
 // cheer sound spam
-// UI too high
-// speed needs to be faster
 // boat needs to be larger prob, or CP smaller
 // NPC still too large
 // 

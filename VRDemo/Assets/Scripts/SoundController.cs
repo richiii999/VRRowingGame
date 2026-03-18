@@ -2,7 +2,7 @@ using UnityEngine;
 
 using static Tools;
 
-// SoundController.cs: Controls level bkg sounds and refs to sound effects that are called by other objects
+// SoundController: Controls level bkg sounds and refs to sound effects that are called by other objects
 // Note: 3D Sound requires 'spatial blend' of an AudioSource to be set to 1 (default 0)
 // Make sure splashes are 3D, other sounds can be 2D
 
@@ -46,7 +46,6 @@ public class SoundController : MonoBehaviour{
     // BUG (bad design): why cant I have a Vector3(0,0,0) as default param? So dumb to separate it to xyz
     public void PlayRandomSound(string category = "none", float x = 0f, float y = 0f, float z = 0f){ 
         currSound = null; // Reset currSound to prevent double play of sound effects
-        // Debug.Log(category);
         switch (category){
             case "splash": 
                 if (splashTimer == 0) {
