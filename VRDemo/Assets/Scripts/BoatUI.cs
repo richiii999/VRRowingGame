@@ -14,8 +14,8 @@ public class BoatUI : MonoBehaviour{
     public GameObject angleNeedle = null;
     public GameObject scoreUI = null;
 
-    private int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
-    private int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
+    public int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
+    public int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
     // Total Score is just the sum of these two displayed at the end
 
     void Start(){

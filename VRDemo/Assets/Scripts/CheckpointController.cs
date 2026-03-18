@@ -68,7 +68,7 @@ public class CheckpointController : MonoBehaviour{
     }
 
     public Checkpoint GetCP(int idx = -1){ // Returns a CP by index, or currently active CP (default), or null if none/finished
-        if (idx < -1 || idx > checkpoints.Length - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; }
+        if (idx < -1 || idx > checkpoints.Length - 1) { Debug.LogWarning("Invalid idx for GetCP()"); return null; } // NPCRacer will hit this when it finishes, thats ok.
         if (idx > -1) return checkpoints[idx]; // Get CP by index
         
         return finished ? null : checkpoints[currCPidx]; // Finished means no currCP
