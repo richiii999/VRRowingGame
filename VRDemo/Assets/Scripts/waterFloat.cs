@@ -274,29 +274,37 @@ public class Buoyancy : MonoBehaviour
 				var force = localDampingForce + Mathf.Sqrt(k) * localArchimedesForce;
 
 				//change deceleration here
+
+				/*
 				quaternion baseRotation = new quaternion(0.50f,-0.5f,0.5f,0.5f);
 				if(leftHand.transform.localRotation != baseRotation)
 					Debug.Log("leftHand"+leftHand.transform.localRotation);
 				if(rightHand.transform.localRotation != baseRotation)
-					Debug.Log("rightHand"+rightHand.transform.localRotation);
+					Debug.Log("rightHand"+rightHand.transform.localRotation);				
+				*/
+
 
 				if( //both are feathered
-					leftHand.transform.position.y > waterLevel /*&& orientation is correct */ &&
-					rightHand.transform.position.y > waterLevel /*&& orientation is correct */
+					/*leftHand.transform.position.y > waterLevel &&*/ math.abs(leftHand.transform.localRotation.z) > 0.3 &&
+					/*rightHand.transform.position.y > waterLevel &&*/ math.abs(rightHand.transform.localRotation.z) > 0.3
 				) {
 					force.x *= featheringCoefficientWhenBoth;
 					force.z *= featheringCoefficientWhenBoth;
+					Debug.Log("both TRUE");
 				} else {
-					if(leftHand.transform.position.y > waterLevel && math.abs(leftHand.transform.localRotation.y) > -0.5 && math.abs(leftHand.transform.localRotation.y) < -0.40) //only lefthand is feathered
-					{//leftHand(0.38149, -0.44024, -0.61342, 0.53326)
+					if(/*leftHand.transform.position.y > waterLevel &&*/ math.abs(leftHand.transform.localRotation.z) > 0.3) //only lefthand is feathered
+					{
 						force.x *= featheringCoefficientWhenOnlyOne;
 						force.z *= featheringCoefficientWhenOnlyOne;
-					} else if(rightHand.transform.position.y > waterLevel /*&& orientation is correct */){ // only righthand is feathered
+						Debug.Log("leftHand TRUE");
+					} else if(/*rightHand.transform.position.y > waterLevel &&*/ math.abs(rightHand.transform.localRotation.z) > 0.3){ // only righthand is feathered
 						force.x *= featheringCoefficientWhenOnlyOne;
 						force.z *= featheringCoefficientWhenOnlyOne;
+						Debug.Log("rightHand TRUE");
 					} else { // neither is feathered
 						force.x *= featheringCoefficientWhenNeither;
 						force.z *= featheringCoefficientWhenNeither;
+						Debug.Log("neither TRUE");
 					}					
 				}
 

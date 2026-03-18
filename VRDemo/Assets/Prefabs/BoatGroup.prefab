@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1337234342589704979}
   - component: {fileID: 7272289546820022217}
   - component: {fileID: 7018915363317962456}
+  - component: {fileID: 2420217584895715035}
   m_Layer: 0
   m_Name: Oar
   m_TagString: Untagged
@@ -2843,6 +2844,7 @@ GameObject:
   - component: {fileID: 8218353422840385097}
   - component: {fileID: 3815653955751810256}
   - component: {fileID: 7157747192587223296}
+  - component: {fileID: 2396853422085264726}
   m_Layer: 0
   m_Name: Oar
   m_TagString: Untagged
