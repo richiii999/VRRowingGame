@@ -12,6 +12,7 @@ public class BoatUI : MonoBehaviour{
     public GameObject nextButton = null;
     public GameObject retryButton = null;
     public GameObject angleNeedle = null;
+    public GameObject scoreUI = null;
 
     private int scoreTime = 0; // How much time-based score (faster than CP.scoreTime) the player accumulated
     private int scoreAngle = 0; // How much angle-based score (lower CP.maxAngle -> higher score) the player accumulated.
@@ -25,7 +26,7 @@ public class BoatUI : MonoBehaviour{
         rayToEnableOnFinish.SetActive(false);
     }
 
-    public void SetTimerText(float t = 0.0f){ if (t != 0.0f) timerText.text = "Time: " + t.ToString("F1"); }
+    public void SetTimerText(float t = 0.0f){ if (t != 0.0f) timerText.text = $"Time: {t:F1}"; }
 
     public void SetUIAngle(float a = 0.0f){ angleNeedle.transform.localEulerAngles = new Vector3(0f, 90f, a); } // Rotates the AngleNeedle
 
