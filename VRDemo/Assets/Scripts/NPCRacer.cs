@@ -25,7 +25,7 @@ public class NPCRacer : MonoBehaviour{
     void Start(){ 
         CPC = RefToComp<CheckpointController>("CheckpointGroup"); 
         if (currCP == null) currCP = CPC.GetCP(); // NOTE: This script must be executed after CPC 
-        if (oarL != null && oarR != null) QuitGame("NPCRacer Oars are missing!");
+        if (oarL == null || oarR == null) QuitGame("NPCRacer Oars are missing!");
     }
         
     void Update(){ 
