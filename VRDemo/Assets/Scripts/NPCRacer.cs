@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.Search;
 using System;
 
 using static Tools;
@@ -10,29 +9,23 @@ using static Tools;
 // NOTE: This script must be executed after CPC, see Edit>Project Settings>Script Execution Order
 
 public class NPCRacer : MonoBehaviour{
-    CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
-    public Checkpoint currCP = null; // If not set, uses CPC to find first CP.
+    private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
+    public Checkpoint currCP         = null; // If not set, uses CPC to find first CP.
 
-    Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
-    GameObject oarL        = null; // Refs to the Oars & Look objects (to spin them)
-    GameObject oarR        = null;
-    GameObject lookTargetL = null;
-    GameObject lookTargetR = null;
+    public Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
+    public GameObject oarL        = null; // Refs to the Oars & Look objects (to spin them)
+    public GameObject oarR        = null; 
+    public GameObject lookTargetL = null;
+    public GameObject lookTargetR = null;
 
     public float speed     = 1.0f;  // How fast the NPC move
     public float animSpan  = 10.0f; // Width of rowing animation (0 = static)
     public float animSpeed = 3.0f;  // Speed of rowing animation
 
     void Start(){ 
-        // set refs
         CPC = RefToComp<CheckpointController>("CheckpointGroup"); 
-        motorRB = GetComponentInChildren<Rigidbody>();
-        oarL = FindChild(gameObject, "OarLeft");
-        oarR = FindChild(gameObject, "OarRight");
-        lookTargetL = FindChild(gameObject, "OarLookTargetL");
-        lookTargetR = FindChild(gameObject, "OarLookTargetR");
-
         if (currCP == null) currCP = CPC.GetCP(); // NOTE: This script must be executed after CPC 
+        if (oarL == null || oarR == null) QuitGame("NPCRacer Oars are missing!");
     }
         
     void Update(){ 
