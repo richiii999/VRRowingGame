@@ -1,13 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// MenuActions: Provides Scene Management functions for UI objects
 
-#if UNITY_EDITOR
-    using UnityEditor;
-#endif
-    
 public class PauseMenuAction : MenuActions {
     public static bool GameIsPaused = false;
     

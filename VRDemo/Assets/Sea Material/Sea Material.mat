@@ -244,7 +244,7 @@ Material:
     - _ENABLE_UNDERWATERLAYER: 0
     - _ENVIRONMENTREFLECTIONS_OFF: 1
     - _Enable_Intersection: 0
-    - _Enable_SurfaceFoam: 1
+    - _Enable_SurfaceFoam: 0
     - _FarColorDistance: 20
     - _FarColorMaskHardness: 10
     - _FarColorStartOffset: 0.08
@@ -332,7 +332,7 @@ Material:
     - _ShoreFadeHardness: 0.39
     - _ShoreFadeSmoothness: 0.136
     - _ShoreFade_1: 0
-    - _ShoreFade_Smoothness: 0
+    - _ShoreFade_Smoothness: 0.081
     - _ShoreLineAmmount: 3.34
     - _ShoreLineCenterMask: 2.01
     - _ShoreLineCutoff: 0.66
@@ -381,7 +381,7 @@ Material:
     - _Underwater_Fade: 15
     - _WORLDSPACEDEPTH: 1
     - _WaterDepth: 0.42
-    - _Water_Depth: 15.9
+    - _Water_Depth: -2.5
     - _WaveHeight: 0.01
     - _WaveHeight2nd: 0.01
     - _WaveLength: 10
@@ -419,8 +419,8 @@ Material:
     m_Colors:
     - _1st_Wave_Direction: {r: 1, g: 0, b: 0, a: 0}
     - _2nd_Wave_Direction: {r: -1, g: 0, b: 1, a: 0}
-    - _Color_Deep: {r: 0, g: 0.2541522, b: 0.4507858, a: 0.7019608}
-    - _Color_Shallow: {r: 0.2269659, g: 0.822786, b: 0.4507858, a: 0}
+    - _Color_Deep: {r: 0, g: 0, b: 1, a: 0.2627451}
+    - _Color_Shallow: {r: 0, g: 0.3242216, b: 1, a: 0.2784314}
     - _Deep_Color: {r: 0, g: 0.6745098, b: 0.47963083, a: 0.40392157}
     - _DistanceColor: {r: 1, g: 1, b: 1, a: 1}
     - _FarColor: {r: 0.15966535, g: 0.6787135, b: 0.8679245, a: 0}

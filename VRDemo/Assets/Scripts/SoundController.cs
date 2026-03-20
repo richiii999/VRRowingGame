@@ -2,7 +2,7 @@ using UnityEngine;
 
 using static Tools;
 
-// SoundController.cs: Controls level bkg sounds and refs to sound effects that are called by other objects
+// SoundController: Controls level bkg sounds and refs to sound effects that are called by other objects
 // Note: 3D Sound requires 'spatial blend' of an AudioSource to be set to 1 (default 0)
 // Make sure splashes are 3D, other sounds can be 2D
 

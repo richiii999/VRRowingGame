@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading;
 
+// MainMenuManager: Provides Scene Management functions for the main menu
 
 public class MainMenuManager : MonoBehaviour {
     [Header("Game Camera")]
