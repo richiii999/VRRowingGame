@@ -1,15 +1,16 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-// SoundController.cs: Controls level bkg sounds and refs to sound effects that are called by other objects
+using static Tools;
+
+// SoundController: Controls level bkg sounds and refs to sound effects that are called by other objects
 // Note: 3D Sound requires 'spatial blend' of an AudioSource to be set to 1 (default 0)
 // Make sure splashes are 3D, other sounds can be 2D
 
 public class SoundController : MonoBehaviour{
     // Stores references to each of the AudioSource objects (by category)
-    public List<AudioSource> splashes; 
-    public List<AudioSource> bgSounds; 
-    public List<AudioSource> cheers; 
+    AudioSource[] splashes; 
+    AudioSource[] bgSounds; 
+    AudioSource[] cheers; 
 
     // Only 1 sound effect in its category can play at a time (bg exempt since only one is played via loop)
     public int spamTimer = 120; // Time in frames to delay repeated sounds
@@ -21,16 +22,13 @@ public class SoundController : MonoBehaviour{
     public AudioSource BGSound = null; // Specific BG to play, if not set, pick random
     
     void Start(){
-        // Populate the SE and BG lists with their sounds
-        Transform SpContainer = transform.Find("Splashes"); // Sensitive names, dont change in editor
-        Transform BGContainer = transform.Find("BgSounds"); 
-        Transform ChContainer = transform.Find("Cheers"); 
-        for (int i = 0; i < SpContainer.childCount; i++) splashes.Add(SpContainer.GetChild(i).gameObject.GetComponent<AudioSource>());
-        for (int i = 0; i < BGContainer.childCount; i++) bgSounds.Add(BGContainer.GetChild(i).gameObject.GetComponent<AudioSource>());
-        for (int i = 0; i < ChContainer.childCount; i++)   cheers.Add(ChContainer.GetChild(i).gameObject.GetComponent<AudioSource>());
+        // Populate the AudioSource arrays with their respective components
+        splashes = GetComponentsInChildren<AudioSource>(RefToObj("Splashes")); // Sensitive names, dont change in editor
+        bgSounds = GetComponentsInChildren<AudioSource>(RefToObj("BgSounds"));
+        cheers = GetComponentsInChildren<AudioSource>(RefToObj("Cheers"));
 
         if (BGSoundOnStart) { // Play BGSound on loop, if none set: pick one randomly
-            if (BGSound == null && bgSounds.Count > 0) BGSound = bgSounds[Random.Range(0, bgSounds.Count)];
+            if (BGSound == null && bgSounds.Length > 0) BGSound = bgSounds[Random.Range(0, bgSounds.Length)];
             if (BGSound){ BGSound.loop = true; BGSound.Play(); }
             else Debug.LogWarning("Unable to find a BGSound!");
         }
@@ -51,13 +49,13 @@ public class SoundController : MonoBehaviour{
         switch (category){
             case "splash": 
                 if (splashTimer == 0) {
-                    currSound = splashes[Random.Range(0, splashes.Count)];
+                    currSound = splashes[Random.Range(0, splashes.Length)];
                     splashTimer += spamTimer;
                 }
                 break;
             case "cheer": 
                 if (cheerTimer == 0) {
-                    currSound = cheers[Random.Range(0, cheers.Count)];
+                    currSound = cheers[Random.Range(0, cheers.Length)];
                     cheerTimer += spamTimer;
                 }
                 break;

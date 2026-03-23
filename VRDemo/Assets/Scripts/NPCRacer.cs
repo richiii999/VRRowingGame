@@ -1,63 +1,56 @@
 using UnityEngine;
 using System;
-using Unity.XR.CoreUtils;
-using UnityEngine.UIElements;
 
-// NPCRacer.cs: Controls the NPCs behavior
-// NPCs are effectively just visuals to look at in the background, they move along a set track and dont do any
-// pathfinding or anything, 'difficulty' can be adjusted via changing the speed variable.
+using static Tools;
 
+// NPCRacer: Controls the NPCs behavior
+// NPCs automatically row to each checkpoint in order. CurrCP can be set in the editor to make them start farther along (ex. main menu NPCs)
+
+// NOTE: This script must be executed after CPC, see Edit>Project Settings>Script Execution Order
 
 public class NPCRacer : MonoBehaviour{
-    public GameObject CPGroup = null; // Ref to CheckpointGroup so the NPC
-    private Transform currCP = null; // Set on start from ^
-    private int CPTotal = 0; // How many CPs in ^^
-    // Probably an easier way to do ^ , like put the CPs in a list or someth idk
+    private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
+    public Checkpoint currCP         = null; // If not set, uses CPC to find first CP.
 
-    public Rigidbody motorRB = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
-
-    public GameObject oarL = null; // Refs to the Oars objects (to spin them)
-    public GameObject oarR = null; 
+    public Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
+    public GameObject oarL        = null; // Refs to the Oars & Look objects (to spin them)
+    public GameObject oarR        = null; 
     public GameObject lookTargetL = null;
     public GameObject lookTargetR = null;
 
-    public float speed = 1.0f; // How fast the NPC goes along their track
-    public float rowAnimSpan = 4.0f; // How wide the row anim move the oars
+    public float speed     = 1.0f;  // How fast the NPC move
+    public float animSpan  = 10.0f; // Width of rowing animation (0 = static)
+    public float animSpeed = 3.0f;  // Speed of rowing animation
 
     void Start(){ 
-        if (CPGroup == null) Debug.LogWarning("NPC CPGroup not set!"); 
-        else {
-            currCP = CPGroup.transform.GetChild(0);
-            CPTotal = CPGroup.transform.childCount;
-        }
-        
+        CPC = RefToComp<CheckpointController>("CheckpointGroup"); 
+        if (currCP == null) currCP = CPC.GetCP(); // NOTE: This script must be executed after CPC 
+        if (oarL == null || oarR == null) QuitGame("NPCRacer Oars are missing!");
     }
         
-    void Update(){
-        if (oarL != null && oarR != null){ // Make the oars "row" in a loop by pointing towards moving targets
-            oarL.transform.LookAt(lookTargetL.transform);
-            oarR.transform.LookAt(lookTargetR.transform);
+    void Update(){ 
+        // Make the oars "row" in a loop by pointing them towards moving targets
+        float sin = (float)Math.Sin(Time.time * animSpeed) * animSpan; // sin movement
+        Vector3 side = motorRB.transform.forward * sin; // side-to-side looktarget movement
+        Vector3 fwd = motorRB.transform.right * 10.0f; // forward looktarget position
 
-            lookTargetL.transform.position += new Vector3(0f, 0f, (float)Math.Sin(Time.time) * rowAnimSpan);
-            lookTargetR.transform.position += new Vector3(0f, 0f, (float)Math.Sin(Time.time) * rowAnimSpan * -1);
-        }
+        lookTargetL.transform.position = motorRB.transform.position + fwd + side;
+        lookTargetR.transform.position = motorRB.transform.position + fwd - side;
 
-        // // TODO: Move towards next cp smoothly
-        // Vector3 targetDir = currCP.position - motorRB.transform.position;
-        // float angle = Vector3.Angle(targetDir, transform.forward);
-        // // motorRB.AddForce(Vector3.Rotate(transform.forward) * speed);
+        oarL.transform.LookAt(lookTargetL.transform);
+        oarR.transform.LookAt(lookTargetR.transform);
 
-        // if (angle < 5.0f)
-        //     print("Close");
+        // Move towards next cp smoothly via adding force to boatMotor
+        if (currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
     }
 
-    private void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Checkpoint") && other.transform.parent.transform == currCP){
-            Debug.Log("NP C Checkpoint");
-            int currIndex = other.gameObject.transform.GetSiblingIndex();
-            if (currIndex == CPTotal) Debug.Log("NPC Finished"); // Reached last CP
-            else currCP = CPGroup.transform.GetChild(currIndex + 1);
+    private void OnTriggerEnter(Collider other){ // NPC Checkpoint
+        if (other.CompareTag("Checkpoint") && currCP && other.transform.parent.parent.gameObject == currCP.gameObject){
+            currCP = CPC.GetNextCP(currCP); // currCP is now the next CP
+            if (currCP == null) { // true: NPC passed the final checkpoint
+                animSpan = 0f; // Stop rowing anim
+                if (CPC.finished == false) CPC.FinishRace(isPlayer: false); // only call end game if NPC wins
+            }
         }
     }
-    
 }

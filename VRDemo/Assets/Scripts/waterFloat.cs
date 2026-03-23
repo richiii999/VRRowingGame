@@ -7,6 +7,7 @@
 // Terms of use: do whatever you like
 
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Buoyancy : MonoBehaviour
@@ -19,7 +20,11 @@ public class Buoyancy : MonoBehaviour
 	public int voxelsLimit = 16;
 
 	public float waterYLevel = 0.0f; // Set the water Y level
-
+	public GameObject leftHand;
+	public GameObject rightHand;
+	public float featheringCoefficientWhenNeither = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
+	public float featheringCoefficientWhenOnlyOne = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
+	public float featheringCoefficientWhenBoth = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
 	private const float DAMPFER = 0.1f;
 	private const float WATER_DENSITY = 1000;
 
@@ -267,6 +272,42 @@ public class Buoyancy : MonoBehaviour
 				var velocity = GetComponent<Rigidbody>().GetPointVelocity(wp);
 				var localDampingForce = -velocity * DAMPFER * GetComponent<Rigidbody>().mass;
 				var force = localDampingForce + Mathf.Sqrt(k) * localArchimedesForce;
+
+				//change deceleration here
+
+				/*
+				quaternion baseRotation = new quaternion(0.50f,-0.5f,0.5f,0.5f);
+				if(leftHand.transform.localRotation != baseRotation)
+					Debug.Log("leftHand"+leftHand.transform.localRotation);
+				if(rightHand.transform.localRotation != baseRotation)
+					Debug.Log("rightHand"+rightHand.transform.localRotation);				
+				*/
+
+
+				if( //both are feathered
+					/*leftHand.transform.position.y > waterLevel &&*/ math.abs(leftHand.transform.localRotation.z) > 0.3 &&
+					/*rightHand.transform.position.y > waterLevel &&*/ math.abs(rightHand.transform.localRotation.z) > 0.3
+				) {
+					force.x *= featheringCoefficientWhenBoth;
+					force.z *= featheringCoefficientWhenBoth;
+					Debug.Log("both TRUE");
+				} else {
+					if(/*leftHand.transform.position.y > waterLevel &&*/ math.abs(leftHand.transform.localRotation.z) > 0.3) //only lefthand is feathered
+					{
+						force.x *= featheringCoefficientWhenOnlyOne;
+						force.z *= featheringCoefficientWhenOnlyOne;
+						Debug.Log("leftHand TRUE");
+					} else if(/*rightHand.transform.position.y > waterLevel &&*/ math.abs(rightHand.transform.localRotation.z) > 0.3){ // only righthand is feathered
+						force.x *= featheringCoefficientWhenOnlyOne;
+						force.z *= featheringCoefficientWhenOnlyOne;
+						Debug.Log("rightHand TRUE");
+					} else { // neither is feathered
+						force.x *= featheringCoefficientWhenNeither;
+						force.z *= featheringCoefficientWhenNeither;
+						Debug.Log("neither TRUE");
+					}					
+				}
+
 				GetComponent<Rigidbody>().AddForceAtPosition(force, wp);
 
 				forces.Add(new[] { wp, force }); // For drawing force gizmos

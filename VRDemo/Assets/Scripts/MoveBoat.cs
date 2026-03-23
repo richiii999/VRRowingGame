@@ -1,10 +1,11 @@
 using UnityEngine;
 
+// MoveBoat: Controls the forces applied to BoatMotor from the Oars' Flappers
+
 public class MoveBoat : MonoBehaviour{
     public Rigidbody boat;
     public Rigidbody boatMotor;
     public float Speed_Coffecient = 1.00f; // Scales the force applied to the boat
-    public bool debugBoatVelocity = false; // Enable to turn on debug.log calls for the boat
     public bool debugFlapper = false; // Enable to turn on debug.log calls for the flappers
 
     private Vector3 current; // Current and previous coordinates of the flapper (used for physics calculation)
@@ -35,39 +36,34 @@ public class MoveBoat : MonoBehaviour{
     }
 
     void Update(){
+        //setting velocity
         Vector3 flapperPosition = this.transform.position;
         Vector3 flapperVelocity = current - previous;
-        //flapperVelocity = flapperVelocity + (flapperVelocity / 2);
         flapperVelocity.y = (float)0.0;
-        if(flapperVelocity.x < (float)0.05 && flapperVelocity.y < (float)0.05 && flapperVelocity.z < (float)0.05)
+
+        //spazzing out prevention
+        //currently a bandaid fix. Instead, the hands should deattached when they get too far from the object.
+        if(flapperVelocity.magnitude > 0.5)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+            Debug.Log("Magnitude too big");
         }
         
+        //check if underwater. If yes add force and change underwater state
         if(flapperPosition.y < waterYLevel){ // If flapper below water
             if (!underwaterTrigger) setUnderwater(true);
 
-            //boat.AddForce( flapperVelocity * Speed_Coffecient);
+            //boat.AddForce(flapperVelocity * Speed_Coffecient);
             boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
         else if (underwaterTrigger) setUnderwater(false);
         
-        /*
-        if(!(boat.linearVelocity.x < 0.01 && boat.linearVelocity.x > -0.01) && debugBoatVelocity){
-            Debug.Log("boat speed: " + boat.linearVelocity);
+        //debug code
+        if (debugFlapper){
+            Debug.Log(flapperVelocity.magnitude);
         }
-        
-        if(!(boat.linearVelocity.z < 0.01 && boat.linearVelocity.z > -0.01) && debugBoatVelocity){
-            Debug.Log("boat speed: " + boat.linearVelocity);
-        }
-        
-        if (debugFlapper && (current != previous)){
-                //Debug.Log("Flapper Position: " + current);
-                Debug.Log("Diff: " + (current - previous));
-        }
-        Debug.Log(Time.timeSinceLevelLoadAsDouble);
-        */
 
+        //setting positions 
         Vector3 relativePosition = boat.transform.position - this.transform.position;
         previous = current;
         current = relativePosition;

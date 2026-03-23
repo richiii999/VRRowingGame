@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 #endif
 
+using Rowing.Core;
+
+// MenuActions: Provides Scene Management functions for UI objects
+
 public class MenuActions : MonoBehaviour {
-    public static string MainMenuSceneName = "MainMenu";
-    public static string LevelSelectSceneName = "LevelSelect";
-
-
     /* Main Menu */
-    public void goToLevelSelect() {
+    public void GoToLevelSelect() {
         Debug.Log("Level Select Clicked");
-        SceneManager.LoadSceneAsync(MenuActions.LevelSelectSceneName); 
+        SceneManager.LoadSceneAsync(SceneList.MainMenuLevel.ToString()); 
     }
 
-    public void quitGame() {
+    public static void QuitGame() {
         Debug.Log("Quit Clicked");
         #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
