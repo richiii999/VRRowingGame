@@ -1589,6 +1589,10 @@ PrefabInstance:
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: targetScene
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: LV1_Stadium

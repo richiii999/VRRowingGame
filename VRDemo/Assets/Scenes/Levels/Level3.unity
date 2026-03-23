@@ -7175,11 +7175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoints: []
-  BoatHUD: {fileID: 0}
-  time: 0
-  startTime: 0
   finished: 0
-  soundController: {fileID: 0}
+  maxAngle: 0
 --- !u!4 &2044569747
 Transform:
   m_ObjectHideFlags: 0
@@ -7422,6 +7419,10 @@ PrefabInstance:
     - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: targetScene
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
