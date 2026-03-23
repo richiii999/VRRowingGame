@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.XR;
 // MenuActions: Provides Scene Management functions for UI objects
 
 public class PauseMenuAction : MenuActions {
@@ -11,7 +13,24 @@ public class PauseMenuAction : MenuActions {
 
     [Header("Ray interactor on hands")]
     public GameObject rayInteracter;
+    private InputDevice targetDevice;
+    void Start(){ StartCoroutine(GetDevices(1.0f)); }
+    IEnumerator GetDevices(float delayTime){
+        yield return new WaitForSeconds(delayTime);
+        List<InputDevice> devices = new List<InputDevice>();
+        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
+        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
 
+        foreach (var item in devices)
+        {
+            Debug.Log(item.name + item.characteristics);
+        }
+
+        if(devices.Count > 0)
+        {
+            targetDevice = devices[0];
+        }
+    }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {

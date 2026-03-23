@@ -290,21 +290,21 @@ public class Buoyancy : MonoBehaviour
 				) {
 					force.x *= featheringCoefficientWhenBoth;
 					force.z *= featheringCoefficientWhenBoth;
-					Debug.Log("both TRUE");
+					//Debug.Log("both TRUE");
 				} else {
 					if(/*leftHand.transform.position.y > waterLevel &&*/ math.abs(leftHand.transform.localRotation.z) > 0.3) //only lefthand is feathered
 					{
 						force.x *= featheringCoefficientWhenOnlyOne;
 						force.z *= featheringCoefficientWhenOnlyOne;
-						Debug.Log("leftHand TRUE");
+						//Debug.Log("leftHand TRUE");
 					} else if(/*rightHand.transform.position.y > waterLevel &&*/ math.abs(rightHand.transform.localRotation.z) > 0.3){ // only righthand is feathered
 						force.x *= featheringCoefficientWhenOnlyOne;
 						force.z *= featheringCoefficientWhenOnlyOne;
-						Debug.Log("rightHand TRUE");
+						//Debug.Log("rightHand TRUE");
 					} else { // neither is feathered
 						force.x *= featheringCoefficientWhenNeither;
 						force.z *= featheringCoefficientWhenNeither;
-						Debug.Log("neither TRUE");
+						//Debug.Log("neither TRUE");
 					}					
 				}
 
