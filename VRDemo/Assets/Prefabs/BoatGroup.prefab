@@ -3496,6 +3496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   strength: 0.15
   maxVel: 2
+  boost: 3
   RB: {fileID: 4423585689815351981}
 --- !u!54 &4423585689815351981
 Rigidbody:
