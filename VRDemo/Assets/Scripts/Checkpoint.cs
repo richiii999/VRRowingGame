@@ -62,9 +62,9 @@ public class Checkpoint : MonoBehaviour{
     private void DeactivateCheckpoint(Collider other) {
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
-        CPC.OnCheckpoint(this); 
         other.GetComponentInChildren<BoatUI>().Score( scoreTime / (Time.time - startTime), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
         SetColor(Color.gray);
         SetGlowAlpha(0.4f);
+        CPC.OnCheckpoint(this); 
     }
 }
