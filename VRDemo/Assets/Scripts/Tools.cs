@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+using System;
 
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
@@ -56,5 +59,27 @@ public static class Tools{
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    public static void LoadScene(string sceneName=""){ // Loads scene, even in editor
+
+        Debug.Log($"Loading Scene: {sceneName}");
+    
+        #if UNITY_STANDALONE
+            SceneManager.LoadSceneAsync(sceneName);
+        #endif
+
+        #if UNITY_EDITOR
+            bool success = false;
+            try { EditorSceneManager.OpenScene($"Assets/Scenes/{sceneName}.unity"); success = true; } catch {} // Ignore first fail, try different path
+            try { if (!success) EditorSceneManager.OpenScene($"Assets/Scenes/Levels{sceneName}.unity"); } 
+            catch (Exception e) { Debug.LogError($"Failed to load Scene: {sceneName}"); Debug.LogError(e.Message); } // only if both fail
+        #endif
+    }
+
+    public static void VerifySceneInBuild(string sceneName){ // Checks if sceneName is in the build path (required to change scenes at runtime)
+        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1) {
+            Debug.LogWarning($"Scene: {sceneName} not in build path"); 
+        }
     }
 }

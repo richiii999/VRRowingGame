@@ -2297,7 +2297,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!1 &3829647147499604460
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,7 +2622,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8233256479807414163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6019127364240617541}
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeSceneButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &6019127364240617541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3191,7 +3203,6 @@ GameObject:
   - component: {fileID: 9082533024135852650}
   - component: {fileID: 5022569632865295531}
   - component: {fileID: 5272717499456930700}
-  - component: {fileID: 8067764939817533670}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -3341,18 +3352,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8067764939817533670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6388744030623082602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa9b74abc456d824aa1bf8bfbca5cece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6592513138930225152
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4197,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1831195243860150240}
-  - component: {fileID: 3213229782844499021}
   m_Layer: 0
   m_Name: --UI
   m_TagString: Untagged
@@ -4222,18 +4220,6 @@ Transform:
   - {fileID: 6580394877730537965}
   m_Father: {fileID: 5180724251971649493}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3213229782844499021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8003293714257473526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa9b74abc456d824aa1bf8bfbca5cece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8210828268647635303
 GameObject:
   m_ObjectHideFlags: 0

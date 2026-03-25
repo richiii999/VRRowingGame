@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 // MainMenuManager: Provides Scene Management functions for the main menu
 
 public class MainMenuManager : MonoBehaviour {
@@ -80,7 +81,5 @@ public class MainMenuManager : MonoBehaviour {
         }
     }
 
-    public void QuitGame() {
-        MenuActions.QuitGame();
-    }
+    public void QuitGame() { Tools.QuitGame(); }
 }

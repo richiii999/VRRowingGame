@@ -19,8 +19,7 @@ public class LevelSelectBall : MonoBehaviour {
             Debug.Log("LevelSelectBall Triggered");
             Destroy(other); // Prevent multiple collisions by deleting the ball
             
-            Debug.Log($"Loading Scene: {Level}");
-            SceneManager.LoadSceneAsync(Level);
+            
         }
     }
 
