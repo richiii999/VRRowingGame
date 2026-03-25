@@ -8,7 +8,7 @@ public class SceneChangeButton : MonoBehaviour{
 
     public void Start(){
         if (SceneUtility.GetBuildIndexByScenePath(Level) == -1) { // Check if the Scene doesnt exist
-            Debug.Log("Scene '" + Level + "' Doesnt exist!"); 
+            Debug.LogWarning("Scene '" + Level + "' Doesnt exist!"); 
             Level = ""; // Reset Level to "" to prevent errors loading invalid scene
         }
     }

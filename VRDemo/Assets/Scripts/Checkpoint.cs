@@ -1,9 +1,7 @@
 using UnityEngine;
-using System;
 using TMPro;
 
 using static Tools;
-using System.Drawing;
 using Color = UnityEngine.Color;
 
 
@@ -63,7 +61,9 @@ public class Checkpoint : MonoBehaviour{
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
         CPC.OnCheckpoint(this); 
-        other.GetComponentInChildren<BoatUI>().Score( scoreTime / (Time.time - startTime), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
+        float angleScore = CPC.ResetMaxAngle(); // ResetMaxAngle() returns the value it was before resetting.
+        foreach (BoatUI UI in other.GetComponentsInChildren<BoatUI>()) UI.Score( scoreTime / (Time.time - startTime), angleScore); 
+        
         SetColor(Color.gray);
         SetGlowAlpha(0.4f);
     }
