@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 using Rowing.Core;
 
 // MenuActions: Provides Scene Management functions for UI objects
+// Note: Refactored to use Tools interface for changing scenes & quitting
 
-public class PauseMenuAction {
+public class MenuActions {
     public static bool GameIsPaused = false;
     
     [Header("UI Canvas")]
