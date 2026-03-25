@@ -11,6 +11,8 @@ using static Tools;
 public class NPCRacer : MonoBehaviour{
     private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
     public Checkpoint currCP         = null; // If not set, uses CPC to find first CP.
+
+    public float laneOffset = 0.0f; // Offsets the NPC's lane position (so it doesnt hog the center)
     public bool frozen = true; // Freeze NPC until player first CP
 
     public Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
@@ -42,7 +44,7 @@ public class NPCRacer : MonoBehaviour{
         oarR.transform.LookAt(lookTargetR.transform);
 
         // Move towards next cp smoothly via adding force to boatMotor
-        if (!frozen && currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
+        if (!frozen && currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position + transform.right * laneOffset);
     }
 
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
