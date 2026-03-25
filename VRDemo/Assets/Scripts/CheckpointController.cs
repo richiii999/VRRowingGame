@@ -35,6 +35,12 @@ public class CheckpointController : MonoBehaviour{
         // First Checkpoint is active from start 
         checkpoints[0].isNext = true;
         checkpoints[0].timerTxt.color = new Color(0f,0f,0f,0f); // Hide 1st CP timer
+
+        int i = 1;
+        foreach (FlagNum flagGroup in FindObjectsByType<FlagNum>(FindObjectsSortMode.None)) {
+            flagGroup.SetFlagText(i.ToString());
+            i += 1;
+        }
     }
 
     void Update(){ 

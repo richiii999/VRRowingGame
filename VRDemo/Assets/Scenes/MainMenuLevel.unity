@@ -2151,6 +2151,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 925990159}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer
@@ -4372,6 +4376,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 1728330633}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (3)
@@ -8090,6 +8098,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 929486298}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (1)
@@ -10949,6 +10961,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 1225376570}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (2)
@@ -11361,9 +11377,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoints: []
-  soundController: {fileID: 0}
-  totalTime: 0
-  startTime: 0
   finished: 0
   maxAngle: 0
 --- !u!4 &2044569747
