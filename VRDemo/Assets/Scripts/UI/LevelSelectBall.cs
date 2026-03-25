@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // LevelSelectBall: Changes scene when this obj is placed into the LevelSelectBasket
 // Should be attached to each level diorama on the level select scene.
@@ -7,12 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelSelectBall : MonoBehaviour {
     public string Level = ""; // Which scene to go to?
 
-    void Start() { // Verify given scene name
-        if (SceneUtility.GetBuildIndexByScenePath(Level) == -1) { 
-            Debug.Log($"Scene '{Level}' Doesnt exist!"); 
-            Level = ""; // Reset Level to "" to prevent errors loading invalid scene
-        }
-    }
+    void Start() { Tools.VerifySceneInBuild(Level); }
 
     void OnTriggerEnter(Collider other) {
         if (Level != "" && other.CompareTag("LevelSelectBasket")) { // Detect sphere in the box

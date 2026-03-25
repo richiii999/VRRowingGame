@@ -6,7 +6,7 @@ using System;
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
 // NOTE: All funcs here should be 'public static fn()' to allow access and use from anywhere. 
-// Import can also be 'using static Tools'. Calling a func from tools does not require Tools.fn(), you can just call fn() directly
+// Import can also be 'using static Tools'. If imported, calling a func require Tools.fn(), you can just call fn() directly
 
 public static class Tools{
 

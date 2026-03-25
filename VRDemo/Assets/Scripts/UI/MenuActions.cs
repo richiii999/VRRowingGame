@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 using Rowing.Core;
 
 // MenuActions: Provides Scene Management functions for UI objects
 // Note: Refactored to use Tools interface for changing scenes & quitting
 
-public class MenuActions {
+public class MenuActions : MonoBehaviour{
     public static bool GameIsPaused = false;
     
     [Header("UI Canvas")]
@@ -45,18 +44,12 @@ public class MenuActions {
 
 
     /* Custom Actions */
-    public void goToMainMenu() {
-        Debug.Log("Return to Main Menu Clicked");
-        SceneManager.LoadSceneAsync(SceneList.MainMenuLevel.ToString()); 
-        Resume();
-    }
+    public void goToMainMenu() { Resume(); Tools.LoadScene(SceneList.MainMenuLevel.ToString()); }
+
+    public void RestartLevel() { Resume(); Tools.LoadScene(targetScene.ToString()); }
+    
     public void recenter() {
         Debug.Log("Re-Center Clicked");
     }
     
-    public void goToLevelStart() { // Restart Level 
-        Debug.Log("Restart Level Clicked");
-        SceneManager.LoadSceneAsync(targetScene.ToString());
-        Resume();
-    }
 }
