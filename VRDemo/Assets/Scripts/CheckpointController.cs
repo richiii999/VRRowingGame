@@ -61,6 +61,7 @@ public class CheckpointController : MonoBehaviour{
             startTime = Time.time;
             BoatUI.ResetScore();
             BackUI.ResetScore();
+            foreach (NPCRacer NPC in FindObjectsByType<NPCRacer>(FindObjectsSortMode.None)) NPC.UnFreeze();
         } 
 
         // Middle CP: Activate next CP

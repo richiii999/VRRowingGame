@@ -11,6 +11,7 @@ using static Tools;
 public class NPCRacer : MonoBehaviour{
     private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
     public Checkpoint currCP         = null; // If not set, uses CPC to find first CP.
+    public bool frozen = true; // Freeze NPC until player first CP
 
     public Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
     public GameObject oarL        = null; // Refs to the Oars & Look objects (to spin them)
@@ -41,7 +42,7 @@ public class NPCRacer : MonoBehaviour{
         oarR.transform.LookAt(lookTargetR.transform);
 
         // Move towards next cp smoothly via adding force to boatMotor
-        if (currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
+        if (!frozen && currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
     }
 
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
@@ -51,6 +52,13 @@ public class NPCRacer : MonoBehaviour{
                 animSpan = 0f; // Stop rowing anim
                 if (CPC.finished == false) CPC.FinishRace(isPlayer: false); // only call end game if NPC wins
             }
+        }
+    }
+
+    public void UnFreeze(float boostFactor = 800.0f){ // Unfreeze NPC, with optional speedboost on start
+        if (frozen) { // Only if NPC is currently frozen
+            frozen = false;
+            motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position) * boostFactor);
         }
     }
 }
