@@ -728,7 +728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3335c92ade17c1349a6ea3e7ff03b7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boatUI: {fileID: 0}
+  totalLabel: {fileID: 8916555308710552437}
+  totalVal: {fileID: 6946366607773248103}
+  timeVal: {fileID: 4913267133904170122}
+  timeInc: {fileID: 959009106813214377}
+  angleVal: {fileID: 1720527807711578403}
+  angleInc: {fileID: 2889858924283683957}
 --- !u!1 &8441791209427090022
 GameObject:
   m_ObjectHideFlags: 0

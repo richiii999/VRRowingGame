@@ -17,7 +17,8 @@ public class BoatUI : MonoBehaviour{
 
     void Start(){
         // set refs
-        scoreUI = RefToComp<ScoreUI>("ScoreUI");
+        scoreUI = GetComponentInChildren<ScoreUI>();
+        Debug.Log(scoreUI.transform.parent);
 
         timerText.text = "Pass the Checkpoint to start!";
         menuButton.SetActive(false);
