@@ -52,7 +52,7 @@ public class MainMenuManager : MonoBehaviour {
     // Turn off Menu UI
     // Toggle Game Systems on
     public void StartTutorial() {
-        Debug.Log("Start Tutorial Tapped");
+        // Debug.Log("Start Tutorial Tapped");
         ToggleGameSystem(true);
     }
 
