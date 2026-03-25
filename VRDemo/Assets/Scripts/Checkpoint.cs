@@ -33,7 +33,7 @@ public class Checkpoint : MonoBehaviour{
 
     void Update(){ 
         if (isNext) { 
-            // Minimum value 0.1 - PingPong between 0.1-0.5
+            // Minimum value 0.1 - PingPong between 0.1-0.7
             // Multiply Time by 0.4 to slow the PingPong down a little bit
             float alpha = Mathf.PingPong(Time.time * 0.4f, 0.6f) + 0.1f;
             SetGlowAlpha(alpha);
@@ -62,9 +62,9 @@ public class Checkpoint : MonoBehaviour{
     private void DeactivateCheckpoint(Collider other) {
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
+        CPC.OnCheckpoint(this); 
         other.GetComponentInChildren<BoatUI>().Score( scoreTime / (Time.time - startTime), CPC.ResetMaxAngle()); // ResetMaxAngle() returns the value it was.
         SetColor(Color.gray);
         SetGlowAlpha(0.4f);
-        CPC.OnCheckpoint(this); 
     }
 }

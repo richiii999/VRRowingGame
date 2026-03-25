@@ -13,24 +13,9 @@ public class PauseMenuAction : MenuActions {
 
     [Header("Ray interactor on hands")]
     public GameObject rayInteracter;
-    private InputDevice targetDevice;
-    void Start(){ StartCoroutine(GetDevices(1.0f)); }
-    IEnumerator GetDevices(float delayTime){
-        yield return new WaitForSeconds(delayTime);
-        List<InputDevice> devices = new List<InputDevice>();
-        InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller;
-        InputDevices.GetDevicesWithCharacteristics(rightControllerCharacteristics, devices);
 
-        foreach (var item in devices)
-        {
-            Debug.Log(item.name + item.characteristics);
-        }
-
-        if(devices.Count > 0)
-        {
-            targetDevice = devices[0];
-        }
-    }
+    [Header("Scene Selection")]
+    public SceneList targetScene;
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -61,7 +46,7 @@ public class PauseMenuAction : MenuActions {
     /* Custom Actions */
     public void goToMainMenu() {
         Debug.Log("Return to Main Menu Clicked");
-        SceneManager.LoadSceneAsync(MenuActions.MainMenuSceneName); 
+        SceneManager.LoadSceneAsync(SceneList.MainMenuLevel.ToString()); 
         Resume();
     }
     public void recenter() {
@@ -70,6 +55,7 @@ public class PauseMenuAction : MenuActions {
     
     public void goToLevelStart() { // Restart Level 
         Debug.Log("Restart Level Clicked");
+        SceneManager.LoadSceneAsync(targetScene.ToString());
         Resume();
     }
 }

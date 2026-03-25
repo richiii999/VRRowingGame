@@ -346,6 +346,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: sceneName
+      value: TestLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: targetScene
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: TestLevel
@@ -5821,7 +5829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: speed
-      value: 0.6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
