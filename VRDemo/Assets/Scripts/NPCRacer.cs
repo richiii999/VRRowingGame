@@ -57,7 +57,7 @@ public class NPCRacer : MonoBehaviour{
         }
     }
 
-    public void UnFreeze(float boostFactor = 800f){ // Unfreeze NPC, with optional speedboost on start
+    public void UnFreeze(){ // Unfreeze NPC, with optional speedboost on start
         if (frozen) { // Only if NPC is currently frozen
             frozen = false;
             SpeedBoost(800f); // Give initial speedboost to NPC (since player already moving)
