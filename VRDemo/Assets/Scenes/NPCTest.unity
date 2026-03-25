@@ -5059,11 +5059,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoints: []
-  currCP: {fileID: 0}
-  soundController: {fileID: 0}
-  totalTime: 0
-  startTime: 0
   finished: 0
+  maxAngle: 0
 --- !u!4 &1443970431
 Transform:
   m_ObjectHideFlags: 0
@@ -7287,6 +7284,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}

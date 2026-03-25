@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.XR;
 
+using Rowing.Core;
 // MenuActions: Provides Scene Management functions for UI objects
 
 public class PauseMenuAction : MenuActions {
@@ -12,6 +16,8 @@ public class PauseMenuAction : MenuActions {
     [Header("Ray interactor on hands")]
     public GameObject rayInteracter;
 
+    [Header("Scene Selection")]
+    public SceneList targetScene;
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -42,7 +48,7 @@ public class PauseMenuAction : MenuActions {
     /* Custom Actions */
     public void goToMainMenu() {
         Debug.Log("Return to Main Menu Clicked");
-        SceneManager.LoadSceneAsync(MenuActions.MainMenuSceneName); 
+        SceneManager.LoadSceneAsync(SceneList.MainMenuLevel.ToString()); 
         Resume();
     }
     public void recenter() {
@@ -51,6 +57,7 @@ public class PauseMenuAction : MenuActions {
     
     public void goToLevelStart() { // Restart Level 
         Debug.Log("Restart Level Clicked");
+        SceneManager.LoadSceneAsync(targetScene.ToString());
         Resume();
     }
 }

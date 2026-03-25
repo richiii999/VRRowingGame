@@ -1053,7 +1053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.18
+      value: 3.13
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2151,6 +2151,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 925990159}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer
@@ -4372,6 +4376,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 1728330633}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (3)
@@ -6945,16 +6953,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 1476550043}
     m_Modifications:
     - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.22
+      value: 3.181
       objectReference: {fileID: 0}
     - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.72
+      value: -4.85
       objectReference: {fileID: 0}
     - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.36
+      value: 0.948
       objectReference: {fileID: 0}
     - target: {fileID: 1303223799888546078, guid: e0cd5eca4970ca849afd12eef95b47bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8090,6 +8110,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 929486298}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (1)
@@ -9600,6 +9624,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8134947553438011820, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134947553438011820, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134947553438011820, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.55
+      objectReference: {fileID: 0}
     - target: {fileID: 8210828268647635303, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_Name
       value: -- Main Menu --
@@ -10949,6 +10985,10 @@ PrefabInstance:
       propertyPath: currCP
       value: 
       objectReference: {fileID: 1225376570}
+    - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: frozen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
       value: NPCRacer (2)
@@ -11361,9 +11401,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpoints: []
-  soundController: {fileID: 0}
-  totalTime: 0
-  startTime: 0
   finished: 0
   maxAngle: 0
 --- !u!4 &2044569747

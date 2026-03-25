@@ -14,6 +14,7 @@ public class CheckpointController : MonoBehaviour{
     private int currCPidx = 0; // index instead of reference, to make getting the next one easier.
     
     BoatUI BoatUI = null;
+    BoatUI BackUI = null;
     SoundController soundController = null; // To play cheers
 
     float startTime = 0.00f; // At what time did the 1st CP get crossed?
@@ -25,6 +26,7 @@ public class CheckpointController : MonoBehaviour{
     void Start(){
         soundController = RefToComp<SoundController>("SoundController", mustExist: false);
         BoatUI = RefToComp<BoatUI>("BoatUI", mustExist: false); // mustExist: false, ex. NPC testing scene with no player
+        if (BoatUI) BackUI = RefToComp<BoatUI>("BackUI");
 
         // Init checkpoints[] (children of the this gameObj)
         checkpoints = GetComponentsInChildren<Checkpoint>(gameObject);
@@ -33,15 +35,23 @@ public class CheckpointController : MonoBehaviour{
         // First Checkpoint is active from start 
         checkpoints[0].isNext = true;
         checkpoints[0].timerTxt.color = new Color(0f,0f,0f,0f); // Hide 1st CP timer
+
+        int i = 1;
+        foreach (FlagNum flagGroup in FindObjectsByType<FlagNum>(FindObjectsSortMode.None)) {
+            flagGroup.SetFlagText(i.ToString());
+            i += 1;
+        }
     }
 
     void Update(){ 
         if (!finished && BoatUI) { // Update BoatUI's timer and angle based on the current checkpoint
             BoatUI.SetTimerText( (startTime == 0.00f) ? 0f : Time.time - startTime); 
+            BackUI.SetTimerText( (startTime == 0.00f) ? 0f : Time.time - startTime); 
 
             currAngle = XZAngleBetween(checkpoints[currCPidx].gameObject, BoatUI.gameObject);
             maxAngle = math.max(maxAngle, math.abs(currAngle));
             BoatUI.SetUIAngle(currAngle);
+            BackUI.SetUIAngle(currAngle);
         }
     }
 
@@ -56,6 +66,8 @@ public class CheckpointController : MonoBehaviour{
         if (CP == checkpoints[0]) { 
             startTime = Time.time;
             BoatUI.ResetScore();
+            BackUI.ResetScore();
+            foreach (NPCRacer NPC in FindObjectsByType<NPCRacer>(FindObjectsSortMode.None)) NPC.UnFreeze();
         } 
 
         // Middle CP: Activate next CP
@@ -80,7 +92,7 @@ public class CheckpointController : MonoBehaviour{
         for(int i = 0; i < checkpoints.Length; i++) {checkpoints[i].isNext = false; } // Disable all CPs (ex. in case player loses)
         finished = true; // Stop timers
         Debug.Log($"Race Finished, {(isPlayer ? "Player" : "NPC")} wins!");
-        if (BoatUI) BoatUI.Finish(isPlayer);
+        if (BoatUI) { BoatUI.Finish(isPlayer); BackUI.Finish(isPlayer); }
     }
 
     public float ResetMaxAngle() { float a = maxAngle; maxAngle = 0.0f; return a; } // Resets maxAngle, returning the value it was before resetting.

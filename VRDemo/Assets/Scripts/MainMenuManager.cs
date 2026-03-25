@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-
 // MainMenuManager: Provides Scene Management functions for the main menu
 
 public class MainMenuManager : MonoBehaviour {
@@ -53,7 +52,7 @@ public class MainMenuManager : MonoBehaviour {
     // Turn off Menu UI
     // Toggle Game Systems on
     public void StartTutorial() {
-        Debug.Log("Start Tutorial Tapped");
+        // Debug.Log("Start Tutorial Tapped");
         ToggleGameSystem(true);
     }
 
