@@ -13,9 +13,9 @@ public class SoundController : MonoBehaviour{
     AudioSource[] cheers; 
 
     // Only 1 sound effect in its category can play at a time (bg exempt since only one is played via loop)
-    public int spamTimer = 120; // Time in frames to delay repeated sounds
-    private int splashTimer = 0;
-    private int cheerTimer = 0;
+    public float spamTimer = 2f; // Time in seconds until sound can be played again
+    private float splashTimer = 0f;
+    private float cheerTimer = 0f;
     private AudioSource currSound = null; // Ref to the current sound
 
     public bool BGSoundOnStart = true; // Play BG sound on start?
@@ -37,9 +37,16 @@ public class SoundController : MonoBehaviour{
     void Update(){
         if (Input.GetKeyUp(KeyCode.LeftBracket)) PlayRandomSound("splash"); // DEBUG: Splash with '['
 
-        // Decrement spamTimers
-        if (cheerTimer > 0) cheerTimer -= 1;
-        if (splashTimer > 0) splashTimer -= 1;
+        // decrease timer
+        // deltaTime is time since last frame
+        if(splashTimer > 0f)
+            splashTimer -= Time.deltaTime;
+        if(cheerTimer > 0f)
+            cheerTimer -= Time.deltaTime;
+        if(splashTimer < 0f)
+            splashTimer = 0f;
+        if(cheerTimer < 0f)
+            cheerTimer = 0f;
     }
 
     // Plays one of the splash sound effects randomly
@@ -48,13 +55,14 @@ public class SoundController : MonoBehaviour{
         currSound = null; // Reset currSound to prevent double play of sound effects
         switch (category){
             case "splash": 
-                if (splashTimer == 0) {
+                if (splashTimer == 0f) {
+                    Debug.Log("Play Splash");
                     currSound = splashes[Random.Range(0, splashes.Length)];
                     splashTimer += spamTimer;
                 }
                 break;
             case "cheer": 
-                if (cheerTimer == 0) {
+                if (cheerTimer == 0f) {
                     currSound = cheers[Random.Range(0, cheers.Length)];
                     cheerTimer += spamTimer;
                 }

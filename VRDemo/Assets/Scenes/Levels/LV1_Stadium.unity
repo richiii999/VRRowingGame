@@ -1581,6 +1581,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
+    - target: {fileID: 1474234367453537939, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: debugFlapper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1790077849}
     - target: {fileID: 1705753896783483294, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Name
       value: BoatGroup
@@ -1596,6 +1608,26 @@ PrefabInstance:
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: LV1_Stadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: debugFlapper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: soundController
+      value: 
+      objectReference: {fileID: 1790077849}
+    - target: {fileID: 4929694475241183827, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Calibrate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VRCalibration, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
@@ -1957,6 +1989,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605080244}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &678410060 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3807324915550588694, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &713451693 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7824282511326166410, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
@@ -2167,6 +2204,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+      propertyPath: BGSound
+      value: 
+      objectReference: {fileID: 678410060}
+    - target: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+      propertyPath: spamTimer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6464591060795059253, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
       propertyPath: m_Name
       value: SoundController
@@ -2699,6 +2744,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748478295}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1790077849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
+  m_PrefabInstance: {fileID: 1307795483}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e671d8434a07c2f46bb17fc6b8eed466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1888749656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451112575427530757, guid: 54a568060170671408f89a8a1ed7c9f2, type: 3}

@@ -18,7 +18,7 @@ public class VRCalibration : MonoBehaviour{
 
     void Update(){ if (Input.GetKeyDown(key)) Calibrate(); }
 
-    void Calibrate() { 
+    public void Calibrate() { 
         xrOrigin.MoveCameraToWorldLocation(boatTF.position + offset); 
         xrOrigin.gameObject.transform.LookAt(lookTarget);
     }
