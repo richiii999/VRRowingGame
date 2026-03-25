@@ -4195,6 +4195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2837297696575913780}
+  - component: {fileID: 6478772902289987105}
   m_Layer: 0
   m_Name: -- Main Menu --
   m_TagString: Untagged
@@ -4220,6 +4221,24 @@ Transform:
   - {fileID: 1831195243860150240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6478772902289987105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210828268647635303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6271056bafc7a5a42a72ef7a9fa9451e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameCamera: {fileID: 0}
+  mainMenuCamera: {fileID: 0}
+  menuCanvas: {fileID: 0}
+  levelSelectUI: {fileID: 0}
+  objectsToDisableInMenu: []
+  skipMainMenu: 0
 --- !u!1 &8440119595739591617
 GameObject:
   m_ObjectHideFlags: 0
