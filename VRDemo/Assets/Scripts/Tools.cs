@@ -5,11 +5,6 @@ using UnityEngine;
 // NOTE: All funcs here should be 'public static fn()' to allow access and use from anywhere. 
 // Import can also be 'using static Tools'. Calling a func from tools does not require Tools.fn(), you can just call fn() directly
 
-// Issues:
-// cheer sound spam
-// boat needs to be larger prob, or CP smaller
-// NPC still too large
-
 public static class Tools{
 
     // Standardized initialization of references to GameObjects/Components in scripts, since we do it so often.

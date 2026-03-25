@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 // SceneChangeButton: Changes the scene to a specific level when pressed (set in the editor)
 
 public class SceneChangeButton : MonoBehaviour{
-    public string Level = "MainMenu"; // The level to change when clicking the button 
+    public string Level = "MainMenuLevel"; // The level to change when clicking the button 
 
     public void Start(){
         if (SceneUtility.GetBuildIndexByScenePath(Level) == -1) { // Check if the Scene doesnt exist
