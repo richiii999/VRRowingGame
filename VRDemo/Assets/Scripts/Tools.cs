@@ -68,7 +68,6 @@ public static class Tools{
         #if UNITY_STANDALONE
             SceneManager.LoadSceneAsync(sceneName);
         #endif
-
         #if UNITY_EDITOR
             bool success = false;
             try { EditorSceneManager.OpenScene($"Assets/Scenes/{sceneName}.unity"); success = true; } catch {} // Ignore first fail, try different path
