@@ -1,55 +1,57 @@
 using UnityEngine;
 
 using Rowing.Core;
+using Unity.XR.CoreUtils;
+
+using static Tools;
 
 // MenuActions: Provides Scene Management functions for UI objects
-// Note: Refactored to use Tools interface for changing scenes & quitting
+// Setup: The buttons under 'Pause Menu' should have their click event set to their resepective functions in this script (ex. ResumeButton -> Resume())
 
-public class MenuActions : MonoBehaviour{
-    public static bool GameIsPaused = false;
-    
-    [Header("UI Canvas")]
-    public GameObject pauseMenuUI;
+// Note for Mav: Refactored to use Tools interface for changing scenes & quitting
+
+public class MenuActions : MonoBehaviour {
+    public bool GameIsPaused = false;
 
     [Header("Ray interactor on hands")]
     public GameObject rayInteracter;
 
-    [Header("Scene Selection")]
-    public SceneList targetScene;
+    void Start() { ToggleActive(false); } // Hidden by default (leave active in editor)
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (GameIsPaused) {
-                Resume();
-            } else {
-                Pause();
-            }
+            if (GameIsPaused) Resume();
+            else Pause();
         }
     }
 
+    void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
+        foreach (GameObject child in GetAllChildren(gameObject)) child.SetActive(state);
+        rayInteracter.SetActive(state);
+    }
+
     public void Resume() {
-        pauseMenuUI.SetActive(false);
-        rayInteracter.SetActive(false);
+        ToggleActive(false);
+
         Time.timeScale = 1.0f;
         GameIsPaused = false;
     }
 
     public void Pause() {
-        pauseMenuUI.SetActive(true);
-        rayInteracter.SetActive(true);
+        ToggleActive(true);
+
         Time.timeScale = 0.0f;
         GameIsPaused = true;
     }
 
+    public void MainMenu() { Resume(); LoadScene(SceneList.MainMenuLevel.ToString()); }
 
-
-    /* Custom Actions */
-    public void goToMainMenu() { Resume(); Tools.LoadScene(SceneList.MainMenuLevel.ToString()); }
-
-    public void RestartLevel() { Resume(); Tools.LoadScene(targetScene.ToString()); }
+    public void RestartLevel() { Resume(); LoadScene(GetCurrScene()); }
     
-    public void recenter() {
-        Debug.Log("Re-Center Clicked");
+    public void RecalibrateVR() {
+        Debug.Log("Recalibrate Clicked (does nothing for now)");
+        // TODO: Recalibrate the VR (borrow from hayden's function somewhere idk)
+        // Actually sorry, I think I broke what this button was attached to before, something in XRController, that was probably correct sry
     }
     
 }

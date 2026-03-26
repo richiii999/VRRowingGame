@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System;
+using System.Collections.Generic;
 
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
@@ -81,4 +82,18 @@ public static class Tools{
             Debug.LogWarning($"Scene: {sceneName} not in build path"); 
         }
     }
+
+    // Litterally how is this not built-in? The most basic shit ever
+    public static List<GameObject> GetAllChildren(GameObject obj){
+        List<GameObject> children = new List<GameObject>();
+
+        foreach(Transform child in obj.transform){
+            children.Add(child.gameObject);
+            children.AddRange(GetAllChildren(child.gameObject)); // Recursive children
+        }
+
+        return children;
+    }
+
+    public static string GetCurrScene() { return SceneManager.GetActiveScene().name; } // Tbh can just call the func directly, I just did this for convienience
 }
