@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: targetScene
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3155904102004628468, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Level
+      value: MainMenuLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: TestLevel
@@ -401,6 +405,14 @@ PrefabInstance:
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184945525367198712, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Level
+      value: MainMenuLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104122327892720490, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: Level
+      value: TestLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

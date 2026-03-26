@@ -14,13 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VR UI/LevelSelect.unity
     guid: d04bde0c7f589f14f81bdf0f0f6d7543
-  - enabled: 0
-    path: Assets/Scenes/Levels/Level1.unity
-    guid: eb8b4d518a2bfdb4d8f5b1f5e2e5b807
   - enabled: 1
     path: Assets/Scenes/Old/Level2.unity
     guid: 04d1eac2ad87225458c670a49aea794e
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Old/Level3.unity
     guid: 5f516307d07b56a4683e2a7ae174779f
   - enabled: 1
@@ -32,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Stadium.unity
     guid: c871ef1b68f3dbd4ca76685e827a5eb3
+  - enabled: 1
+    path: Assets/Scenes/TestLevel.unity
+    guid: 2b0233ed019fef4419c300b886d36f45
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}
