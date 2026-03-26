@@ -13,10 +13,11 @@ public class LevelSelectBall : MonoBehaviour {
             Debug.Log("LevelSelectBall Triggered");
             Destroy(other); // Prevent multiple collisions by deleting the ball
             
-            
+            Tools.LoadScene(Level);
         }
     }
 
     // When the player picks up the ball, remove it's spring joint (so it doesnt fly back when they let go early)
+    // Note: This should be attached to the XRGrabInteractable's event list, for the Select event
     public void DetachJoint(){ Destroy(gameObject.GetComponent<SpringJoint>()); }
 }
