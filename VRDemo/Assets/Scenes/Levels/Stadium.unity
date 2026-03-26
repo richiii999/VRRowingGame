@@ -1606,6 +1606,10 @@ PrefabInstance:
       propertyPath: Level
       value: MainMenuLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 3709814609445418147, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: rayInteracter
+      value: 
+      objectReference: {fileID: 602959030}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: Stadium
@@ -1691,6 +1695,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+--- !u!1 &602959030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6910775299949548509, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 602959029}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &605080244
 GameObject:
   m_ObjectHideFlags: 0

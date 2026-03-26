@@ -4353,6 +4353,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8677177902028006225, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+      propertyPath: rayInteracter
+      value: 
+      objectReference: {fileID: 6910775299949548509}
     - target: {fileID: 9042390136698959995, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.099999994

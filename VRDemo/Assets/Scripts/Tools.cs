@@ -63,6 +63,7 @@ public static class Tools{
     }
 
     public static void LoadScene(string sceneName=""){ // Loads scene, even in editor
+        if (sceneName == "QUIT") QuitGame("Quit from LoadScene()");
 
         Debug.Log($"Loading Scene: {sceneName}");
     

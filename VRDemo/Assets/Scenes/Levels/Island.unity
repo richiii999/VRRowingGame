@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &79568743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6910775299949548509, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 99480707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &94265198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 451112575427530757, guid: 54a568060170671408f89a8a1ed7c9f2, type: 3}
@@ -156,6 +161,10 @@ PrefabInstance:
       propertyPath: Level
       value: MainMenuLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 3709814609445418147, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: rayInteracter
+      value: 
+      objectReference: {fileID: 79568743}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: Island
