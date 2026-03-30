@@ -46,7 +46,7 @@ public class MoveBoat : MonoBehaviour{
         if(flapperVelocity.magnitude > 0.5)
         {
             flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
-            Debug.Log("Magnitude too big");
+            // Debug.Log("Magnitude too big");
         }
         
         //check if underwater. If yes add force and change underwater state
@@ -71,9 +71,10 @@ public class MoveBoat : MonoBehaviour{
 
     private void setUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
         underwaterTrigger = state;
-        if (underwaterTrigger && soundController) soundController.PlayRandomSound("splash",
-                                                                                  transform.position.x, 
-                                                                                  transform.position.y, 
-                                                                                  transform.position.z);
+        if (underwaterTrigger && soundController)
+        {
+            //Debug.Log("Oar Underwater");
+            soundController.PlayRandomSound("splash",transform.position.x,transform.position.y,transform.position.z);
+        }
     }
 }

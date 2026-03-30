@@ -1573,12 +1573,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e671d8434a07c2f46bb17fc6b8eed466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashes: []
-  bgSounds: []
-  cheers: []
-  spamTimer: 120
+  spamTimer: 2
   BGSoundOnStart: 1
-  BGSound: {fileID: 0}
+  BGSound: {fileID: 3807324915550588694}
 --- !u!1 &7145484891458659929
 GameObject:
   m_ObjectHideFlags: 0

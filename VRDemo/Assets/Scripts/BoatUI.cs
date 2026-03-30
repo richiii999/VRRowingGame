@@ -17,7 +17,7 @@ public class BoatUI : MonoBehaviour{
 
     void Start(){
         // set refs
-        scoreUI = RefToComp<ScoreUI>("ScoreUI");
+        scoreUI = GetComponentInChildren<ScoreUI>();
 
         timerText.text = "Pass the Checkpoint to start!";
         menuButton.SetActive(false);
@@ -35,6 +35,9 @@ public class BoatUI : MonoBehaviour{
         
         menuButton.SetActive(true); 
         rayToEnableOnFinish.SetActive(true);
+
+        // Avoids text bug where NPC wins before player hits 1st CP
+        if (!timerText.text.StartsWith("Time: ")) timerText.text = $"Time: 0.0";
 
         if (win){
             nextButton.SetActive(true); 

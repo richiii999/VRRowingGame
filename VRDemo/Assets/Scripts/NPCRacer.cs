@@ -12,6 +12,9 @@ public class NPCRacer : MonoBehaviour{
     private CheckpointController CPC = null; // Ref to CheckpointController script on CheckpointGroup obj
     public Checkpoint currCP         = null; // If not set, uses CPC to find first CP.
 
+    public float laneOffset = 0.0f; // Offsets the NPC's lane position (so it doesnt hog the center), shouldnt be more than +-7 
+    public bool frozen = true; // Freeze NPC until player first CP
+
     public Rigidbody  motorRB     = null; // Ref to 'BoatMotor' obj's Rigidbody to apply forces to
     public GameObject oarL        = null; // Refs to the Oars & Look objects (to spin them)
     public GameObject oarR        = null; 
@@ -41,7 +44,7 @@ public class NPCRacer : MonoBehaviour{
         oarR.transform.LookAt(lookTargetR.transform);
 
         // Move towards next cp smoothly via adding force to boatMotor
-        if (currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position);
+        if (!frozen && currCP != null) motorRB.AddForce(Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position + currCP.transform.forward * laneOffset, speed) - transform.position );
     }
 
     private void OnTriggerEnter(Collider other){ // NPC Checkpoint
@@ -53,4 +56,17 @@ public class NPCRacer : MonoBehaviour{
             }
         }
     }
+
+    public void UnFreeze(){ // Unfreeze NPC, with optional speedboost on start
+        if (frozen) { // Only if NPC is currently frozen
+            frozen = false;
+            SpeedBoost(800f); // Give initial speedboost to NPC (since player already moving)
+        }
+    }
+
+    public void SpeedBoost(float boostFactor = 200f){
+        motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position) * boostFactor);
+    }
+
+    // TODO give NPC speedboost if they are behind player, scaled by how far away from player they are. If within X units, no speedboost tho
 }

@@ -11,12 +11,13 @@ using static Tools;
 
 public class ScoreUI : MonoBehaviour{
     // Refs to child text boxes
-    GameObject totalLabel = null;
-    TextMeshProUGUI totalVal = null;
-    TextMeshProUGUI timeVal  = null;
-    TextMeshProUGUI timeInc  = null;
-    TextMeshProUGUI angleVal = null;
-    TextMeshProUGUI angleInc = null;
+    // Note: U have to set them in the editor since there are 2 UIs front & back.
+    public GameObject totalLabel;
+    public TextMeshProUGUI totalVal;
+    public TextMeshProUGUI timeVal;
+    public TextMeshProUGUI timeInc;
+    public TextMeshProUGUI angleVal;
+    public TextMeshProUGUI angleInc;
 
     // Correct color values (light-green: #7FFF7F), idk how to set colors properly, this a dumb way bruh
     readonly byte R = 127; 
@@ -28,13 +29,7 @@ public class ScoreUI : MonoBehaviour{
     // Total Score is just the sum of these two displayed at the end
 
     void Start(){
-        // set refs
-        totalLabel = RefToObj("TotalLabel");
-        totalVal = RefToComp<TextMeshProUGUI>("TotalValue");
-        timeVal  = RefToComp<TextMeshProUGUI>("TimeValue");
-        timeInc  = RefToComp<TextMeshProUGUI>("TimeInc");
-        angleVal = RefToComp<TextMeshProUGUI>("AngleValue");
-        angleInc = RefToComp<TextMeshProUGUI>("AngleInc");
+        
 
         // Hide stuff on start
         totalLabel.SetActive(false); 
