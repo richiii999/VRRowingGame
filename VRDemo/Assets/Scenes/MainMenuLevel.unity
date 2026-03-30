@@ -9394,9 +9394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boatTF: {fileID: 1736110381}
   xrOrigin: {fileID: 1590413405}
-  lookTarget: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  key: 0
+  lookTarget: {fileID: 517989517}
+  offset: {x: 2.5, y: 3.65, z: 8.25}
+  key: 32
 --- !u!1 &1612435360 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
