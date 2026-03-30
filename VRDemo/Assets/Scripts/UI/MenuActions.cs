@@ -2,7 +2,7 @@ using UnityEngine;
 
 using Rowing.Core;
 using Unity.XR.CoreUtils;
-
+using System.Collections;
 using static Tools;
 
 // MenuActions: Provides Scene Management functions for UI objects
@@ -16,6 +16,9 @@ public class MenuActions : MonoBehaviour {
     [Header("Ray interactor on hands")]
     public GameObject rayInteracter;
 
+    public XROrigin xrOrigin;
+    public Transform boatTF;
+    public Vector3 offset;
     void Start() { ToggleActive(false); } // Hidden by default (leave active in editor)
 
     void Update() {
@@ -52,6 +55,7 @@ public class MenuActions : MonoBehaviour {
         Debug.Log("Recalibrate Clicked (does nothing for now)");
         // TODO: Recalibrate the VR (borrow from hayden's function somewhere idk)
         // Actually sorry, I think I broke what this button was attached to before, something in XRController, that was probably correct sry
+        xrOrigin.MoveCameraToWorldLocation(boatTF.position + offset); 
     }
     
 }
