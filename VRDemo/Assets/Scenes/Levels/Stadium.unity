@@ -3006,10 +3006,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1473006246}
     - target: {fileID: 6478772902289987105, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
-      propertyPath: skipMainMenu
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6478772902289987105, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: levelSelectUI
       value: 
       objectReference: {fileID: 3856576620438741322}
