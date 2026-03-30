@@ -31,21 +31,14 @@ public class MenuActions : MonoBehaviour {
     void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
         foreach (GameObject child in GetAllChildren(gameObject)) child.SetActive(state);
         rayInteracter.SetActive(state);
+
+        Time.timeScale = state ? 0.0f : 1.0f;
+        GameIsPaused = state;
     }
 
-    public void Resume() {
-        ToggleActive(false);
+    public void Resume() { ToggleActive(false); }
 
-        Time.timeScale = 1.0f;
-        GameIsPaused = false;
-    }
-
-    public void Pause() {
-        ToggleActive(true);
-
-        Time.timeScale = 0.0f;
-        GameIsPaused = true;
-    }
+    public void Pause() { ToggleActive(true); }
 
     public void MainMenu() { Resume(); LoadScene(SceneList.MainMenuLevel.ToString()); }
 
