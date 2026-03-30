@@ -1,14 +1,13 @@
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
+using System;
+using System.Collections.Generic;
 
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
 // NOTE: All funcs here should be 'public static fn()' to allow access and use from anywhere. 
-// Import can also be 'using static Tools'. Calling a func from tools does not require Tools.fn(), you can just call fn() directly
-
-// Issues:
-// cheer sound spam
-// boat needs to be larger prob, or CP smaller
-// NPC still too large
+// Import can also be 'using static Tools'. If imported, calling a func require Tools.fn(), you can just call fn() directly
 
 public static class Tools{
 
@@ -62,4 +61,40 @@ public static class Tools{
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
     }
+
+    public static void LoadScene(string sceneName=""){ // Loads scene, even in editor
+        if (sceneName == "QUIT") QuitGame("Quit from LoadScene()");
+
+        Debug.Log($"Loading Scene: {sceneName}");
+    
+        #if UNITY_STANDALONE
+            SceneManager.LoadSceneAsync(sceneName);
+        #endif
+        #if UNITY_EDITOR
+            bool success = false;
+            try { EditorSceneManager.OpenScene($"Assets/Scenes/{sceneName}.unity"); success = true; } catch {} // Ignore first fail, try different path
+            try { if (!success) EditorSceneManager.OpenScene($"Assets/Scenes/Levels{sceneName}.unity"); } 
+            catch (Exception e) { Debug.LogError($"Failed to load Scene: {sceneName}"); Debug.LogError(e.Message); } // only if both fail
+        #endif
+    }
+
+    public static void VerifySceneInBuild(string sceneName){ // Checks if sceneName is in the build path (required to change scenes at runtime)
+        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1) {
+            Debug.LogWarning($"Scene: {sceneName} not in build path"); 
+        }
+    }
+
+    // Litterally how is this not built-in? The most basic shit ever
+    public static List<GameObject> GetAllChildren(GameObject obj){
+        List<GameObject> children = new List<GameObject>();
+
+        foreach(Transform child in obj.transform){
+            children.Add(child.gameObject);
+            children.AddRange(GetAllChildren(child.gameObject)); // Recursive children
+        }
+
+        return children;
+    }
+
+    public static string GetCurrScene() { return SceneManager.GetActiveScene().name; } // Tbh can just call the func directly, I just did this for convienience
 }
