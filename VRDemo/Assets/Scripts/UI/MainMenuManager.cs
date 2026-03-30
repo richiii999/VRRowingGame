@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
+
 // MainMenuManager: Provides Scene Management functions for the main menu
+
+// TODO: Still refactoring this, need to have the platform enabled for each level, so you can overlook the level on start in VR
 
 public class MainMenuManager : MonoBehaviour {
     [Header("Game Camera")]
@@ -80,7 +83,5 @@ public class MainMenuManager : MonoBehaviour {
         }
     }
 
-    public void QuitGame() {
-        MenuActions.QuitGame();
-    }
+    public void QuitGame() { Tools.QuitGame(); }
 }
