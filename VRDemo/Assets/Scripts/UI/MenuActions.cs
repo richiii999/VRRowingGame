@@ -7,8 +7,6 @@ using static Tools;
 // MenuActions: Provides Scene Management functions for UI objects
 // Setup: The buttons under 'Pause Menu' should have their click event set to their resepective functions in this script (ex. ResumeButton -> Resume())
 
-// Note for Mav: Refactored to use Tools interface for changing scenes & quitting
-
 public class MenuActions : MonoBehaviour {
     public bool GameIsPaused = false;
 
@@ -18,18 +16,16 @@ public class MenuActions : MonoBehaviour {
     public XROrigin xrOrigin;
     public Transform boatTF;
     public Vector3 offset;
-    void Start() { ToggleActive(false); } // Hidden by default (leave active in editor)
 
-    public string Axisname = "XRI_Left_Trigger";
-    public float threshHold = 0.5f;
+    void Start() { ToggleActive(false); } // Hidden by default (leave active in editor)
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (GameIsPaused) Resume();
             else Pause();
         }
-        if (Input.GetAxisRaw(Axisname) > threshHold && !GameIsPaused) Pause();
-        print(Input.GetAxisRaw(Axisname));
+        
+        if (Input.GetAxisRaw("XRI_Left_Trigger") > 0.5f && !GameIsPaused) Pause();
     }
 
     void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
@@ -40,19 +36,10 @@ public class MenuActions : MonoBehaviour {
         GameIsPaused = state;
     }
 
+    // Button Funcs
     public void Resume() { ToggleActive(false); }
-
     public void Pause() { ToggleActive(true); }
-
     public void MainMenu() { Resume(); LoadScene(SceneList.MainMenuLevel.ToString()); }
-
     public void RestartLevel() { Resume(); LoadScene(GetCurrScene()); }
-    
-    public void RecalibrateVR() {
-        Debug.Log("Recalibrate Clicked (does nothing for now)");
-        // TODO: Recalibrate the VR (borrow from hayden's function somewhere idk)
-        // Actually sorry, I think I broke what this button was attached to before, something in XRController, that was probably correct sry
-        xrOrigin.MoveCameraToWorldLocation(boatTF.position + offset); 
-    }
-    
+    public void RecalibrateVR() { xrOrigin.MoveCameraToWorldLocation(boatTF.position + offset); }
 }
