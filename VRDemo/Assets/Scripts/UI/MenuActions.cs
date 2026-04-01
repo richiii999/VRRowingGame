@@ -29,6 +29,7 @@ public class MenuActions : MonoBehaviour {
             else Pause();
         }
         if (Input.GetAxisRaw(Axisname) > threshHold && !GameIsPaused) Pause();
+        print(Input.GetAxisRaw(Axisname));
     }
 
     void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
