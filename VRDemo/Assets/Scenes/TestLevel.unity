@@ -362,6 +362,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoatGroup
       objectReference: {fileID: 0}
+    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2764716033144692951, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: sceneName
       value: TestLevel
@@ -417,6 +421,14 @@ PrefabInstance:
     - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RecalibrateVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1627,35 +1639,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.011235259
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.9999369
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00024610787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000049478404
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -181.287
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.005996704
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.027999878
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7840021450840886744, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_Name
-      value: PolyWaterAttempt1
+      value: Water
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5008,6 +5020,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
+    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.40000004
@@ -5055,6 +5071,10 @@ PrefabInstance:
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: featheringCoefficientWhenOnlyOne
@@ -5954,6 +5974,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
+    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.40000004
@@ -6001,6 +6025,10 @@ PrefabInstance:
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: waterOffset
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: featheringCoefficientWhenOnlyOne
