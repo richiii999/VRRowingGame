@@ -20,12 +20,15 @@ public class MenuActions : MonoBehaviour {
     public Vector3 offset;
     void Start() { ToggleActive(false); } // Hidden by default (leave active in editor)
 
+    public string Axisname = "XRI_Left_Trigger";
+    public float threshHold = 0.5f;
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (GameIsPaused) Resume();
             else Pause();
         }
-        if (Input.GetAxisRaw("XRI_Left_Trigger") > .5 && !GameIsPaused) Pause();
+        if (Input.GetAxisRaw(Axisname) > threshHold && !GameIsPaused) Pause();
     }
 
     void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
