@@ -18,7 +18,7 @@ public class WASDMove : MonoBehaviour{
         if (Input.GetKeyUp(KeyCode.LeftShift))   { boostEnabled = false; maxVel = 2f; }
         float boostFactor = boostEnabled ? 1f + boost : 1f;
         // Debug.Log(boostFactor);
-        //Debug.Log(boostFactor);
+        // Debug.Log(boostFactor);
 
         // Add fwd/back and L/R forces separately
         RB.AddForce(Input.GetAxis("Vertical") * boostFactor * strength * transform.forward, ForceMode.Impulse);

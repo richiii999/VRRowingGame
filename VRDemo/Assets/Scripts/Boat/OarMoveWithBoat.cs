@@ -17,6 +17,6 @@ public class OarMoveWithBoat : MonoBehaviour
     void Update(){
         //Oar.GetComponent<ConfigurableJoint>().anchor = differenceAnchor + Boat.transform.position;
         Oar.transform.position = differenceBoat_Oar + Boat.transform.position;
-        Debug.Log(Oar.transform.position);
+        // Debug.Log(Oar.transform.position);
     }
 }

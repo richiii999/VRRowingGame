@@ -954,8 +954,8 @@ MonoBehaviour:
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!1 &2360001629362316586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3340,7 @@ MonoBehaviour:
   boatTF: {fileID: 6827182281671778948}
   xrOrigin: {fileID: 4169529424599111607}
   lookTarget: {fileID: 0}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 0.9, z: 0}
   key: 32
 --- !u!1 &7940750171873549239
 GameObject:
