@@ -2,7 +2,6 @@ using UnityEngine;
 
 using Rowing.Core;
 using Unity.XR.CoreUtils;
-using System.Collections;
 using static Tools;
 
 // MenuActions: Provides Scene Management functions for UI objects
@@ -26,6 +25,7 @@ public class MenuActions : MonoBehaviour {
             if (GameIsPaused) Resume();
             else Pause();
         }
+        if (Input.GetAxisRaw("XRI_Left_Trigger") > .5 && !GameIsPaused) Pause();
     }
 
     void ToggleActive(bool state){ // True means pause menu is shown, false means it is hidden
