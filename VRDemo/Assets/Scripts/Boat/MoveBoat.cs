@@ -28,7 +28,7 @@ public class MoveBoat : MonoBehaviour{
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
 
-        waterYLevel = boat.GetComponent<Buoyancy>().waterOffset; 
+        waterYLevel = Tools.RefToObj("/Env/Water").transform.position.y + boat.GetComponent<Buoyancy>().waterOffset; 
 
         Vector3 relativePosition = boat.transform.position - transform.position;
         current = relativePosition;
