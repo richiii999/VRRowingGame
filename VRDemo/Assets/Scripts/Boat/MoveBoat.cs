@@ -13,7 +13,7 @@ public class MoveBoat : MonoBehaviour{
     private float waterYLevel = 0.0f; // Water's Y level (grabbed from waterFloat.cs on the boat group)
 
     private bool underwaterTrigger = false; // Trigger when enter water, resets when leaves water (ex. to play sounds)
-    // Note: Use the setter setUnderwater(), do not set directly
+    // Note: Use the setter SetUnderwater(), do not set directly
 
     public SoundController soundController = null; // Ref to the level's SoundController to play splashes
 
@@ -28,35 +28,35 @@ public class MoveBoat : MonoBehaviour{
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
 
-        waterYLevel = boat.GetComponent<Buoyancy>().waterYLevel; 
+        waterYLevel = boat.GetComponent<Buoyancy>().waterOffset; 
 
-        Vector3 relativePosition = boat.transform.position - this.transform.position;
+        Vector3 relativePosition = boat.transform.position - transform.position;
         current = relativePosition;
         previous = relativePosition;
     }
 
     void Update(){
         //setting velocity
-        Vector3 flapperPosition = this.transform.position;
+        Vector3 flapperPosition = transform.position;
         Vector3 flapperVelocity = current - previous;
-        flapperVelocity.y = (float)0.0;
+        flapperVelocity.y = 0f;
 
         //spazzing out prevention
         //currently a bandaid fix. Instead, the hands should deattached when they get too far from the object.
         if(flapperVelocity.magnitude > 0.5)
         {
-            flapperVelocity = new Vector3((float)0.0,(float)0.0,(float)0.0);
+            flapperVelocity = new Vector3(0f, 0f, 0f);
             // Debug.Log("Magnitude too big");
         }
         
         //check if underwater. If yes add force and change underwater state
         if(flapperPosition.y < waterYLevel){ // If flapper below water
-            if (!underwaterTrigger) setUnderwater(true);
+            if (!underwaterTrigger) SetUnderwater(true);
 
             //boat.AddForce(flapperVelocity * Speed_Coffecient);
             boatMotor.AddForce(flapperVelocity * Speed_Coffecient);
         }
-        else if (underwaterTrigger) setUnderwater(false);
+        else if (underwaterTrigger) SetUnderwater(false);
         
         //debug code
         if (debugFlapper){
@@ -64,12 +64,12 @@ public class MoveBoat : MonoBehaviour{
         }
 
         //setting positions 
-        Vector3 relativePosition = boat.transform.position - this.transform.position;
+        Vector3 relativePosition = boat.transform.position - transform.position;
         previous = current;
         current = relativePosition;
     }
 
-    private void setUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
+    private void SetUnderwater(bool state){ // Setter for underwater, used to play 3D splash sounds
         underwaterTrigger = state;
         if (underwaterTrigger && soundController)
         {

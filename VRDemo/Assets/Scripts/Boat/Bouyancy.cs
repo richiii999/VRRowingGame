@@ -10,35 +10,35 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class Buoyancy : MonoBehaviour
-{
-//	public Ocean ocean;
-
+public class Buoyancy : MonoBehaviour{
 	public float density = 500;
 	public int slicesPerAxis = 2;
 	public bool isConcave = false;
 	public int voxelsLimit = 16;
 
-	public float waterYLevel = 0.0f; // Set the water Y level
+	private float waterYLevel = 0f; // Set from the /Env/Water Y-level
+	public float waterOffset = 0.0f; // Set the water Y-Offset to float higher or lower
+
 	public GameObject leftHand;
 	public GameObject rightHand;
-	public float featheringCoefficientWhenNeither = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
-	public float featheringCoefficientWhenOnlyOne = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
-	public float featheringCoefficientWhenBoth = (float)1.0; // higher number = more deceleratation. lower number = less deceleration. 1 = default
-	private const float DAMPFER = 0.1f;
-	private const float WATER_DENSITY = 1000;
 
-	private float voxelHalfHeight;
-	private Vector3 localArchimedesForce;
-	private List<Vector3> voxels;
-	private bool isMeshCollider;
-	private List<Vector3[]> forces; // For drawing force gizmos
+	public float featheringCoefficientWhenNeither = 1f; // higher number = more deceleratation. lower number = less deceleration. 1 = default
+	public float featheringCoefficientWhenOnlyOne = 1f; 
+	public float featheringCoefficientWhenBoth    = 1f; 
+	
+	const float DAMPFER = 0.1f;
+	const float WATER_DENSITY = 1000;
 
-	/// <summary>
-	/// Provides initialization.
-	/// </summary>
-	private void Start()
-	{
+	float voxelHalfHeight;
+	Vector3 localArchimedesForce;
+	List<Vector3> voxels;
+	bool isMeshCollider;
+	List<Vector3[]> forces; // For drawing force gizmos
+
+	void Start(){
+		waterYLevel = Tools.RefToObj("/Env/Water").transform.position.y;
+		Debug.Log(GetWaterLevel(0f,0f));
+
 		forces = new List<Vector3[]>(); // For drawing force gizmos
 
 		// Store original rotation and position
@@ -56,18 +56,10 @@ public class Buoyancy : MonoBehaviour
 		isMeshCollider = GetComponent<MeshCollider>() != null;
 
 		var bounds = GetComponent<Collider>().bounds;
-		if (bounds.size.x < bounds.size.y)
-		{
-			voxelHalfHeight = bounds.size.x;
-		}
-		else
-		{
-			voxelHalfHeight = bounds.size.y;
-		}
-		if (bounds.size.z < voxelHalfHeight)
-		{
-			voxelHalfHeight = bounds.size.z;
-		}
+		if (bounds.size.x < bounds.size.y) voxelHalfHeight = bounds.size.x;
+		else voxelHalfHeight = bounds.size.y;
+
+		if (bounds.size.z < voxelHalfHeight) voxelHalfHeight = bounds.size.z;
 		voxelHalfHeight /= 2 * slicesPerAxis;
 
 		// The object must have a RidigBody
@@ -99,7 +91,7 @@ public class Buoyancy : MonoBehaviour
 	/// <param name="concave">Whether the object have a concave shape.</param>
 	/// <returns>List of voxels represented by their center points.</returns>
 	/// </summary>
-	private List<Vector3> SliceIntoVoxels(bool concave)
+	List<Vector3> SliceIntoVoxels(bool concave)
 	{
 		var points = new List<Vector3>(slicesPerAxis * slicesPerAxis * slicesPerAxis);
 
@@ -169,7 +161,7 @@ public class Buoyancy : MonoBehaviour
 	/// <param name="c">Mesh collider.</param>
 	/// <param name="p">Point.</param>
 	/// <returns>True - the point is inside the mesh collider. False - the point is outside of the mesh collider. </returns>
-	private static bool PointIsInsideMeshCollider(Collider c, Vector3 p)
+	static bool PointIsInsideMeshCollider(Collider c, Vector3 p)
 	{
 		Vector3[] directions = { Vector3.up, Vector3.down, Vector3.left, Vector3.right, Vector3.forward, Vector3.back };
 
@@ -191,7 +183,7 @@ public class Buoyancy : MonoBehaviour
 	/// <param name="list">List of points.</param>
 	/// <param name="firstIndex">Index of the first point in the list. It's always less than the second index.</param>
 	/// <param name="secondIndex">Index of the second point in the list. It's always greater than the first index.</param>
-	private static void FindClosestPoints(IList<Vector3> list, out int firstIndex, out int secondIndex)
+	static void FindClosestPoints(IList<Vector3> list, out int firstIndex, out int secondIndex)
 	{
 		float minDistance = float.MaxValue, maxDistance = float.MinValue;
 		firstIndex = 0;
@@ -221,7 +213,7 @@ public class Buoyancy : MonoBehaviour
 	/// </summary>
 	/// <param name="list">List of points.</param>
 	/// <param name="targetCount">Target number of points in the list.</param>
-	private static void WeldPoints(IList<Vector3> list, int targetCount)
+	static void WeldPoints(IList<Vector3> list, int targetCount)
 	{
 		if (list.Count <= 2 || targetCount < 2)
 		{
@@ -240,22 +232,9 @@ public class Buoyancy : MonoBehaviour
 		}
 	}
 
-	/// <summary>
-	/// Returns the water level at given location.
-	/// </summary>
-	/// <param name="x">x-coordinate</param>
-	/// <param name="z">z-coordinate</param>
-	/// <returns>Water level</returns>
-	private float GetWaterLevel(float x, float z)
-	{
-//		return ocean == null ? 0.0f : ocean.GetWaterHeightAtLocation(x, z);
-		return waterYLevel; // VRRowing change to hardcode flat water
-	}
+	float GetWaterLevel(float _x=0f, float _z=0f) { return waterOffset + waterYLevel; } // VRRowing change to hardcode flat water
 
-	/// <summary>
-	/// Calculates physics.
-	/// </summary>
-	private void FixedUpdate(){
+	void FixedUpdate(){
 		forces.Clear(); // For drawing force gizmos
 
 		foreach (var point in voxels){
@@ -318,7 +297,7 @@ public class Buoyancy : MonoBehaviour
 	/// <summary>
 	/// Draws gizmos.
 	/// </summary>
-	private void OnDrawGizmos()
+	void OnDrawGizmos()
 	{
 		if (voxels == null || forces == null)
 		{
