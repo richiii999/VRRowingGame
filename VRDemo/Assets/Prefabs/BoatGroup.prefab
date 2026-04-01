@@ -1026,12 +1026,12 @@ MonoBehaviour:
   density: 500
   slicesPerAxis: 2
   voxelsLimit: 16
-  waterOffset: 0
+  waterOffset: 3.1
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!54 &6454570026754623682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1476,12 +1476,12 @@ MonoBehaviour:
   density: 500
   slicesPerAxis: 2
   voxelsLimit: 16
-  waterOffset: 0
+  waterOffset: 3.1
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!54 &6627120821778633924
 Rigidbody:
   m_ObjectHideFlags: 0
