@@ -56,7 +56,7 @@ public class SoundController : MonoBehaviour{
         switch (category){
             case "splash": 
                 if (splashTimer == 0f) {
-                    Debug.Log("Play Splash");
+                    //Debug.Log("Play Splash");
                     currSound = splashes[Random.Range(0, splashes.Length)];
                     splashTimer += spamTimer;
                 }

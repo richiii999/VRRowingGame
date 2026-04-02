@@ -948,14 +948,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 500
   slicesPerAxis: 2
-  isConcave: 0
   voxelsLimit: 16
-  waterYLevel: -0.75
+  waterOffset: 3.1
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!1 &2360001629362316586
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,14 +1025,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 500
   slicesPerAxis: 2
-  isConcave: 0
   voxelsLimit: 16
-  waterYLevel: -0.75
+  waterOffset: 3.1
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!54 &6454570026754623682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1477,14 +1475,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   density: 500
   slicesPerAxis: 2
-  isConcave: 0
   voxelsLimit: 16
-  waterYLevel: -0.75
+  waterOffset: 3.1
   leftHand: {fileID: 4519042813569102091}
   rightHand: {fileID: 2917616178247901226}
   featheringCoefficientWhenNeither: 1
-  featheringCoefficientWhenOnlyOne: 1
-  featheringCoefficientWhenBoth: 1
+  featheringCoefficientWhenOnlyOne: 0.8
+  featheringCoefficientWhenBoth: 0.4
 --- !u!54 &6627120821778633924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1756,6 +1753,8 @@ GameObject:
   - component: {fileID: 3525032132816280513}
   - component: {fileID: 8519856697803611781}
   - component: {fileID: 2459408212237422891}
+  - component: {fileID: 6478078569853302883}
+  - component: {fileID: 7106790083207073357}
   m_Layer: 0
   m_Name: Right Direct Interactor
   m_TagString: Untagged
@@ -1936,6 +1935,77 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6478078569853302883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6519472236291038858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0b9921bce4eeb49bd05815b1135ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractorSourceObject: {fileID: 8519856697803611781}
+  m_HapticImpulsePlayer: {fileID: 7106790083207073357}
+  m_PlaySelectEntered: 1
+  m_SelectEnteredData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlaySelectExited: 1
+  m_SelectExitedData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlaySelectCanceled: 0
+  m_SelectCanceledData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverEntered: 0
+  m_HoverEnteredData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverExited: 0
+  m_HoverExitedData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverCanceled: 0
+  m_HoverCanceledData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_AllowHoverHapticsWhileSelecting: 0
+--- !u!114 &7106790083207073357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6519472236291038858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticOutput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: 
+      m_Id: ab54316f-8747-47a7-ba30-a46754c015ab
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: -8222252007134549311, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+  m_AmplitudeMultiplier: 1
 --- !u!1 &6703072948578207281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3410,7 @@ MonoBehaviour:
   boatTF: {fileID: 6827182281671778948}
   xrOrigin: {fileID: 4169529424599111607}
   lookTarget: {fileID: 0}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 0.9, z: 0}
   key: 32
 --- !u!1 &7940750171873549239
 GameObject:
@@ -3478,7 +3548,7 @@ Transform:
   m_GameObject: {fileID: 8522778967653985054}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: 5.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3554,6 +3624,8 @@ GameObject:
   - component: {fileID: 1890333942535012114}
   - component: {fileID: 8134366570636692068}
   - component: {fileID: 2298542060299706898}
+  - component: {fileID: 958052784291405828}
+  - component: {fileID: 765006769129951074}
   m_Layer: 0
   m_Name: Left Direct Interactor
   m_TagString: Untagged
@@ -3734,6 +3806,77 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &958052784291405828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164843535617833911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd0b9921bce4eeb49bd05815b1135ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractorSourceObject: {fileID: 8134366570636692068}
+  m_HapticImpulsePlayer: {fileID: 765006769129951074}
+  m_PlaySelectEntered: 1
+  m_SelectEnteredData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlaySelectExited: 1
+  m_SelectExitedData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlaySelectCanceled: 0
+  m_SelectCanceledData:
+    m_Amplitude: 0.5
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverEntered: 0
+  m_HoverEnteredData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverExited: 0
+  m_HoverExitedData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_PlayHoverCanceled: 0
+  m_HoverCanceledData:
+    m_Amplitude: 0.25
+    m_Duration: 0.1
+    m_Frequency: 0
+  m_AllowHoverHapticsWhileSelecting: 0
+--- !u!114 &765006769129951074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9164843535617833911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b734f2bd29eeddd4d85afb0c266228c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HapticOutput:
+    m_InputSourceMode: 2
+    m_InputAction:
+      m_Name: Haptic
+      m_Type: 2
+      m_ExpectedControlType: 
+      m_Id: 2456c138-0d85-4bcf-8b68-76c3b1e3d52f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_InputActionReference: {fileID: -8785819595477538065, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_ObjectReferenceObject: {fileID: 0}
+  m_AmplitudeMultiplier: 1
 --- !u!1001 &246119095682441214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4279,27 +4422,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.1
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7077236
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7064895
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -19.1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.5
+      value: 23.5
       objectReference: {fileID: 0}
     - target: {fileID: 1115103728924822945, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1175122378961766678, guid: ae67a7b693247ad49a528847f1613b34, type: 3}
       propertyPath: rayToEnableOnFinish
