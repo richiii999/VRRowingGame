@@ -857,6 +857,7 @@ GameObject:
   - component: {fileID: 921521446857019065}
   - component: {fileID: 4249274727420233216}
   - component: {fileID: 1968491798886157769}
+  - component: {fileID: 3103890094683418566}
   m_Layer: 0
   m_Name: BoatGroup
   m_TagString: Player
@@ -955,6 +956,18 @@ MonoBehaviour:
   featheringCoefficientWhenNeither: 1
   featheringCoefficientWhenOnlyOne: 0.8
   featheringCoefficientWhenBoth: 0.4
+--- !u!114 &3103890094683418566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705753896783483294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0764df0cda3e8b0687e7befe21f69d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2360001629362316586
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3574,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8522778967653985054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c0d0daeab91ea744968188e75f584bd, type: 3}
   m_Name: 
