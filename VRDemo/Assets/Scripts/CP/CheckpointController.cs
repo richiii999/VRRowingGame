@@ -62,6 +62,7 @@ public class CheckpointController : MonoBehaviour{
         if (CP == checkpoints[0]) { 
             startTime = Time.time;
             BoatUI.ResetScore();
+            Debug.Log("Score reset!");
             foreach (NPCRacer NPC in FindObjectsByType<NPCRacer>(FindObjectsSortMode.None)) NPC.UnFreeze();
         } 
 
