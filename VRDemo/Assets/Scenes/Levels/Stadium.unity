@@ -1580,7 +1580,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1474234367453537939, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: debugFlapper
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 602959029}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c0d0daeab91ea744968188e75f584bd, type: 3}
   m_Name: 
