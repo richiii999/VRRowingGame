@@ -44,7 +44,7 @@ public class Buoyancy : MonoBehaviour{
 
 	void Start(){
 		waterYLevel = Tools.RefToObj("/Env/Water").transform.position.y;
-		Debug.Log(GetWaterLevel(0f,0f));
+		// Debug.Log(GetWaterLevel(0f,0f));
 
 		forces = new List<Vector3[]>(); // For drawing force gizmos
 
