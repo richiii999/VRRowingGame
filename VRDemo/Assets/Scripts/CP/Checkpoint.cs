@@ -12,6 +12,7 @@ using Color = UnityEngine.Color;
 
 public class Checkpoint : MonoBehaviour{
     CheckpointController CPC; // Ref to the CPC
+    BoatUI boatUI = null;
     
     public Renderer PostL; // The CheckpointTrigger's Renderer (to access material color as INSTANCE not the base color)
     public Renderer PostR;
@@ -23,8 +24,9 @@ public class Checkpoint : MonoBehaviour{
     public float scoreTime = 6.0f; // How many seconds for full score? (Reach slower than this = less score given)
     
     void Start(){ 
-        // set ref
+        // set refs
         CPC = RefToComp<CheckpointController>("CheckpointGroup");
+        boatUI = RefToComp<BoatUI>("BoatUI", mustExist: false);
 
         SetGlowAlpha(0.15f); // Super low checkpoint glow on start
     }
@@ -60,9 +62,11 @@ public class Checkpoint : MonoBehaviour{
     private void DeactivateCheckpoint(Collider other) {
         if ( !(isNext && other.CompareTag("Player")) ) return; // Player, in-order only
         
-        CPC.OnCheckpoint(this); 
         float angleScore = CPC.ResetMaxAngle(); // ResetMaxAngle() returns the value it was before resetting.
-        foreach (BoatUI UI in other.GetComponentsInChildren<BoatUI>()) UI.Score( scoreTime / (Time.time - startTime), angleScore); 
+        boatUI.Score( scoreTime / (Time.time - startTime), angleScore); 
+        Debug.Log("Scored");
+        
+        CPC.OnCheckpoint(this); 
         
         SetColor(Color.gray);
         SetGlowAlpha(0.4f);
