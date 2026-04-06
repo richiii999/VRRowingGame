@@ -32,7 +32,7 @@ public class Buoyancy : MonoBehaviour{
 	Rigidbody rb = null;
 
 	// VR-Rowing specific values
-	private float waterYLevel = 0f; // Set from the /Env/Water Y-level
+	public float waterYLevel = 0f; // Set from the /Env/Water Y-level
 	public float waterOffset = 0.0f; // Set the water Y-Offset to float higher or lower
 
 	public GameObject leftHand;
