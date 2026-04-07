@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4e154bf235e41704bbd6bbc6fd6c63f6, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1595,10 +1595,6 @@ PrefabInstance:
       value: BoatGroup
       objectReference: {fileID: 0}
     - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968491798886157769, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
@@ -1617,6 +1613,10 @@ PrefabInstance:
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: Stadium
+      objectReference: {fileID: 0}
+    - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: m_Constraints
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: debugFlapper
@@ -1639,16 +1639,8 @@ PrefabInstance:
       value: VRCalibration, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
       value: -3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
@@ -1660,7 +1652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.47
+      value: -3.76
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1668,23 +1660,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.69218475
+      value: -0.6922316
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.008209497
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.721623
+      value: 0.72167546
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.008558626
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -1.359
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1696,7 +1688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7184945525367198712, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
-      value: MainMenuLevel
+      value: Island
       objectReference: {fileID: 0}
     - target: {fileID: 9104122327892720490, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
@@ -2065,10 +2057,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
     - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
@@ -2086,7 +2074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.33
+      value: -3.68
       objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2121,10 +2109,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
@@ -2135,6 +2119,10 @@ PrefabInstance:
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: laneOffset
       value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: m_Constraints
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name
@@ -2477,10 +2465,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
     - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
@@ -2498,7 +2482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.33
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2533,10 +2517,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: waterYLevel
       value: -3.5
       objectReference: {fileID: 0}
@@ -2547,6 +2527,10 @@ PrefabInstance:
     - target: {fileID: 4402117052852853986, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: laneOffset
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5402289021565881002, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
+      propertyPath: m_Constraints
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6137230102774592427, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_Name

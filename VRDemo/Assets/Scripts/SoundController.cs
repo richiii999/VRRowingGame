@@ -8,24 +8,24 @@ using static Tools;
 
 public class SoundController : MonoBehaviour{
     // Stores references to each of the AudioSource objects (by category)
-    AudioSource[] splashes; 
-    AudioSource[] bgSounds; 
-    AudioSource[] cheers; 
+    public AudioSource[] splashes; 
+    public AudioSource[] bgSounds; 
+    public AudioSource[] cheers; 
 
     // Only 1 sound effect in its category can play at a time (bg exempt since only one is played via loop)
     public float spamTimer = 2f; // Time in seconds until sound can be played again
-    private float splashTimer = 0f;
-    private float cheerTimer = 0f;
-    private AudioSource currSound = null; // Ref to the current sound
+    public float splashTimer = 0f;
+    public float cheerTimer = 0f;
+    public AudioSource currSound = null; // Ref to the current sound
 
     public bool BGSoundOnStart = true; // Play BG sound on start?
     public AudioSource BGSound = null; // Specific BG to play, if not set, pick random
     
     void Start(){
         // Populate the AudioSource arrays with their respective components
-        splashes = GetComponentsInChildren<AudioSource>(RefToObj("Splashes")); // Sensitive names, dont change in editor
-        bgSounds = GetComponentsInChildren<AudioSource>(RefToObj("BgSounds"));
-        cheers = GetComponentsInChildren<AudioSource>(RefToObj("Cheers"));
+        splashes = RefToObj("Splashes").GetComponentsInChildren<AudioSource>(); // Sensitive names, dont change in editor
+        bgSounds = RefToObj("BgSounds").GetComponentsInChildren<AudioSource>();
+        cheers   = RefToObj("Cheers").GetComponentsInChildren<AudioSource>();
 
         if (BGSoundOnStart) { // Play BGSound on loop, if none set: pick one randomly
             if (BGSound == null && bgSounds.Length > 0) BGSound = bgSounds[Random.Range(0, bgSounds.Length)];
@@ -53,10 +53,11 @@ public class SoundController : MonoBehaviour{
     // BUG (bad design): why cant I have a Vector3(0,0,0) as default param? So dumb to separate it to xyz
     public void PlayRandomSound(string category = "none", float x = 0f, float y = 0f, float z = 0f){ 
         currSound = null; // Reset currSound to prevent double play of sound effects
+        // Debug.Log($"Sound played, cat={category}");
+        
         switch (category){
             case "splash": 
                 if (splashTimer == 0f) {
-                    //Debug.Log("Play Splash");
                     currSound = splashes[Random.Range(0, splashes.Length)];
                     splashTimer += spamTimer;
                 }
