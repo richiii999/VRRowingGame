@@ -45,7 +45,7 @@ public class MainMenuManager : MonoBehaviour {
     // Turn on Menu UI
     // Toggle Game Systems off
     public void EnterMenuMode() {
-        Debug.Log("Enter Menu Mode Tapped");
+        // Debug.Log("Enter Menu Mode Tapped");
         ToggleGameSystem(false);
     }
 
@@ -54,10 +54,16 @@ public class MainMenuManager : MonoBehaviour {
     // Teleport player to tutorial spawn point
     // Turn off Menu UI
     // Toggle Game Systems on
-    public void StartTutorial() {
-        // Debug.Log("Start Tutorial Tapped");
-        ToggleGameSystem(true);
-    }
+    public void StartTutorial() { ToggleGameSystem(true); } // LEGACY: dont remove in case stuff depends on this
+
+    // Have to be separate funcs due to the way UI events are connected.
+    public void StartEasy()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(1f); }
+    public void StartMedium()  { ToggleGameSystem(true); Tools.SetNPCDifficulty(5f); }
+    public void StartHard()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(10f); }
+    public void MaverickMode() { ToggleGameSystem(true); Tools.SetNPCDifficulty(15f); }
+    
+
+
 
     // MARK: - Show level select
     // Turn off Menu UI

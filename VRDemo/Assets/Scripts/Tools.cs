@@ -3,6 +3,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
+using static UnityEngine.Random;
 
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
@@ -97,4 +98,10 @@ public static class Tools{
     }
 
     public static string GetCurrScene() { return SceneManager.GetActiveScene().name; } // Tbh can just call the func directly, I just did this for convienience
+
+    public static void SetNPCDifficulty(float difficulty=1.0f){ // Set NPC diff within 80-120% of passed value
+        foreach (GameObject NPC in GameObject.FindGameObjectsWithTag("NPCRacer")){
+            NPC.GetComponent<NPCRacer>().speed = Range(difficulty * 0.8f, difficulty * 1.2f);
+        }
+    }
 }
