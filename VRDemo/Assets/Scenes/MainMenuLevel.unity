@@ -10473,7 +10473,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610559207}
   m_LocalRotation: {x: -0, y: -0.000000119209275, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.3156239, y: 0.29046577, z: 0.13398479}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10481,8 +10481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 98.9, y: 0.8}
-  m_SizeDelta: {x: 227.9, y: 50}
+  m_AnchoredPosition: {x: 108, y: 31}
+  m_SizeDelta: {x: 220.32, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610559209
 MonoBehaviour:
@@ -10504,7 +10504,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Trigger Button and Ray for Menu Options
+  m_text: 'Use Right Trigger Button and Ray for Menu Options.
+
+    Use Left Trigger
+    to Pause During a Level.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10531,8 +10534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

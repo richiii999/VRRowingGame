@@ -10,7 +10,7 @@ public class MoveBoat : MonoBehaviour{
 
     private Vector3 current; // Current and previous coordinates of the flapper (used for physics calculation)
     private Vector3 previous;
-    private float waterYLevel = 0.0f; // Water's Y level (grabbed from waterFloat.cs on the boat group)
+    public float waterYLevel = 0.0f; // Water's Y level (grabbed from waterFloat.cs on the boat group)
 
     private bool underwaterTrigger = false; // Trigger when enter water, resets when leaves water (ex. to play sounds)
     // Note: Use the setter setUnderwater(), do not set directly
@@ -28,7 +28,6 @@ public class MoveBoat : MonoBehaviour{
         soundController = GameObject.Find("SoundController").GetComponent<SoundController>();
         if (soundController == null) Debug.LogWarning("No soundcontroller detected");
 
-        waterYLevel = boat.GetComponent<Buoyancy>().waterYLevel; 
 
         Vector3 relativePosition = boat.transform.position - this.transform.position;
         current = relativePosition;
