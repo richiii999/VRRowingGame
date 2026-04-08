@@ -772,8 +772,8 @@ Transform:
   m_GameObject: {fileID: 1792672370773629232}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000119209275}
-  m_LocalPosition: {x: -4.532449, y: -2.4377844, z: 4.980003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2837297696575913780}
@@ -809,7 +809,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: f6ab54b54a138524183c6af8105047d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1838,8 +1838,8 @@ Transform:
   m_GameObject: {fileID: 2618934544155307533}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000119209275}
-  m_LocalPosition: {x: -5.149466, y: -1.2900954, z: 3.295029}
-  m_LocalScale: {x: 0.59999985, y: 0.5999999, z: 0.60000014}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6336206973074246158}
@@ -2071,7 +2071,7 @@ Transform:
   m_GameObject: {fileID: 3286629446373817597}
   serializedVersion: 2
   m_LocalRotation: {x: -2.910372e-11, y: 2.7105051e-20, z: 2.910383e-11, w: 1}
-  m_LocalPosition: {x: -7.6738615e-11, y: -0.00000011920929, z: 1.9402635e-10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2477,7 +2477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000044822693, y: -29}
+  m_AnchoredPosition: {x: 0, y: -29}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3759759046491835398
@@ -2761,7 +2761,7 @@ Transform:
   m_GameObject: {fileID: 4598984163642893475}
   serializedVersion: 2
   m_LocalRotation: {x: -2.910372e-11, y: 2.7105051e-20, z: 2.910383e-11, w: 1}
-  m_LocalPosition: {x: -7.6738615e-11, y: -0.00000011920929, z: 1.9402635e-10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3669,8 +3669,8 @@ RectTransform:
   m_GameObject: {fileID: 6388744030623082602}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.5}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8285324967892513869}
   - {fileID: 7301748765165212268}
@@ -3702,7 +3702,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -4243,7 +4243,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6580394877730537965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4952,8 +4952,8 @@ Transform:
   m_GameObject: {fileID: 8003293714257473526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.000000119209275}
-  m_LocalPosition: {x: -5.1094685, y: -0.62309635, z: -1.0728358}
-  m_LocalScale: {x: 0.6, y: 0.59999996, z: 0.6}
+  m_LocalPosition: {x: 0, y: 1, z: -5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6580394877730537965}
@@ -4985,7 +4985,7 @@ Transform:
   m_GameObject: {fileID: 8210828268647635303}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1054473, y: 9.61832, z: 34.309998}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
