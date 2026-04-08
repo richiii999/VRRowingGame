@@ -79,7 +79,7 @@ public static class Tools{
     }
 
     public static void VerifySceneInBuild(string sceneName){ // Checks if sceneName is in the build path (required to change scenes at runtime)
-        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1) {
+        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1 && sceneName != "QUIT") { // "QUIT" is reserved sceneName, it closes the game
             Debug.LogWarning($"Scene: {sceneName} not in build path"); 
         }
     }
