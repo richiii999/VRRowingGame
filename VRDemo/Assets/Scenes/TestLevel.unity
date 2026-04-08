@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d9dca9ae1786c394f9e79c637aa9a7bf, type: 2}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -394,10 +394,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3815653955751810256, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: m_FarAttachMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3900782385915704166, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: Level
       value: TestLevel
@@ -417,14 +413,6 @@ PrefabInstance:
     - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RecalibrateVR
-      objectReference: {fileID: 0}
-    - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6587233317086086096, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1635,35 +1623,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.011235259
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1
+      value: -0.9999369
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.00024610787
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.000049478404
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -180
+      value: -181.287
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.005996704
       objectReference: {fileID: 0}
     - target: {fileID: 7459800827501221730, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.027999878
       objectReference: {fileID: 0}
     - target: {fileID: 7840021450840886744, guid: 61a66cdef9df7634ea1792515b11e8c5, type: 3}
       propertyPath: m_Name
-      value: Water
+      value: PolyWaterAttempt1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5016,10 +5004,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
-    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.40000004
@@ -5067,10 +5051,6 @@ PrefabInstance:
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: featheringCoefficientWhenOnlyOne
@@ -5573,6 +5553,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278e87ed922e9b64d83347638de543fb, type: 3}
+--- !u!114 &1566053402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3103890094683418566, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+  m_PrefabInstance: {fileID: 99480707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0764df0cda3e8b0687e7befe21f69d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1572439032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5970,10 +5961,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260168744}
     m_Modifications:
-    - target: {fileID: 985228506014433406, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.40000004
@@ -6021,10 +6008,6 @@ PrefabInstance:
     - target: {fileID: 3619019022332318987, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
-      propertyPath: waterOffset
-      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 4282830590837703487, guid: b68f68dbe43e80c488fa6ff5868d55cc, type: 3}
       propertyPath: featheringCoefficientWhenOnlyOne
@@ -6671,6 +6654,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 987481547}
     m_Modifications:
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1566053402}
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Flip_Backwards
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FlipBackwards, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2523836658409331366, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.1054473
