@@ -3,8 +3,6 @@ using System.Collections.Generic;
 
 // MainMenuManager: Provides Scene Management functions for the main menu
 
-// TODO: Still refactoring this, need to have the platform enabled for each level, so you can overlook the level on start in VR
-
 public class MainMenuManager : MonoBehaviour {
     [Header("Game Camera")]
     public GameObject gameCamera;
@@ -58,9 +56,9 @@ public class MainMenuManager : MonoBehaviour {
 
     // Have to be separate funcs due to the way UI events are connected.
     public void StartEasy()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(1f); }
-    public void StartMedium()  { ToggleGameSystem(true); Tools.SetNPCDifficulty(5f); }
-    public void StartHard()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(10f); }
-    public void MaverickMode() { ToggleGameSystem(true); Tools.SetNPCDifficulty(15f); }
+    public void StartMedium()  { ToggleGameSystem(true); Tools.SetNPCDifficulty(3f); }
+    public void StartHard()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(6f); }
+    public void MaverickMode() { ToggleGameSystem(true); Tools.SetNPCDifficulty(10f); }
     
 
 

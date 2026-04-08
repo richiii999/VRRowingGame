@@ -65,6 +65,6 @@ public class NPCRacer : MonoBehaviour{
     }
 
     public void SpeedBoost(float boostFactor = 200f){
-        motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position) * boostFactor);
+        motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, 1f) - transform.position) * boostFactor);
     }
 }
