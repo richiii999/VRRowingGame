@@ -55,10 +55,10 @@ public class MainMenuManager : MonoBehaviour {
     public void StartTutorial() { ToggleGameSystem(true); } // LEGACY: dont remove in case stuff depends on this
 
     // Have to be separate funcs due to the way UI events are connected.
-    public void StartEasy()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(1f); }
-    public void StartMedium()  { ToggleGameSystem(true); Tools.SetNPCDifficulty(3f); }
-    public void StartHard()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(6f); }
-    public void MaverickMode() { ToggleGameSystem(true); Tools.SetNPCDifficulty(10f); }
+    public void StartEasy()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(0.5f); }
+    public void StartMedium()  { ToggleGameSystem(true); Tools.SetNPCDifficulty(1f); }
+    public void StartHard()    { ToggleGameSystem(true); Tools.SetNPCDifficulty(1.5f); }
+    public void MaverickMode() { ToggleGameSystem(true); Tools.SetNPCDifficulty(3f); }
     
 
 
