@@ -1,9 +1,10 @@
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
-
+#if UNITY_EDITOR
+using UnityEditor.SceneManagement;
+#endif
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
 // NOTE: All funcs here should be 'public static fn()' to allow access and use from anywhere. 
