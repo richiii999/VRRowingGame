@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 20d4f77b9022eab48b4d94599ed4bf82, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -226,7 +226,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 69a74a71bbe231347855dad736614db2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1787907065}
   m_SourcePrefab: {fileID: 100100000, guid: 69a74a71bbe231347855dad736614db2, type: 3}
 --- !u!4 &274829145 stripped
 Transform:
@@ -1580,7 +1583,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1474234367453537939, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1511644247249023880, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: debugFlapper
@@ -1607,6 +1614,10 @@ PrefabInstance:
       value: MainMenuLevel
       objectReference: {fileID: 0}
     - target: {fileID: 3709814609445418147, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709814609445418147, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: rayInteracter
       value: 
       objectReference: {fileID: 602959030}
@@ -1617,6 +1628,14 @@ PrefabInstance:
     - target: {fileID: 4249274727420233216, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_Constraints
       value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4253846761689735086, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: offset.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
+      propertyPath: waterYLevel
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4365178524663994698, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: debugFlapper
@@ -1632,11 +1651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Calibrate
+      value: RecalibrateVR
       objectReference: {fileID: 0}
     - target: {fileID: 5926413599887819300, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VRCalibration, Assembly-CSharp
+      value: MenuActions, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6075097113512040364, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: waterYLevel
@@ -1652,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.76
+      value: -3.713
       objectReference: {fileID: 0}
     - target: {fileID: 6827182281671778948, guid: 484e391f298d9154d81e4fa76c66993f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1721,7 +1740,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 602959029}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c0d0daeab91ea744968188e75f584bd, type: 3}
   m_Name: 
@@ -2841,6 +2860,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748478295}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1787907064 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 69a74a71bbe231347855dad736614db2, type: 3}
+  m_PrefabInstance: {fileID: 274829144}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1787907065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787907064}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3492874011910102737, guid: 69a74a71bbe231347855dad736614db2, type: 3}
 --- !u!114 &1790077849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6437843510363697850, guid: 7b651a3a411f3074783dd1685954e8c4, type: 3}
@@ -2985,19 +3031,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 82.3
+      value: 55.4
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.61832
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 34.309998
+      value: 49.7
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9919939
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3005,7 +3051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.12628573
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -3017,7 +3063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 14.51
       objectReference: {fileID: 0}
     - target: {fileID: 2837297696575913780, guid: 62903bcbd3c3ef242a533323c106d08b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z

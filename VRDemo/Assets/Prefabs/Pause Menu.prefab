@@ -546,6 +546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameIsPaused: 0
   rayInteracter: {fileID: 0}
+  xrOrigin: {fileID: 0}
+  boatTF: {fileID: 0}
+  offset: {x: 0, y: 0.8, z: 0}
 --- !u!1 &6515784750441418581
 GameObject:
   m_ObjectHideFlags: 0

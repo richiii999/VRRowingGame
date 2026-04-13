@@ -281,7 +281,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: f5830e5e32fd3f94191a0399d2c627db, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -539,7 +539,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 59d4ce1839fdb394e84979ac48939b32, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -668,7 +668,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: eacbee894f33b9f419a134eab779c3cd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1573,7 +1573,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e671d8434a07c2f46bb17fc6b8eed466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splashes: []
+  bgSounds: []
+  cheers: []
   spamTimer: 2
+  splashTimer: 0
+  cheerTimer: 0
+  currSound: {fileID: 0}
   BGSoundOnStart: 1
   BGSound: {fileID: 3807324915550588694}
 --- !u!1 &7145484891458659929
@@ -1750,7 +1756,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 72f8db43905ed98419e2e648c9012147, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

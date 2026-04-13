@@ -3,6 +3,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections.Generic;
+using static UnityEngine.Random;
 
 // Tools.cs: Collection of useful funcs that are used throughout various scripts
 
@@ -79,7 +80,7 @@ public static class Tools{
     }
 
     public static void VerifySceneInBuild(string sceneName){ // Checks if sceneName is in the build path (required to change scenes at runtime)
-        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1) {
+        if (SceneUtility.GetBuildIndexByScenePath(sceneName) == -1 && sceneName != "QUIT") { // "QUIT" is reserved sceneName, it closes the game
             Debug.LogWarning($"Scene: {sceneName} not in build path"); 
         }
     }
@@ -97,4 +98,10 @@ public static class Tools{
     }
 
     public static string GetCurrScene() { return SceneManager.GetActiveScene().name; } // Tbh can just call the func directly, I just did this for convienience
+
+    public static void SetNPCDifficulty(float difficulty=1.0f){ // Set NPC diff within 80-120% of passed value
+        foreach (GameObject NPC in GameObject.FindGameObjectsWithTag("NPCRacer")){
+            NPC.GetComponent<NPCRacer>().speed = Range(difficulty * 0.8f, difficulty * 1.2f);
+        }
+    }
 }

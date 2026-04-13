@@ -65,8 +65,6 @@ public class NPCRacer : MonoBehaviour{
     }
 
     public void SpeedBoost(float boostFactor = 200f){
-        motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, speed) - transform.position) * boostFactor);
+        motorRB.AddForce((Vector3.MoveTowards(motorRB.transform.position, currCP.transform.position, 1f) - transform.position) * boostFactor);
     }
-
-    // TODO give NPC speedboost if they are behind player, scaled by how far away from player they are. If within X units, no speedboost tho
 }
