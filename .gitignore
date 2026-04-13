@@ -125,3 +125,6 @@ InitTestScene*.unity*
 VRDemo/.vscode/settings.json
 VRDemo/.vscode/extensions.json
 VRDemo/.vscode/launch.json
+
+
+.DS_Store
