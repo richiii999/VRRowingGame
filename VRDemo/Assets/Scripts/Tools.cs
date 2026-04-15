@@ -98,4 +98,9 @@ public static class Tools{
     }
 
     public static string GetCurrScene() { return SceneManager.GetActiveScene().name; } // Tbh can just call the func directly, I just did this for convienience
+    public static void SetNPCDifficulty(float difficulty=1.0f){ // Set NPC diff within 80-120% of passed value
+        foreach (GameObject NPC in GameObject.FindGameObjectsWithTag("NPCRacer")){
+            NPC.GetComponent<NPCRacer>().speed = difficulty;
+        }
+    }
 }
