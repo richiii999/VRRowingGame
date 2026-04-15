@@ -214,6 +214,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7058693533941040078}
+        m_TargetAssemblyTypeName: snapBacktoPostition, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -243,15 +255,15 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7058693533941040078}
         m_TargetAssemblyTypeName: snapBacktoPostition, Assembly-CSharp
-        m_MethodName: SetRotation
-        m_Mode: 1
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
@@ -844,6 +856,7 @@ MonoBehaviour:
   boatMotor: {fileID: 4423585689815351981}
   Speed_Coffecient: 700
   debugFlapper: 0
+  waterYLevel: 0
   soundController: {fileID: 0}
 --- !u!1 &1705753896783483294
 GameObject:
@@ -1248,6 +1261,7 @@ MonoBehaviour:
   boatMotor: {fileID: 4423585689815351981}
   Speed_Coffecient: 700
   debugFlapper: 0
+  waterYLevel: 0
   soundController: {fileID: 0}
 --- !u!1 &3759435225402288425
 GameObject:
@@ -3117,6 +3131,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2874230307002800575}
+        m_TargetAssemblyTypeName: snapBacktoPostition, Assembly-CSharp
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -3146,15 +3172,15 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2874230307002800575}
         m_TargetAssemblyTypeName: snapBacktoPostition, Assembly-CSharp
-        m_MethodName: SetRotation
-        m_Mode: 1
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
